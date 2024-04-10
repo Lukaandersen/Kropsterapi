@@ -3,6 +3,7 @@
 import { BuilderComponent, useIsPreviewing } from "@builder.io/react"; 
 import { BuilderContent, builder } from '@builder.io/sdk';
 import DefaultErrorPage from "next/error";
+import '../builder-registry'
 
 interface BuilderPageProps { 
   content?: BuilderContent;
