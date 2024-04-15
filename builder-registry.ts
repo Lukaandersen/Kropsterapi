@@ -2,6 +2,8 @@
 'use client';
 import { builder, Builder } from '@builder.io/react';
 import Counter from './components/blocks/Counter/Counter';
+import Footer from './components/blocks/Footer/Footer';
+import Testamonial from './components/blocks/Testamonials/Testamonial';
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -40,5 +42,32 @@ Builder.registerComponent(Counter, {
             ],
         },
     ],
+});
+
+Builder.registerComponent(Footer, {
+    name: 'Footer',
+  
+          
+    
+});
+Builder.registerComponent(Testamonial, {
+    name: 'Testamonial',
+    inputs: [
+        {
+            name:'name',
+            type:'string',
+
+        },
+        {
+            name:'title',
+            type:'string',
+        },
+        {
+            name:'testamonialText',
+            type:'string'
+        }
+    ]
+          
+    
 });
 
