@@ -4,6 +4,7 @@ import { builder, Builder } from '@builder.io/react';
 import Counter from './components/blocks/Counter/Counter';
 import Footer from './components/blocks/Footer/Footer';
 import Testamonial from './components/blocks/Testamonials/Testamonial';
+import Navigation from './components/blocks/Navigation/Navigation'
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -65,6 +66,31 @@ Builder.registerComponent(Testamonial, {
         {
             name:'testamonialText',
             type:'string'
+        }
+    ]
+          
+    
+});
+
+Builder.registerComponent(Navigation, {
+    name: 'Navigation',
+    inputs: [
+        {
+            name:'menupunkt1',
+            type:'string',
+
+        },
+        {
+            name:'menupunkt2',
+            type:'string',
+        },
+        {
+            name:'menupunkt3',
+            type:'string'
+        },
+        {
+            name:'logo',
+            type:'image'
         }
     ]
           
