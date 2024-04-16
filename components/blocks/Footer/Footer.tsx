@@ -2,25 +2,30 @@ import styles from "./styles.module.css";
 
 export default function Footer() {
 return (
-    <div className="bg-lightBeige font-josefin">
-    <div className=" justify-center  text-center grid gap-12 py-10">
-        <hr className="bg-greyPurple h-0.5 w-96 "/>
-        <h3 className="text-darkPurple font-semibold">Hvad er Kropsterapi?</h3>
-        <h3 className="text-darkPurple">Booking</h3>
-        <h3 className="text-darkPurple">Gavekort</h3>
-        <h3 className="text-darkPurple">Om mig</h3>
-        <div className="flex justify-center">
-          <img src="instagram-purple.png" alt="instagram-logo" />
-        </div>        
-        <hr className="bg-greyPurple h-0.5"/>
+    <div className="bg-lightBeige flex flex-col items-center">
+    <div className="bg-darkBeige h-0.5 my-9 w-2/3 grid justify-center"></div>
 
+    <div className=" text-primaryPurple grid grid-cols-3 text-center h-56">
+        <div className="grid justify-between">
+            <h3 className="">Find mig her</h3>
+            <div className="grid grid-cols-2 justify-items-center gap-6 px-16">
+            <img src="FacebookLight.png" alt="" />
+            <img src="instagramLight.png" alt="" />
+            </div>
+            <h3>Marstalsgade 2100 Østerbro</h3>
+        </div>
+        <div className="grid">
+            <h3>Hvad er Kropsterapi?</h3>
+            <h3>Om Mig</h3>  
+            <h3>Booking</h3>   
+        </div>
+        <div className="grid">
+            <h3>Cookiepolitik</h3>
+            <h3>Privatpolitik</h3>
+            <h3>CVR: 12345678</h3>
+        </div>
+    
     </div>
-    <div className="flex justify-between px-5 text-darkPurple ">
-        <p>Marstalsgade 53, 2100 Kbh Ø</p>
-        <p>Cookiepolitik</p>
-        <p>Privatlivspolitik</p>
-        <p>CVR:12345678</p>
-    </div>
-    </div>
+</div>
 )
 }
