@@ -23,14 +23,28 @@ export default function Testamonial () {
     const navigationNextRef = useRef<HTMLButtonElement>(null);
     const navigationPrevRef = useRef<HTMLButtonElement>(null);
     return(
-        <div>
-        <h1>{}</h1>
-        <button ref={navigationPrevRef} className="previous rounded border-primary border-2 p-2">
-        <ArrowIcon />
-        </button>
-        <button ref={navigationNextRef} className="next rounded border-primary border-2 p-2" >
-        <ArrowIcon scaleX={-1} />
-        </button>
+        <div className='bg-mediumBeige py-6 text-primaryPurple'>
+        <div className='flex flex-col items-center gap-6 '>
+        <h3 className='text-sm'>Melissa Nielsen</h3>
+        <h2 className='text-xl playfair'>Så tryg og professionel behandling</h2>
+        <p className='text-center max-w-[820px]'>Jeg har aldrig før prøvet kropsterapi og jeg var lidt skeptisk og 
+nervøs for om det var grænseoverskridende. 
+Det var så behageligt og slet ikke utrygt. Charlotte har en rigtig fin
+lille klinik på Østerbro som er nem at komme til. Jeg er glad for
+at jeg kastede mig ud i det og tog afsted. </p>
+</div>
+<div className="flex justify-center gap-4 mt-8">
+                <div>
+                    <button ref={navigationPrevRef} className="previous rounded border-primary border-2 p-2">
+                        <ArrowIcon />
+                    </button>
+                </div>
+                <div className="flex justify-center items-center">
+                    <button ref={navigationNextRef} className="next rounded border-primary border-2 p-2">
+                        <ArrowIcon scaleX={-1} />
+                    </button>
+                </div>
+            </div>
         </div>
     )
 }

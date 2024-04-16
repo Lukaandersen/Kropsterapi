@@ -25,6 +25,7 @@ const config: Config = {
       },
       fontFamily: {
         josefin: ['Josefin Sans', 'sans-serif'],
+        playfair: ['Playfair Display', 'serif'],
       },
     },
   },
