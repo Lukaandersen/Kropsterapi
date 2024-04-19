@@ -5,6 +5,7 @@ import Footer from "./components/blocks/Footer/Footer";
 import Testamonial from "./components/blocks/Testamonials/Testamonial";
 import Navigation from "./components/blocks/Navigation/Navigation";
 import BookingButton from "./components/buttons/BookingButton/BookingButton";
+import TextCard from "./components/cards/TextCard/TextCard";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -89,3 +90,13 @@ Builder.registerComponent(Navigation, {
 Builder.registerComponent(BookingButton, {
   name: "BookingButton",
 });
+
+Builder.registerComponent(TextCard, {
+    name: "TextCard",
+    inputs: [
+        {
+            name:"image",
+            type:"image"
+        }
+    ]
+  });
