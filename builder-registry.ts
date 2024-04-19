@@ -6,6 +6,7 @@ import Testamonial from "./components/blocks/Testamonials/Testamonial";
 import Navigation from "./components/blocks/Navigation/Navigation";
 import BookingButton from "./components/buttons/BookingButton/BookingButton";
 import TextCard from "./components/cards/TextCard/TextCard";
+import TextBlock from "./components/blocks/TextBlock/TextBlock";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -97,6 +98,15 @@ Builder.registerComponent(TextCard, {
         {
             name:"image",
             type:"image"
+        }
+    ]
+  });
+  Builder.registerComponent(TextBlock, {
+    name: "TextBlock",
+    inputs: [
+        {
+            name:"titel",
+            type:"paragraph"
         }
     ]
   });
