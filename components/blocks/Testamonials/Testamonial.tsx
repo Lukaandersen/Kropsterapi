@@ -18,31 +18,38 @@ const ArrowIcon: React.FC<{ scaleX?: number }> = ({ scaleX = 1 }) => (
 
 
 
-export default function Testamonial () {
+export default function Testamonial (props) {
+    console.log (props)
 
     const navigationNextRef = useRef<HTMLButtonElement>(null);
     const navigationPrevRef = useRef<HTMLButtonElement>(null);
+
+    const handlePrevClick = () => {
+        console.log('Forrige knap blev klikket');
+        // Tilføj yderligere logik eller manipulation af data her
+    }
+
+    const handleNextClick = () => {
+        console.log('Næste knap blev klikket');
+        // Tilføj yderligere logik eller manipulation af data her
+    }
     return(
         <div className='bg-mediumBeige py-6 text-primaryPurple'>
         <div className='flex flex-col items-center gap-6 '>
-        <h3 className='text-sm'>Melissa Nielsen</h3>
-        <h2 className='text-xl playfair'>Så tryg og professionel behandling</h2>
-        <p className='text-center max-w-[820px]'>Jeg har aldrig før prøvet kropsterapi og jeg var lidt skeptisk og 
-nervøs for om det var grænseoverskridende. 
-Det var så behageligt og slet ikke utrygt. Charlotte har en rigtig fin
-lille klinik på Østerbro som er nem at komme til. Jeg er glad for
-at jeg kastede mig ud i det og tog afsted. </p>
+        <h3 className='text-sm'>{props.name}</h3>
+        <h2 className='text-xl playfair'>{props.title}</h2>
+        <p className='text-center max-w-[820px]'>{props.testamonialText}</p>
 </div>
 <div className="flex justify-center gap-4 mt-8">
                 <div>
-                    <button ref={navigationPrevRef} className="previous rounded border-primary border-2 p-2">
-                        <ArrowIcon />
-                    </button>
+                <button ref={navigationPrevRef} className="previous rounded border-primary border-2 p-2" onClick={handlePrevClick}>
+                    <ArrowIcon />
+                </button>
                 </div>
                 <div className="flex justify-center items-center">
-                    <button ref={navigationNextRef} className="next rounded border-primary border-2 p-2">
-                        <ArrowIcon scaleX={-1} />
-                    </button>
+                <button ref={navigationNextRef} className="next rounded border-primary border-2 p-2" onClick={handleNextClick}>
+                    <ArrowIcon scaleX={-1} />
+                </button>
                 </div>
             </div>
         </div>

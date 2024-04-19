@@ -1,7 +1,7 @@
 export default function Testamonial () {
     return (
 
-<div className='bg-lightBeige opacity-50 flex place-items-center justify-between'>
+<div className='bg-lightBeige/50 flex place-items-center justify-between'>
     <div>
         <a href="/forside">
     <img src="Logo.png" alt=""/>
