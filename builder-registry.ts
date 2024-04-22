@@ -10,6 +10,8 @@ import TextBlock from "./components/blocks/TextBlock/TextBlock";
 import { text } from "stream/consumers";
 import lightBeigeButton from "./components/buttons/lightBeigeButton";
 import beigeButton from "./components/buttons/beigeButton";
+import brownButton from "./components/buttons/brownButton";
+import purpleButton from "./components/buttons/purpleButton";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -103,6 +105,24 @@ Builder.registerComponent(lightBeigeButton, {
 
 Builder.registerComponent(beigeButton, {
   name: "beigeButton",
+  inputs: [
+    {
+      name: "text",
+      type: "string",
+    },
+  ],
+});
+Builder.registerComponent(brownButton, {
+  name: "brownButton",
+  inputs: [
+    {
+      name: "text",
+      type: "string",
+    },
+  ],
+});
+Builder.registerComponent(purpleButton, {
+  name: "purpleButton",
   inputs: [
     {
       name: "text",
