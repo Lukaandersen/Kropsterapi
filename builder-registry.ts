@@ -4,9 +4,12 @@ import Counter from "./components/blocks/Counter/Counter";
 import Footer from "./components/blocks/Footer/Footer";
 import Testamonial from "./components/blocks/Testamonials/Testamonial";
 import Navigation from "./components/blocks/Navigation/Navigation";
-import BookingButton from "./components/buttons/BookingButton/BookingButton";
+import BookingButton from "./components/buttons/BookingButton/lightBeigeButton";
 import TextCard from "./components/cards/TextCard/TextCard";
 import TextBlock from "./components/blocks/TextBlock/TextBlock";
+import { text } from "stream/consumers";
+import lightBeigeButton from "./components/buttons/lightBeigeButton";
+import beigeButton from "./components/buttons/beigeButton";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -88,25 +91,41 @@ Builder.registerComponent(Navigation, {
     },
   ],
 });
-Builder.registerComponent(BookingButton, {
-  name: "BookingButton",
+Builder.registerComponent(lightBeigeButton, {
+  name: "ligthBeigeButton",
+  inputs: [
+    {
+      name: "text",
+      type: "string",
+    },
+  ],
+});
+
+Builder.registerComponent(beigeButton, {
+  name: "beigeButton",
+  inputs: [
+    {
+      name: "text",
+      type: "string",
+    },
+  ],
 });
 
 Builder.registerComponent(TextCard, {
-    name: "TextCard",
-    inputs: [
-        {
-            name:"image",
-            type:"image"
-        }
-    ]
-  });
-  Builder.registerComponent(TextBlock, {
-    name: "TextBlock",
-    inputs: [
-        {
-            name:"titel",
-            type:"paragraph"
-        }
-    ]
-  });
+  name: "TextCard",
+  inputs: [
+    {
+      name: "image",
+      type: "image",
+    },
+  ],
+});
+Builder.registerComponent(TextBlock, {
+  name: "TextBlock",
+  inputs: [
+    {
+      name: "titel",
+      type: "paragraph",
+    },
+  ],
+});
