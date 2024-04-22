@@ -15,6 +15,7 @@ import PurpleButton from "./components/buttons/PurpleButton";
 import bookingCard from "./components/cards/BookingCard/BookingCard";
 import BookingCard from "./components/cards/BookingCard/BookingCard";
 import BrownButton from "./components/buttons/BrownButton";
+import CTABanner from "./components/blocks/CTA-Banner/CTABanner";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -158,7 +159,7 @@ Builder.registerComponent(BookingCard, {
     },
     {
       name: "text",
-      type: "string",
+      type: "paragraph",
     },
     {
       name: "price",
@@ -173,6 +174,16 @@ Builder.registerComponent(TextBlock, {
     {
       name: "titel",
       type: "paragraph",
+    },
+  ],
+});
+
+Builder.registerComponent(CTABanner, {
+  name: "CTABanner",
+  inputs: [
+    {
+      name: "titel",
+      type: "string",
     },
   ],
 });

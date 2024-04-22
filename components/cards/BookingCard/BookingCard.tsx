@@ -1,4 +1,3 @@
-import PurpleButton from "@/components/buttons/PurpleButton";
 import BrownButton from "@/components/buttons/BrownButton";
 
 export default function BookingCard(props) {
