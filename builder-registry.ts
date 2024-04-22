@@ -16,6 +16,7 @@ import bookingCard from "./components/cards/BookingCard/BookingCard";
 import BookingCard from "./components/cards/BookingCard/BookingCard";
 import BrownButton from "./components/buttons/BrownButton";
 import CTABanner from "./components/blocks/CTA-Banner/CTABanner";
+import Ordrerbekræftelse from "./components/blocks/Ordrerbekræftelse/Ordrerbekræftelse";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -183,6 +184,15 @@ Builder.registerComponent(CTABanner, {
   inputs: [
     {
       name: "titel",
+      type: "string",
+    },
+  ],
+});
+Builder.registerComponent(Ordrerbekræftelse, {
+  name: "Ordrerbekræftelse",
+  inputs: [
+    {
+      name: "Text",
       type: "string",
     },
   ],
