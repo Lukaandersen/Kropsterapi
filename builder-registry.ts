@@ -7,6 +7,7 @@ import Navigation from "./components/blocks/Navigation/Navigation";
 import BookingButton from "./components/buttons/BookingButton/BookingButton";
 import TextCard from "./components/cards/TextCard/TextCard";
 import TextBlock from "./components/blocks/TextBlock/TextBlock";
+import Accordion from "./components/blocks/Accordion/Accordion";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -107,6 +108,19 @@ Builder.registerComponent(TextCard, {
         {
             name:"titel",
             type:"paragraph"
+        }
+    ]
+  });
+  Builder.registerComponent(Accordion, {
+    name: "Accordion",
+    inputs: [
+        {
+            name:"question",
+            type:"string"
+        },
+        {
+            name:"answer",
+            type:"string"
         }
     ]
   });
