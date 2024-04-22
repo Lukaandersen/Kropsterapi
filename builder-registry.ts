@@ -10,6 +10,7 @@ import beigeButton from "./components/buttons/beigeButton";
 import Accordion from "./components/blocks/Accordion/Accordion";
 import TextCard from "./components/cards/TextCard/TextCard";
 import LightBeigeButton from "./components/buttons/LightBeigeButton";
+import Galleri from "./components/blocks/Galleri/Galleri";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -140,5 +141,11 @@ Builder.registerComponent(TextCard, {
           name:"answer",
           type:"string"
       }
+    ]
+  });
+  Builder.registerComponent(Galleri, {
+    name: "Galleri",
+    inputs: [
+    
     ]
   });
