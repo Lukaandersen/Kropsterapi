@@ -10,8 +10,11 @@ import TextBlock from "./components/blocks/TextBlock/TextBlock";
 import { text } from "stream/consumers";
 import lightBeigeButton from "./components/buttons/lightBeigeButton";
 import beigeButton from "./components/buttons/beigeButton";
-import brownButton from "./components/buttons/brownButton";
-import purpleButton from "./components/buttons/purpleButton";
+import brownButton from "./components/buttons/BrownButton";
+import PurpleButton from "./components/buttons/PurpleButton";
+import bookingCard from "./components/cards/BookingCard/BookingCard";
+import BookingCard from "./components/cards/BookingCard/BookingCard";
+import BrownButton from "./components/buttons/BrownButton";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -103,6 +106,7 @@ Builder.registerComponent(lightBeigeButton, {
   ],
 });
 
+// Buttons:
 Builder.registerComponent(beigeButton, {
   name: "beigeButton",
   inputs: [
@@ -112,8 +116,8 @@ Builder.registerComponent(beigeButton, {
     },
   ],
 });
-Builder.registerComponent(brownButton, {
-  name: "brownButton",
+Builder.registerComponent(BrownButton, {
+  name: "BrownButton",
   inputs: [
     {
       name: "text",
@@ -121,8 +125,8 @@ Builder.registerComponent(brownButton, {
     },
   ],
 });
-Builder.registerComponent(purpleButton, {
-  name: "purpleButton",
+Builder.registerComponent(PurpleButton, {
+  name: "PurpleButton",
   inputs: [
     {
       name: "text",
@@ -140,6 +144,29 @@ Builder.registerComponent(TextCard, {
     },
   ],
 });
+
+Builder.registerComponent(BookingCard, {
+  name: "BookingCard",
+  inputs: [
+    {
+      name: "titel",
+      type: "string",
+    },
+    {
+      name: "image",
+      type: "image",
+    },
+    {
+      name: "text",
+      type: "string",
+    },
+    {
+      name: "price",
+      type: "string",
+    },
+  ],
+});
+
 Builder.registerComponent(TextBlock, {
   name: "TextBlock",
   inputs: [
