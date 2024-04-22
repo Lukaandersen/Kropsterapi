@@ -7,7 +7,7 @@ export default function BookingCard(props) {
       <p className="m-5 text-primaryLight">{props.titel}</p>
       <img src="3_sessioner.png" alt="Billede af noget spirituelt" className="w-64" />
       <p className="text-center text-5xl m-5 text-primaryLight">{props.text}</p>
-      <p className="text-9xl font-bold  !important">{props.price}</p>
+      <p className="text-3xl font-bold  !important">{props.price}</p>
       <BrownButton></BrownButton>
     </div>
   );
