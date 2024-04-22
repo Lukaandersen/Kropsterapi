@@ -4,10 +4,12 @@ import Counter from "./components/blocks/Counter/Counter";
 import Footer from "./components/blocks/Footer/Footer";
 import Testamonial from "./components/blocks/Testamonials/Testamonial";
 import Navigation from "./components/blocks/Navigation/Navigation";
-import BookingButton from "./components/buttons/BookingButton/BookingButton";
-import TextCard from "./components/cards/TextCard/TextCard";
 import TextBlock from "./components/blocks/TextBlock/TextBlock";
+import { text } from "stream/consumers";
+import beigeButton from "./components/buttons/beigeButton";
 import Accordion from "./components/blocks/Accordion/Accordion";
+import TextCard from "./components/cards/TextCard/TextCard";
+import LightBeigeButton from "./components/buttons/LightBeigeButton";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -89,8 +91,24 @@ Builder.registerComponent(Navigation, {
     },
   ],
 });
-Builder.registerComponent(BookingButton, {
-  name: "BookingButton",
+Builder.registerComponent(LightBeigeButton, {
+  name: "LightBeigeButton",
+  inputs: [
+    {
+      name: "text",
+      type: "string",
+    },
+  ],
+});
+
+Builder.registerComponent(beigeButton, {
+  name: "beigeButton",
+  inputs: [
+    {
+      name: "text",
+      type: "string",
+    },
+  ],
 });
 
 Builder.registerComponent(TextCard, {
@@ -112,15 +130,15 @@ Builder.registerComponent(TextCard, {
     ]
   });
   Builder.registerComponent(Accordion, {
-    name: "Accordion",
+    name: "FAQ-Accordion",
     inputs: [
         {
             name:"question",
             type:"string"
         },
         {
-            name:"answer",
-            type:"string"
-        }
+          name:"answer",
+          type:"string"
+      }
     ]
   });

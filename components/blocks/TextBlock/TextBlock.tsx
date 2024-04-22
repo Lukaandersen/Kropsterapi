@@ -1,6 +1,7 @@
+
 export default function TextBlock() {
     return(
-        <div className="grid grid-cols-2  ">
+        <div className="grid grid-cols1 md:grid-cols-2  ">
         <div className="p-10 text-primaryPurple">
         <h2 className="text-xl mb-3">Titel</h2>
         <p>Kropsterapi er en behandlingsform som består af forskellige teknikker, for eksempel pulsering, tryk, stræk osv.

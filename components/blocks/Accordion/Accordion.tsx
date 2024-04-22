@@ -4,17 +4,20 @@ export default function Accordion() {
     const faqItems = [
         { question: "Hvad er kropsterapi?", answer: "Kropsterapi er en holistisk tilgang til at behandle fysiske og mentale udfordringer gennem kropslige teknikker." },
         { question: "Hvordan virker kropsterapi?", answer: "Kropsterapien arbejder med kroppens muskler, led og åndedræt for at frigøre spændinger og genoprette balance." },
+        { question: "Hvem kan få gavn af kropsterapi?", answer: "Alle kan potentielt have gavn af kropsterapi, især dem der oplever kroniske smerter, stress eller angst." },
+        { question: "Hvem kan få gavn af kropsterapi?", answer: "Alle kan potentielt have gavn af kropsterapi, især dem der oplever kroniske smerter, stress eller angst." },
         { question: "Hvem kan få gavn af kropsterapi?", answer: "Alle kan potentielt have gavn af kropsterapi, især dem der oplever kroniske smerter, stress eller angst." }
+
     ];
 
     return (
-        <div className="text-primaryPurple bg-mediumBeige">
-            <div className="grid grid-cols-12 lg:gap-16 gap-0 md:mx-20 mt-5 mb-5 content-center">
-                <div className="col-span-4 ">
+        <div className="text-primaryPurple bg-mediumBeige ">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-0 my-5 content-center">
+                <div className="pl-5 grid md:place-content-center md:col-span-2">
                 <h2 className="text-3xl font-bold mb-6">FAQ</h2>
-                <p className="font-bold">Der er mange der har lignende spørgsmål til Kropsterapi, så her vil jeg prøve at besvare nogle</p>
+                <p className="font-bold max-w-56 mb-12">Der er mange der har lignende spørgsmål til Kropsterapi, så her vil jeg prøve at besvare nogle</p>
                 </div>
-                <div className="md:col-span-8 col-span-6 md:text-start text-center px-6 mb-8 lg:mb-0">
+                <div className="col-span-3 px-6 mb-8 lg:mb-0">
                     {faqItems.map((item, index) => (
                         <AccordionItem key={index} question={item.question} answer={item.answer} />
                     ))}
@@ -34,13 +37,15 @@ function AccordionItem({ question, answer }) {
 
   
     return (
-        <div className="mb-4 grid justify-between">
-            <button className="font-bold flex items-center border-b-2" onClick={toggleAccordion}>
-                <span>{question}</span>
-                <div>{isOpen ? <MinusIcon /> : <PlusIcon />}</div>
-            </button>
-            {isOpen && <p className="mt-2">{answer}</p>}
-        </div>
+        <div className="mb-4 ">
+            <div></div>
+        <button className="font-bold flex justify-between w-full underline" onClick={toggleAccordion}>
+            <span>{question}</span>
+            
+            <div>{isOpen ? <MinusIcon /> : <PlusIcon />}</div>
+        </button>
+        {isOpen && <p className="mt-2">{answer}</p>}
+    </div>
     );
 }
 
