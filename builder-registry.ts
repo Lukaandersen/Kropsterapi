@@ -4,12 +4,13 @@ import Counter from "./components/blocks/Counter/Counter";
 import Footer from "./components/blocks/Footer/Footer";
 import Testamonial from "./components/blocks/Testamonials/Testamonial";
 import Navigation from "./components/blocks/Navigation/Navigation";
-import BookingButton from "./components/buttons/BookingButton/lightBeigeButton";
-import TextCard from "./components/cards/TextCard/TextCard";
 import TextBlock from "./components/blocks/TextBlock/TextBlock";
 import { text } from "stream/consumers";
-import lightBeigeButton from "./components/buttons/lightBeigeButton";
 import beigeButton from "./components/buttons/beigeButton";
+import Accordion from "./components/blocks/Accordion/Accordion";
+import TextCard from "./components/cards/TextCard/TextCard";
+import LightBeigeButton from "./components/buttons/lightBeigeButton"
+import Galleri from "./components/blocks/Galleri/Galleri";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -91,8 +92,8 @@ Builder.registerComponent(Navigation, {
     },
   ],
 });
-Builder.registerComponent(lightBeigeButton, {
-  name: "ligthBeigeButton",
+Builder.registerComponent(LightBeigeButton, {
+  name: "LightBeigeButton",
   inputs: [
     {
       name: "text",
@@ -112,20 +113,39 @@ Builder.registerComponent(beigeButton, {
 });
 
 Builder.registerComponent(TextCard, {
-  name: "TextCard",
-  inputs: [
-    {
-      name: "image",
-      type: "image",
-    },
-  ],
-});
-Builder.registerComponent(TextBlock, {
-  name: "TextBlock",
-  inputs: [
-    {
-      name: "titel",
-      type: "paragraph",
-    },
-  ],
-});
+    name: "TextCard",
+    inputs: [
+        {
+            name:"image",
+            type:"image"
+        }
+    ]
+  });
+  Builder.registerComponent(TextBlock, {
+    name: "TextBlock",
+    inputs: [
+        {
+            name:"titel",
+            type:"paragraph"
+        }
+    ]
+  });
+  Builder.registerComponent(Accordion, {
+    name: "FAQ-Accordion",
+    inputs: [
+        {
+            name:"question",
+            type:"string"
+        },
+        {
+          name:"answer",
+          type:"string"
+      }
+    ]
+  });
+  Builder.registerComponent(Galleri, {
+    name: "Galleri",
+    inputs: [
+    
+    ]
+  });
