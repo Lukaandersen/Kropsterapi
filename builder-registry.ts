@@ -11,9 +11,10 @@ import BookingCard from "./components/cards/BookingCard/BookingCard";
 import BrownButton from "./components/buttons/BrownButton";
 import CTABanner from "./components/blocks/CTA-Banner/CTABanner";
 import Ordrerbekræftelse from "./components/blocks/Ordrerbekræftelse/Ordrerbekræftelse";
-import LightBeigeButton from "./components/buttons/lightBeigeButton";
-import BeigeButton from "./components/buttons/beigeButton";
-import PurpleButton from "./components/buttons/purpleButton";
+import BeigeButton from "./components/buttons/BeigeButton";
+import LightBeigeButton from "./components/buttons/LightBeigeButton";
+import PurpleButton from "./components/buttons/PurpleButton";
+import Timeline from "./components/blocks/Timeline/Timeline";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -187,6 +188,16 @@ Builder.registerComponent(CTABanner, {
 });
 Builder.registerComponent(Ordrerbekræftelse, {
   name: "Ordrerbekræftelse",
+  inputs: [
+    {
+      name: "Text",
+      type: "string",
+    },
+  ],
+});
+
+Builder.registerComponent(Timeline, {
+  name: "Timeline",
   inputs: [
     {
       name: "Text",
