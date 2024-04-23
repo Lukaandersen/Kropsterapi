@@ -4,17 +4,17 @@ import Counter from "./components/blocks/Counter/Counter";
 import Footer from "./components/blocks/Footer/Footer";
 import Testamonial from "./components/blocks/Testamonials/Testamonial";
 import Navigation from "./components/blocks/Navigation/Navigation";
+import BookingButton from "./components/buttons/BookingButton/lightBeigeButton";
+import TextCard from "./components/cards/TextCard/TextCard";
 import TextBlock from "./components/blocks/TextBlock/TextBlock";
 import { text } from "stream/consumers";
-import beigeButton from "./components/buttons/beigeButton";
+import PurpleButton from "./components/buttons/PurpleButton";
 import BookingCard from "./components/cards/BookingCard/BookingCard";
 import BrownButton from "./components/buttons/BrownButton";
 import CTABanner from "./components/blocks/CTA-Banner/CTABanner";
 import Ordrerbekræftelse from "./components/blocks/Ordrerbekræftelse/Ordrerbekræftelse";
-import Accordion from "./components/blocks/Accordion/Accordion";
-import TextCard from "./components/cards/TextCard/TextCard";
-import LightBeigeButton from "./components/buttons/lightBeigeButton"
-import Galleri from "./components/blocks/Galleri/Galleri";
+import BeigeButton from "./components/buttons/BeigeButton";
+import LightBeigeButton from "./components/buttons/LightBeigeButton";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -97,7 +97,7 @@ Builder.registerComponent(Navigation, {
   ],
 });
 Builder.registerComponent(LightBeigeButton, {
-  name: "LightBeigeButton",
+  name: "LigthBeigeButton",
   inputs: [
     {
       name: "text",
@@ -107,7 +107,7 @@ Builder.registerComponent(LightBeigeButton, {
 });
 
 // Buttons:
-Builder.registerComponent(beigeButton, {
+Builder.registerComponent(BeigeButton, {
   name: "beigeButton",
   inputs: [
     {
@@ -125,7 +125,15 @@ Builder.registerComponent(BrownButton, {
     },
   ],
 });
-
+Builder.registerComponent(PurpleButton, {
+  name: "PurpleButton",
+  inputs: [
+    {
+      name: "text",
+      type: "string",
+    },
+  ],
+});
 
 Builder.registerComponent(TextCard, {
   name: "TextCard",
@@ -178,7 +186,6 @@ Builder.registerComponent(CTABanner, {
     },
   ],
 });
-
 Builder.registerComponent(Ordrerbekræftelse, {
   name: "Ordrerbekræftelse",
   inputs: [
@@ -187,24 +194,4 @@ Builder.registerComponent(Ordrerbekræftelse, {
       type: "string",
     },
   ],
-});
-Builder.registerComponent(Galleri, {
-  name: "Galleri",
-  inputs: [
-  
-  ]
-});
-
-Builder.registerComponent(Accordion, {
-  name: "FAQ-Accordion",
-  inputs: [
-      {
-          name:"question",
-          type:"string"
-      },
-      {
-        name:"answer",
-        type:"string"
-    }
-  ]
 });
