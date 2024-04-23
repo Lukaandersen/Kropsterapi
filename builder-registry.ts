@@ -7,6 +7,10 @@ import Navigation from "./components/blocks/Navigation/Navigation";
 import TextBlock from "./components/blocks/TextBlock/TextBlock";
 import { text } from "stream/consumers";
 import beigeButton from "./components/buttons/beigeButton";
+import BookingCard from "./components/cards/BookingCard/BookingCard";
+import BrownButton from "./components/buttons/BrownButton";
+import CTABanner from "./components/blocks/CTA-Banner/CTABanner";
+import Ordrerbekræftelse from "./components/blocks/Ordrerbekræftelse/Ordrerbekræftelse";
 import Accordion from "./components/blocks/Accordion/Accordion";
 import TextCard from "./components/cards/TextCard/TextCard";
 import LightBeigeButton from "./components/buttons/lightBeigeButton"
@@ -102,6 +106,7 @@ Builder.registerComponent(LightBeigeButton, {
   ],
 });
 
+// Buttons:
 Builder.registerComponent(beigeButton, {
   name: "beigeButton",
   inputs: [
@@ -111,41 +116,95 @@ Builder.registerComponent(beigeButton, {
     },
   ],
 });
+Builder.registerComponent(BrownButton, {
+  name: "BrownButton",
+  inputs: [
+    {
+      name: "text",
+      type: "string",
+    },
+  ],
+});
+
 
 Builder.registerComponent(TextCard, {
-    name: "TextCard",
-    inputs: [
-        {
-            name:"image",
-            type:"image"
-        }
-    ]
-  });
-  Builder.registerComponent(TextBlock, {
-    name: "TextBlock",
-    inputs: [
-        {
-            name:"titel",
-            type:"paragraph"
-        }
-    ]
-  });
-  Builder.registerComponent(Accordion, {
-    name: "FAQ-Accordion",
-    inputs: [
-        {
-            name:"question",
-            type:"string"
-        },
-        {
-          name:"answer",
+  name: "TextCard",
+  inputs: [
+    {
+      name: "image",
+      type: "image",
+    },
+  ],
+});
+
+Builder.registerComponent(BookingCard, {
+  name: "BookingCard",
+  inputs: [
+    {
+      name: "titel",
+      type: "string",
+    },
+    {
+      name: "image",
+      type: "image",
+    },
+    {
+      name: "text",
+      type: "paragraph",
+    },
+    {
+      name: "price",
+      type: "string",
+    },
+  ],
+});
+
+Builder.registerComponent(TextBlock, {
+  name: "TextBlock",
+  inputs: [
+    {
+      name: "titel",
+      type: "paragraph",
+    },
+  ],
+});
+
+Builder.registerComponent(CTABanner, {
+  name: "CTABanner",
+  inputs: [
+    {
+      name: "titel",
+      type: "string",
+    },
+  ],
+});
+
+Builder.registerComponent(Ordrerbekræftelse, {
+  name: "Ordrerbekræftelse",
+  inputs: [
+    {
+      name: "Text",
+      type: "string",
+    },
+  ],
+});
+Builder.registerComponent(Galleri, {
+  name: "Galleri",
+  inputs: [
+  
+  ]
+});
+
+Builder.registerComponent(Accordion, {
+  name: "FAQ-Accordion",
+  inputs: [
+      {
+          name:"question",
           type:"string"
-      }
-    ]
-  });
-  Builder.registerComponent(Galleri, {
-    name: "Galleri",
-    inputs: [
-    
-    ]
-  });
+      },
+      {
+        name:"answer",
+        type:"string"
+    }
+  ]
+});
