@@ -1,5 +1,4 @@
 
-import { SVGProps } from 'react';
 import { useRef } from 'react';
 
 const ArrowIcon: React.FC<{ scaleX?: number }> = ({ scaleX = 1 }) => (
@@ -42,12 +41,12 @@ export default function Testamonial (props) {
 </div>
 <div className="flex justify-center gap-4 mt-8">
                 <div>
-                <button ref={navigationPrevRef} className="previous rounded border-primary border-2 p-2" onClick={handlePrevClick}>
+                <button ref={navigationPrevRef} className="previous rounded border-primary border-2 p-2 border-black" onClick={handlePrevClick}>
                     <ArrowIcon />
                 </button>
                 </div>
                 <div className="flex justify-center items-center">
-                <button ref={navigationNextRef} className="next rounded border-primary border-2 p-2" onClick={handleNextClick}>
+                <button ref={navigationNextRef} className="next rounded border-primary border-2 p-2 border-black" onClick={handleNextClick}>
                     <ArrowIcon scaleX={-1} />
                 </button>
                 </div>

@@ -6,7 +6,6 @@ import Testamonial from "./components/blocks/Testamonials/Testamonial";
 import Navigation from "./components/blocks/Navigation/Navigation";
 import TextCard from "./components/cards/TextCard/TextCard";
 import TextBlock from "./components/blocks/TextBlock/TextBlock";
-import { text } from "stream/consumers";
 import BookingCard from "./components/cards/BookingCard/BookingCard";
 import BrownButton from "./components/buttons/BrownButton";
 import CTABanner from "./components/blocks/CTA-Banner/CTABanner";
@@ -14,6 +13,7 @@ import Ordrerbekræftelse from "./components/blocks/Ordrerbekræftelse/Ordrerbek
 import LightBeigeButton from "./components/buttons/lightBeigeButton";
 import BeigeButton from "./components/buttons/beigeButton";
 import PurpleButton from "./components/buttons/purpleButton";
+import Gallery from "./components/blocks/Galleri/Gallery";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -187,6 +187,16 @@ Builder.registerComponent(CTABanner, {
 });
 Builder.registerComponent(Ordrerbekræftelse, {
   name: "Ordrerbekræftelse",
+  inputs: [
+    {
+      name: "Text",
+      type: "string",
+    },
+  ],
+});
+
+Builder.registerComponent(Gallery, {
+  name: "Gallery",
   inputs: [
     {
       name: "Text",
