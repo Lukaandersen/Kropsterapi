@@ -195,3 +195,13 @@ Builder.registerComponent(Ordrerbekræftelse, {
     },
   ],
 });
+
+Builder.registerComponent(Gallery, {
+  name: "Gallery",
+  
+});
+
+Builder.registerComponent(Timeline, {
+  name: "Timeline",
+  
+});
