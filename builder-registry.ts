@@ -5,16 +5,18 @@ import Footer from "./components/blocks/Footer/Footer";
 import Testamonial from "./components/blocks/Testamonials/Testamonial";
 import Navigation from "./components/blocks/Navigation/Navigation";
 import TextCard from "./components/cards/TextCard/TextCard";
-import TextBlock from "./components/blocks/TextBlock/TextBlock";
+import DoubleTextBlock from "./components/blocks/DoubleTextBlock/DoubleTextBlock";
 import BookingCard from "./components/cards/BookingCard/BookingCard";
 import BrownButton from "./components/buttons/BrownButton";
 import CTABanner from "./components/blocks/CTA-Banner/CTABanner";
 import Ordrerbekræftelse from "./components/blocks/Ordrerbekræftelse/Ordrerbekræftelse";
-import BeigeButton from "./components/buttons/BeigeButton";
 import LightBeigeButton from "./components/buttons/LightBeigeButton";
-import PurpleButton from "./components/buttons/PurpleButton";
+import PurpleButton from "./components/buttons/purpleButton";
 import Timeline from "./components/blocks/Timeline/Timeline";
 import Gallery from "./components/blocks/Galleri/Gallery";
+import BeigeButton from "./components/buttons/beigeButton";
+import Accordion from "./components/blocks/Accordion/Accordion";
+import TextImage from "./components/blocks/TextImage/TextImage";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -139,9 +141,14 @@ Builder.registerComponent(TextCard, {
   name: "TextCard",
   inputs: [
     {
-      name: "image",
-      type: "image",
+      name: "title",
+      type: "string",
     },
+    {
+      name: "image",
+      type: "Image",
+      allowedFileTypes: ["jpeg", "jpg", "png", "gif"]
+    }
   ],
 });
 
@@ -167,7 +174,7 @@ Builder.registerComponent(BookingCard, {
   ],
 });
 
-Builder.registerComponent(TextBlock, {
+Builder.registerComponent(DoubleTextBlock, {
   name: "TextBlock",
   inputs: [
     {
@@ -204,4 +211,28 @@ Builder.registerComponent(Gallery, {
 Builder.registerComponent(Timeline, {
   name: "Timeline",
   
+});
+
+Builder.registerComponent(Accordion, {
+  name: "Accordion",
+  
+});
+
+Builder.registerComponent(TextImage, {
+  name: "TextImage",
+  inputs: [
+    {
+      name: "title",
+      type: "string",
+    },
+    {
+name: "text",
+type: "string"
+    },
+    {
+      name: "image",
+      type: "Image",
+      allowedFileTypes: ["jpeg", "jpg", "png", "gif"]
+    }
+  ],
 });

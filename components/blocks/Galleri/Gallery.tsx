@@ -37,8 +37,8 @@ export default function Gallery() {
 
     return (
 
-        <div>
-            <div className="grid">
+        <div className=''>
+            <div className="grid ">
             <Swiper
                 spaceBetween={10}
                 slidesPerView={3}
@@ -48,18 +48,24 @@ export default function Gallery() {
                   nextEl: '.next',
                 }}
                 breakpoints={{
-                640: {
-                allowTouchMove: true,
-                },
-                641: {
-                allowTouchMove: false,
-                },
+                    640: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 40,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 50,
+                    },
                 }}
                 modules={[Navigation, Autoplay]}
             >
                 {images.map((image, index) => (
                 <SwiperSlide key={index} className="swiper-slide">
-                    <img src={image} alt={`Billede ${index}`} className="w-64" />
+                    <img src={image} alt={`Billede ${index}`} className="w-64 flex flex-col items-center justify-center" />
                 </SwiperSlide >
                 ))}
                

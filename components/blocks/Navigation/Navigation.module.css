@@ -1,0 +1,40 @@
+.burgermenu {
+    display: none; /* Skjul burgermenuen som standard */
+}
+
+/* Vis burgermenuen kun på mindre skærme */
+@media screen and (max-width: 768px) {
+    .burgermenu {
+        display: flex; /* Vis burgermenuen som en fleksibel container */
+        flex-direction: column; /* Arranger burgermenuen lodret */
+        cursor: pointer; /* Tilføj en musemarkør, der angiver, at det er klikbart */
+    }
+
+    .line {
+        width: 30px; /* Sæt bredden af burgermenuens linjer */
+        height: 3px; /* Sæt højden af burgermenuens linjer */
+        background-color: black; /* Sæt farven på burgermenuens linjer */
+        margin: 4px; /* Tilføj mellemrum mellem burgermenuens linjer */
+        transition: all 0.3s ease; /* Tilføj en overgangseffekt for smidig animation */
+    }
+
+    .open.line1 {
+        transform: rotate(-45deg) translate(-5px, 5px); /* Drej og flyt den første linje for at danne et kryds */
+    }
+
+    .open.line2 {
+        opacity: 0; /* Skjul den anden linje, når burgermenuen er åben */
+    }
+
+    .open.line3 {
+        transform: rotate(45deg) translate(-5px, -5px); /* Drej og flyt den tredje linje for at danne et kryds */
+    }
+
+    .navMenu ul {
+        display: none; /* Skjul navigationen på mindre skærme */
+    }
+
+    .navMenu ul.hidden {
+        display: block; /* Vis navigationen, når burgermenuen er åben */
+    }
+}

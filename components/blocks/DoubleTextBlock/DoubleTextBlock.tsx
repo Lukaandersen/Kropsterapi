@@ -1,5 +1,5 @@
 
-export default function TextBlock() {
+export default function DoubleTextBlock() {
     return(
         <div className="grid grid-cols1 md:grid-cols-2  ">
         <div className="p-10 text-primaryPurple">

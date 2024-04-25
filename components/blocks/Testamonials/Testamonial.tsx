@@ -20,8 +20,8 @@ const ArrowIcon: React.FC<{ scaleX?: number }> = ({ scaleX = 1 }) => (
 export default function Testamonial (props) {
     console.log (props)
 
-    const navigationNextRef = useRef<HTMLButtonElement>(null);
-    const navigationPrevRef = useRef<HTMLButtonElement>(null);
+    const navigationNextRef1 = useRef<HTMLButtonElement>(null);
+    const navigationPrevRef1 = useRef<HTMLButtonElement>(null);
 
     const handlePrevClick = () => {
         console.log('Forrige knap blev klikket');
@@ -36,17 +36,17 @@ export default function Testamonial (props) {
         <div className='bg-mediumBeige py-6 text-primaryPurple'>
         <div className='flex flex-col items-center gap-6 '>
         <h3 className='text-sm'>{props.name}</h3>
-        <h2 className='text-xl playfair'>{props.title}</h2>
+        <h2 className='text-xl font-playfair italic'>{props.title}</h2>
         <p className='text-center max-w-[820px]'>{props.testamonialText}</p>
 </div>
 <div className="flex justify-center gap-4 mt-8">
                 <div>
-                <button ref={navigationPrevRef} className="previous rounded border-primary border-2 p-2 border-black" onClick={handlePrevClick}>
+                <button ref={navigationPrevRef1} className="previous rounded border-primary border-2 p-2 border-black" onClick={handlePrevClick}>
                     <ArrowIcon />
                 </button>
                 </div>
                 <div className="flex justify-center items-center">
-                <button ref={navigationNextRef} className="next rounded border-primary border-2 p-2 border-black" onClick={handleNextClick}>
+                <button ref={navigationNextRef1} className="next rounded border-primary border-2 p-2 border-black" onClick={handleNextClick}>
                     <ArrowIcon scaleX={-1} />
                 </button>
                 </div>
