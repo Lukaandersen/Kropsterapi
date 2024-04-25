@@ -4,18 +4,17 @@ import Counter from "./components/blocks/Counter/Counter";
 import Footer from "./components/blocks/Footer/Footer";
 import Testamonial from "./components/blocks/Testamonials/Testamonial";
 import Navigation from "./components/blocks/Navigation/Navigation";
-import BookingButton from "./components/buttons/BookingButton/lightBeigeButton";
 import TextCard from "./components/cards/TextCard/TextCard";
 import TextBlock from "./components/blocks/TextBlock/TextBlock";
-import { text } from "stream/consumers";
-import PurpleButton from "./components/buttons/PurpleButton";
 import BookingCard from "./components/cards/BookingCard/BookingCard";
 import BrownButton from "./components/buttons/BrownButton";
 import CTABanner from "./components/blocks/CTA-Banner/CTABanner";
 import Ordrerbekræftelse from "./components/blocks/Ordrerbekræftelse/Ordrerbekræftelse";
 import BeigeButton from "./components/buttons/BeigeButton";
 import LightBeigeButton from "./components/buttons/LightBeigeButton";
+import PurpleButton from "./components/buttons/PurpleButton";
 import Timeline from "./components/blocks/Timeline/Timeline";
+import Gallery from "./components/blocks/Galleri/Gallery";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -197,12 +196,12 @@ Builder.registerComponent(Ordrerbekræftelse, {
   ],
 });
 
+Builder.registerComponent(Gallery, {
+  name: "Gallery",
+  
+});
+
 Builder.registerComponent(Timeline, {
   name: "Timeline",
-  inputs: [
-    {
-      name: "Text",
-      type: "string",
-    },
-  ],
+  
 });
