@@ -6,7 +6,7 @@ export default function Navigation () {
 
     return (
 
-<div className='bg-lightBeige/50 flex place-items-center justify-between' >
+<div className='bg-lightBeige/50 flex place-items-center justify-between z-40 sticky top-0' >
     <div>
         <a href="/forside">
     <img src="Logo.png" alt=""/>

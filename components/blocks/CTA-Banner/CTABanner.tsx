@@ -1,7 +1,11 @@
-export default function CTABanner(props) {
+import React from 'react';
+
+function CTABanner(props) {
   return (
-    <div className="bg-mediumBeige p-10 flex flex-col items-center justify-center">
-      <p className="text-3xl">{props.titel}</p>
+    <div className={`p-10 flex flex-col items-center justify-center ${props.darkMode ? 'bg-primaryPurple' : 'bg-mediumBeige'}`}>
+      <p className={`text-3xl ${props.darkMode ? 'text-white' : 'text-primaryPurple'}`}>{props.titel}</p>
     </div>
   );
 }
+
+export default CTABanner;

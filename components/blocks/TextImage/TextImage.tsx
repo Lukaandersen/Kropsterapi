@@ -1,13 +1,21 @@
+import LightBeigeButton from "@/components/buttons/LightBeigeButton";
+
 export default function (props) {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="text-primaryPurple p-16 ">
-            <h2 className="text-3xl mb-12 font-playfair ">{props.title}</h2>
-            <p className="font-josefin">Kropsterapi er en behandlingsform som består af forskellige teknikker, for eksempel pulsering, tryk, stræk osv.
-        Der er et stort fokus på åndedrættet og der behandles på muskler, meridianbaner, udvalgte zonepunkter mm.
-        Sammenhæng er kropsterapiens tilgang, krop, sind og sjæl om du vil. Det er vigtigt at der er en let tilgængelig forbindelse mellem krop og psyke, fysik og tanke. Alle tilstande har påvirkning på andre dele af dig. Har du ondet et sted i din krop så mærkes det efterhånden også på psyken, tumler du med noget i dit hovede så vise det sig på et tidspunkt også i din krop.</p>
+        <div className="grid grid-cols-1 md:grid-cols-3">
+            <div className="text-primaryPurple p-12 md:col-span-2 grid justify-items-center place-content-center">
+            <h2 className="text-3xl font-playfair  mb-8">{props.title}</h2>
+            <div>
+            <p className="font-josefin max-w-96">For at nå ned til roden af hvad det er der gør ondt og hvorfor det bliver ved med at vende tilbage selvom at man har været en tur til massagekliniken. 
+            Så er det formegentligt noget psykisk der presser dig. Og hvis ikke det bliver løst ved roden, så kommer det tilbage.
+</p> 
+<br />
+<p className="font-josefin max-w-96">Kropetrapi er ideologien om at krop og sind hænger sammen. Som kendt fra fx zoneterapi, så er der flere områder og punkter i vores kroppe som hænger sammen med vores mentale velvære. 
+Grunden til at vælge kropsterapi, er for at komme hele vejen rundt, og komme problemerne til livs.
+</p></div>
+<LightBeigeButton />
             </div>
-            <div className="h-2/3">
+            <div className="h-2/4">
             <img src="Clinic-pictures/_DSF1754.jpg" alt="" className="cover "/>
 
             </div>
