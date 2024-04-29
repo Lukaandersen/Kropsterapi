@@ -17,6 +17,10 @@ import Gallery from "./components/blocks/Galleri/Gallery";
 import BeigeButton from "./components/buttons/beigeButton";
 import Accordion from "./components/blocks/Accordion/Accordion";
 import TextImage from "./components/blocks/TextImage/TextImage";
+import HeroVideo from "./components/blocks/HeroVideo/HeroVideo";
+import SingleText from "./components/blocks/SingleText/SingleText";
+import HeroImage from "./components/blocks/HeroImage/HeroImage";
+import TextImage2 from "./components/blocks/TextImage2/TextImage2";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -235,4 +239,48 @@ type: "string"
       allowedFileTypes: ["jpeg", "jpg", "png", "gif"]
     }
   ],
+});
+Builder.registerComponent(HeroVideo, {
+  name: "HeroVideo",
+  inputs: [
+    {
+      name: "title",
+      type: "string",
+    }
+  ]
+});
+Builder.registerComponent(SingleText, {
+  name: "SingleText",
+  inputs: [
+    {
+      name: "title",
+      type: "string",
+    },
+    {
+      name: "paragraph",
+      type: "string",
+    }
+  ]
+});
+Builder.registerComponent(HeroImage, {
+  name: "HeroImage",
+  inputs: [
+    {
+      name: "Image",
+      type: "string",
+    }
+  ]
+});
+Builder.registerComponent(TextImage2, {
+  name: "TextImage2",
+  inputs: [
+    {
+      name: "title",
+      type: "string",
+    },
+    {
+name: "text",
+type: "string"
+    },
+  ]
 });
