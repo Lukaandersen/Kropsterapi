@@ -21,6 +21,7 @@ import HeroVideo from "./components/blocks/HeroVideo/HeroVideo";
 import SingleText from "./components/blocks/SingleText/SingleText";
 import HeroImage from "./components/blocks/HeroImage/HeroImage";
 import TextImage2 from "./components/blocks/TextImage2/TextImage2";
+import Kontaktformular from "./components/blocks/Kontaktformular/Kontaktformular";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -151,8 +152,8 @@ Builder.registerComponent(TextCard, {
     {
       name: "image",
       type: "Image",
-      allowedFileTypes: ["jpeg", "jpg", "png", "gif"]
-    }
+      allowedFileTypes: ["jpeg", "jpg", "png", "gif"],
+    },
   ],
 });
 
@@ -209,17 +210,14 @@ Builder.registerComponent(Ordrerbekræftelse, {
 
 Builder.registerComponent(Gallery, {
   name: "Gallery",
-  
 });
 
 Builder.registerComponent(Timeline, {
   name: "Timeline",
-  
 });
 
 Builder.registerComponent(Accordion, {
   name: "Accordion",
-  
 });
 
 Builder.registerComponent(TextImage, {
@@ -230,14 +228,14 @@ Builder.registerComponent(TextImage, {
       type: "string",
     },
     {
-name: "text",
-type: "string"
+      name: "text",
+      type: "string",
     },
     {
       name: "image",
       type: "Image",
-      allowedFileTypes: ["jpeg", "jpg", "png", "gif"]
-    }
+      allowedFileTypes: ["jpeg", "jpg", "png", "gif"],
+    },
   ],
 });
 Builder.registerComponent(HeroVideo, {
@@ -246,8 +244,8 @@ Builder.registerComponent(HeroVideo, {
     {
       name: "title",
       type: "string",
-    }
-  ]
+    },
+  ],
 });
 Builder.registerComponent(SingleText, {
   name: "SingleText",
@@ -259,8 +257,8 @@ Builder.registerComponent(SingleText, {
     {
       name: "paragraph",
       type: "string",
-    }
-  ]
+    },
+  ],
 });
 Builder.registerComponent(HeroImage, {
   name: "HeroImage",
@@ -268,8 +266,8 @@ Builder.registerComponent(HeroImage, {
     {
       name: "Image",
       type: "string",
-    }
-  ]
+    },
+  ],
 });
 Builder.registerComponent(TextImage2, {
   name: "TextImage2",
@@ -279,8 +277,11 @@ Builder.registerComponent(TextImage2, {
       type: "string",
     },
     {
-name: "text",
-type: "string"
+      name: "text",
+      type: "string",
     },
-  ]
+  ],
+});
+Builder.registerComponent(Kontaktformular, {
+  name: "Kontaktformular",
 });
