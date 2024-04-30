@@ -1,16 +1,20 @@
-import styles from "./styles.module.css";
+import React from 'react';
+import { useContext } from "react";
+import { DarkContext } from "@/app/DarkContext"
+export default function Footer() 
+{
+    const {darkMode} = useContext(DarkContext);
 
-export default function Footer() {
 return (
-    <div className="bg-lightBeige flex flex-col items-center py-4">
-    <div className="bg-darkBeige h-0.5 my-9 w-2/3 grid justify-center"></div>
+    <div className={`${darkMode ? 'bg-darkBeige':'bg-lightBeige'} flex flex-col items-center py-4`}>
+    <div className={`${darkMode ? 'bg-lightBeige':'bg-darkBeige'} h-0.5 my-9 w-2/3 grid justify-center`}></div>
 
-    <div className=" text-primaryPurple grid grid-cols-1 gap-5 md:grid-cols-3 text-center md:h-56">
+    <div className={`${darkMode ? 'text-lightBeige':'text-darkBeige'} grid grid-cols-1 gap-5 md:grid-cols-3 text-center md:h-56`}>
         <div className="grid gap-5 justify-between">
             <h3 className="">Find mig her</h3>
             <div className="grid grid-cols-2  justify-items-center gap-6 px-16">
-            <img src="FacebookLight.png" alt="" />
-            <img src="instagramLight.png" alt="" />
+            <img src={darkMode ? 'FacebookDark.png' : 'FacebookLight.png'} alt="" width={45}/>
+            <img src={darkMode ? 'InstagramDark.png' : 'InstagramLight.png'} alt="" width={45}/>
             </div>
             <h3>Marstalsgade 2100 Østerbro</h3>
         </div>

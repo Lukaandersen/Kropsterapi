@@ -1,4 +1,6 @@
-
+import React from 'react';
+import { useContext } from "react";
+import { DarkContext } from "@/app/DarkContext"
 import { useRef } from 'react';
 
 const ArrowIcon: React.FC<{ scaleX?: number }> = ({ scaleX = 1 }) => (
@@ -19,6 +21,8 @@ const ArrowIcon: React.FC<{ scaleX?: number }> = ({ scaleX = 1 }) => (
 
 export default function Testamonial (props) {
     console.log (props)
+    const {darkMode} = useContext(DarkContext);
+
 
     const navigationNextRef1 = useRef<HTMLButtonElement>(null);
     const navigationPrevRef1 = useRef<HTMLButtonElement>(null);
@@ -33,7 +37,7 @@ export default function Testamonial (props) {
         // Tilføj yderligere logik eller manipulation af data her
     }
     return(
-        <div className='bg-mediumBeige py-6 text-primaryPurple'>
+        <div className={`${darkMode ? 'text-primaryPurple bg-lightBeige' : 'text-lightBeige bg-darkBeige'} py-6`}>
         <div className='flex flex-col items-center gap-6 '>
         <h3 className='text-sm'>{props.name}</h3>
         <h2 className='text-xl font-playfair italic'>{props.title}</h2>
@@ -41,12 +45,12 @@ export default function Testamonial (props) {
 </div>
 <div className="flex justify-center gap-4 mt-8">
                 <div>
-                <button ref={navigationPrevRef1} className="previous rounded border-primary border-2 p-2 border-black" onClick={handlePrevClick}>
+                <button ref={navigationPrevRef1} className={`previous rounded border-primary border-2 p-2 ${darkMode ?'border-primaryPurple':'border-lightBeige'}`} onClick={handlePrevClick}>
                     <ArrowIcon />
                 </button>
                 </div>
                 <div className="flex justify-center items-center">
-                <button ref={navigationNextRef1} className="next rounded border-primary border-2 p-2 border-black" onClick={handleNextClick}>
+                <button ref={navigationNextRef1} className={`next rounded border-primary border-2 p-2 ${darkMode ?'border-primaryPurple':'border-lightBeige'}`} onClick={handleNextClick}>
                     <ArrowIcon scaleX={-1} />
                 </button>
                 </div>
