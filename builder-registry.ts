@@ -268,6 +268,9 @@ Builder.registerComponent(HeroImage, {
     {
       name: "Image",
       type: "string",
+    }, {
+      name: "title",
+      type: "string",
     }
   ]
 });
