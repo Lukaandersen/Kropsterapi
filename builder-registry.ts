@@ -22,6 +22,7 @@ import SingleText from "./components/blocks/SingleText/SingleText";
 import HeroImage from "./components/blocks/HeroImage/HeroImage";
 import TextImage2 from "./components/blocks/TextImage2/TextImage2";
 import Kontaktformular from "./components/blocks/Kontaktformular/Kontaktformular";
+import QAformular from "./components/blocks/QAFormular/QAFormular";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -284,4 +285,7 @@ Builder.registerComponent(TextImage2, {
 });
 Builder.registerComponent(Kontaktformular, {
   name: "Kontaktformular",
+});
+Builder.registerComponent(QAformular, {
+  name: "QAFormular",
 });
