@@ -1,14 +1,39 @@
 "use client"
+import {DarkModeProvider} from "@/app/DarkContext"
+import React, { useState, useEffect, useContext } from 'react';
+import { builder } from "@builder.io/sdk";
+import MainPage from '@/components/MainPage';
 
-import PageContent from "@/components/PageContent";
-import Footer from "@/components/blocks/Footer/Footer";
-import Navigation from "@/components/blocks/Navigation/Navigation";
+
+
+builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
+
 export default function Page() {
+  
+  const [content, setContent] = useState(null);
+  
+  
+
+  
+
+  useEffect(() => {
+    async function fetchContent() {
+      const pageContent = await builder.get("page").toPromise();
+      setContent(pageContent);
+    }
+    fetchContent();
+  }, []);
+
+  if (!content) {
+    return <div>Loading...</div>;
+  }
+
+  
   return (
-    <div className="bg-lightBeige">
-      <Navigation />
-      <PageContent />
-      <Footer />
-    </div>
+    <DarkModeProvider>
+      
+        <MainPage content={content} />
+      
+      </DarkModeProvider>
   );
 }
