@@ -1,6 +1,6 @@
 import LightBeigeButton from "@/components/buttons/LightBeigeButton";
 
-export default function QAformular() {
+export default function Kontaktformular() {
   return (
     <div className="m-9">
       <h2 className="text-center md:text-left text-[40px] pb-6 md:pl-2 font-playfair">Kontakt</h2>

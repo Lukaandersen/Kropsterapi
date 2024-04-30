@@ -1,6 +1,6 @@
 import BrownButton from "@/components/buttons/BrownButton";
 
-export default function Kontaktformular(props) {
+export default function QAFormular(props) {
   return (
     <div className="flex flex-col items-center justify-center md:m-10 gap-8">
       <h2 className="text-[24px] text-center font-bold md:text-3xl">Fik du ikke svar på dit spørgsmål?</h2>
