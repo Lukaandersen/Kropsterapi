@@ -197,6 +197,10 @@ Builder.registerComponent(CTABanner, {
       name: "titel",
       type: "string",
     },
+    {
+      name: "text",
+      type: "string",
+    },
   ],
 });
 Builder.registerComponent(Ordrerbekræftelse, {
