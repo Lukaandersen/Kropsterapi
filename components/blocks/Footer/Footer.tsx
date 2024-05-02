@@ -10,7 +10,7 @@ export default function Footer() {
       <div className={`${darkMode ? "bg-lightBeige" : "bg-darkBeige"} h-0.5 my-9 w-5/6 grid justify-center`}></div>
 
       <div className={`${darkMode ? "text-lightBeige" : "text-darkBeige"} grid grid-cols-1 gap-5 md:grid-cols-3 text-center md:h-56 w-full justify-between`}>
-        <div className="grid gap-5 justify-center">
+        <div className="grid gap-1 justify-center">
           <h3 className="">Find mig her</h3>
           <div className="grid grid-cols-2  justify-items-center gap-6 px-16">
             <img src={darkMode ? "FacebookDark.png" : "FacebookLight.png"} alt="" width={45} />
