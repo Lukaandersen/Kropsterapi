@@ -23,7 +23,7 @@ function BookingCard(props) {
   console.log("Current darkMode value in BookingCard:", darkMode); // Tilføj denne linje
 
   return (
-    <div>
+    <div className="flex justify-center">
       <div className={`mx-10 md:mx-6 my-2 flex flex-col h-[430px] md:h-[500px] md:w-[250px] items-center justify-center relative ${darkMode ? "bg-mediumBeige" : "bg-darkBeige"}`}>
         <p className={`m-0 text-[26px] ${darkMode ? " text-primaryPurple" : "text-primaryPurple md:text-primaryLight"} `}>{props.titel}</p>
         <div className="relative mx-auto text-center w-64">
