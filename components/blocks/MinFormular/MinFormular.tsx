@@ -1,6 +1,3 @@
-
-export default function MinFormular () {
-    return (
-<h1>Hello</h1>
-    )
+export default function MinFormular() {
+  return <h1>Hello</h1>;
 }
