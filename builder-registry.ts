@@ -184,7 +184,11 @@ Builder.registerComponent(DoubleTextBlock, {
   name: "TextBlock",
   inputs: [
     {
-      name: "titel",
+      name: "title1",
+      type: "paragraph",
+    },
+    {
+      name: "title2",
       type: "paragraph",
     },
   ],

@@ -1,8 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Navigation, Autoplay, Pagination } from 'swiper/modules';
-import { useRef, useState } from 'react';
-
+import { useRef, useState, useContext } from 'react';
+import { DarkContext } from '@/app/DarkContext';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -13,9 +13,9 @@ const ArrowIcon: React.FC<{ scaleX?: number }> = ({ scaleX = 1 }) => (
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
-        stroke="black"
+        stroke="currentColor"
         className="h-5 w-5"
-        style={{ transform: `scaleX(${scaleX})` }}
+        style={{ transform: `scaleX(${scaleX})`, color: 'currentColor' }} 
     >
         <path strokeWidth="2" d="M11 19l-7-7 7-7" />
         <line x1="5" y1="12" x2="22" y2="12" strokeWidth="2" />
@@ -23,6 +23,8 @@ const ArrowIcon: React.FC<{ scaleX?: number }> = ({ scaleX = 1 }) => (
 );
 
 export default function Gallery() {
+    const { darkMode } = useContext(DarkContext);
+
     const navigationNextRef = useRef<HTMLButtonElement>(null);
     const navigationPrevRef = useRef<HTMLButtonElement>(null);
 
@@ -62,18 +64,30 @@ export default function Gallery() {
 
 
     return (
-<div>
-    <div className='p-10'>
+<div  className='p-10'>
+    <div>
+        <h2 className={`${darkMode ? "text-lightBeige" : "text-darkBeige"} font-playfair text-center text-3xl  mb-5`}>Galleri</h2>
         <Swiper
-        // install Swiper modules
         modules={[Navigation, Pagination]} 
-        spaceBetween={20}
-        slidesPerView={3}
         loop={true}
         navigation={{
             prevEl: '.previous',
             nextEl: '.next',
         }}
+        breakpoints={{
+                   640: {
+                         slidesPerView: 1,
+                         spaceBetween: 20,
+                   },
+                        768: {
+                           slidesPerView: 2,
+                        spaceBetween: 25,
+                      },
+                        1024: {
+                           slidesPerView: 3,
+                            spaceBetween: 30,
+                       },
+                    }}
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
         onSwiper={(swiper) => console.log(swiper)}
@@ -88,10 +102,10 @@ export default function Gallery() {
       </Swiper>
       </div>
        <div className="flex justify-center gap-4 mt-8">
-         <button ref={navigationPrevRef} className="previous rounded border-primaryPurple border-2 p-2" >
+         <button ref={navigationPrevRef} className={`${darkMode ? "border-lightBeige" : " border-primaryPurple"} previous rounded border-2 p-2`} >
             <ArrowIcon />
           </button>
-            <button ref={navigationNextRef} className="next rounded border-2 p-2 border-primaryPurple">
+            <button ref={navigationNextRef} className={`${darkMode ? "border-lightBeige" : " border-primaryPurple"} next rounded border-2 p-2`}>
             <ArrowIcon scaleX={-1} />
           </button>
           </div>

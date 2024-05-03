@@ -37,7 +37,7 @@ export default function Testamonial (props) {
         // Tilføj yderligere logik eller manipulation af data her
     }
     return(
-        <div className={`${darkMode ? 'text-primaryPurple bg-lightBeige' : 'text-lightBeige bg-darkBeige'} py-6`}>
+        <div className={`${darkMode ? 'text-primaryPurple bg-lightBeige' : 'text-lightBeige bg-darkBeige'} py-12 px-6`}>
         <div className='flex flex-col items-center gap-6 '>
         <h3 className='text-sm'>{props.name}</h3>
         <h2 className='text-xl font-playfair italic'>{props.title}</h2>

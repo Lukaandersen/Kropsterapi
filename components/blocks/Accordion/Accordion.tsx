@@ -11,20 +11,19 @@ export default function Accordion() {
     ];
 
     return (
-        <div className="text-primaryPurple bg-mediumBeige ">
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-0 my-5 content-center">
-                <div className="pl-5 grid md:place-content-center md:col-span-2">
-                <h2 className="text-3xl font-bold mb-6">FAQ</h2>
-                <p className="font-bold max-w-56 mb-12">Der er mange der har lignende spørgsmål til Kropsterapi, så her vil jeg prøve at besvare nogle</p>
-                </div>
-                <div className="col-span-3 px-6 mb-8 lg:mb-0">
-                    {faqItems.map((item, index) => (
-                        <AccordionItem key={index} question={item.question} answer={item.answer} />
-                    ))}
-
-                </div>
-            </div>
+        <div className="text-primaryPurple bg-mediumBeige p-10 md:flex gap-4">
+        <div className="flex-none">
+            <h2 className="text-3xl font-bold mb-6">FAQ</h2>
+            <p className="font-bold max-w-56 mb-12">
+                Der er mange der har lignende spørgsmål til Kropsterapi, så her vil jeg prøve at besvare nogle
+            </p>
         </div>
+        <div className="w-full md:w-1/2 md:ml-auto">
+            {faqItems.map((item, index) => (
+                <AccordionItem key={index} question={item.question} answer={item.answer} />
+            ))}
+        </div>
+    </div>
     );
 }
 
