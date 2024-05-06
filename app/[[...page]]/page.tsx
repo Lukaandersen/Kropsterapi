@@ -3,13 +3,14 @@ import {DarkModeProvider} from "@/app/DarkContext"
 import React, { useState, useEffect, useContext } from 'react';
 import { builder } from "@builder.io/sdk";
 import MainPage from '@/components/MainPage';
-
+import supabase from '@/app/config/supabaseClient'
 
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
 export default function Page() {
-  
+ console.log(supabase)
+
   const [content, setContent] = useState(null);
   
   
