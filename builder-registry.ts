@@ -23,7 +23,9 @@ import HeroImage from "./components/blocks/HeroImage/HeroImage";
 import TextImage2 from "./components/blocks/TextImage2/TextImage2";
 import Kontaktformular from "./components/blocks/Kontaktformular/Kontaktformular";
 import QAformular from "./components/blocks/QAFormular/QAFormular";
-import MinFormular from "./components/blocks/MinFormular/Minformular"
+import MinFormular from "./components/blocks/MinFormular/Minformular";
+import Admin from "./components/blocks/Admin/Admin";
+import Cart from "./components/blocks/Cart/Cart";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -308,4 +310,12 @@ Builder.registerComponent(QAformular, {
 });
 Builder.registerComponent(MinFormular, {
   name: "MinFormular",
+});
+
+Builder.registerComponent(Admin, {
+  name: "Admin",
+});
+
+Builder.registerComponent(Cart, {
+  name: "Cart",
 });
