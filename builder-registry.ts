@@ -9,6 +9,7 @@ import DoubleTextBlock from "./components/blocks/DoubleTextBlock/DoubleTextBlock
 import BookingCard from "./components/cards/BookingCard/BookingCard";
 import BrownButton from "./components/buttons/BrownButton";
 import CTABanner from "./components/blocks/CTA-Banner/CTABanner";
+import TextBanner from "./components/blocks/TextBanner/TextBanner"
 import Ordrerbekræftelse from "./components/blocks/Ordrerbekræftelse/Ordrerbekræftelse";
 import LightBeigeButton from "./components/buttons/LightBeigeButton";
 import PurpleButton from "./components/buttons/purpleButton";
@@ -207,6 +208,15 @@ Builder.registerComponent(DoubleTextBlock, {
 
 Builder.registerComponent(CTABanner, {
   name: "CTABanner",
+  inputs: [
+    {
+      name: "titel",
+      type: "string",
+    }
+  ],
+});
+Builder.registerComponent(TextBanner, {
+  name: "TextBanner",
   inputs: [
     {
       name: "titel",
