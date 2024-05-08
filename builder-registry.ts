@@ -150,7 +150,15 @@ Builder.registerComponent(TextCard, {
   name: "TextCard",
   inputs: [
     {
-      name: "title",
+      name: "title1",
+      type: "string",
+    },
+    {
+      name: "title2",
+      type: "string",
+    },
+    {
+      name: "title3",
       type: "string",
     },
     {

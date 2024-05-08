@@ -1,0 +1,41 @@
+/* Skjul burgermenuen som standard */
+.burgermenu {
+    display: none;
+}
+
+/* Vis burgermenuen kun på mindre skærme */
+@media screen and (max-width: 768px) {
+    .burgermenu {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .line {
+        width: 30px;
+        height: 3px;
+        background-color: #555060;
+        margin: 4px;
+        transition: all 0.3s ease;
+    }
+
+    .burgermenu.open .line1 {
+        transform: rotate(-45deg) translate(-5px, 10px);
+    }
+
+    .burgermenu.open .line2 {
+        opacity: 0;
+    }
+
+    .burgermenu.open .line3 {
+        transform: rotate(45deg) translate(-5px, -10px);
+    }
+
+    .navMenu ul {
+        display: none;
+    }
+
+    .navMenu ul.hidden {
+        display: block;
+    }
+}

@@ -5,7 +5,7 @@ export default function Page(){
     async function submit(e){
         e.preventDefault()
         const values = new FormData(e.target)
-        console.log(values.get("date"))
+       // console.log(values.get("date"))
         const { data, error } = await supabase
             .from('Appointment booking')
             .insert([
