@@ -17,7 +17,7 @@ export default function Navigation() {
                     <img src="Logo.png" alt="" />
                 </a>
             </div>
-            <div className='flex place-content-center gap-7'>
+            <div className='flex gap-7'>
             <div className="md:hidden justify-center  " onClick={toggleMenu}>
                 <div className={`${styles.burgermenu} ${isOpen ? styles.open : ''}`}>
                     <div className={`${styles.line} ${styles.line1}`}></div>
@@ -27,9 +27,9 @@ export default function Navigation() {
                 <BurgerMenu isOpen={isOpen} />
             </div>
             <ul className={`md:flex gap-6 text-primaryPurple mr-4 ${isOpen ? 'hidden ' : 'hidden'}`}>
-                <li><a href="/booking">Booking</a></li>
-                <li><a href="/about-me">Om mig</a></li>
-                <li><a href="/hvad-er-kropsterapi">Hvad er Kropsterapi?</a></li>
+                <li className='hover:text-darkBlue font-semibold'><a href="/booking">Booking</a></li>
+                <li className='hover:text-darkBlue font-semibold'><a href="/about-me">Om mig</a></li>
+                <li className='hover:text-darkBlue font-semibold'><a href="/hvad-er-kropsterapi">Hvad er Kropsterapi?</a></li>
             </ul>
             <div>
                 <a href="/cart">

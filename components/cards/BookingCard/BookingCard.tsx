@@ -24,7 +24,7 @@ function BookingCard(props) {
 
   return (
     <div className="flex justify-center">
-      <div className={`mx-10 md:mx-6 my-2 flex flex-col h-[430px] md:h-[500px] md:w-[250px] items-center justify-center relative ${darkMode ? "bg-mediumBeige" : "bg-darkBeige"}`}>
+      <div className={`mx-10 md:mx-6 my-2 flex flex-col h-[430px] md:h-[500px] lg:w-[250px] items-center justify-center relative ${darkMode ? "bg-mediumBeige" : "bg-darkBeige"}`}>
         <p className={`m-0 text-[26px] ${darkMode ? " text-primaryPurple" : "text-primaryPurple md:text-primaryLight"} `}>{props.titel}</p>
         <div className="relative mx-auto text-center w-64">
           <img src="3_sessioner.png" alt="Billede af noget spirituelt" className="w-full h-auto opacity-35 md:mx-auto md:w-[200px] " />

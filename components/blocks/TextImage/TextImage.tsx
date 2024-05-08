@@ -20,8 +20,8 @@ Grunden til at vælge kropsterapi, er for at komme hele vejen rundt, og komme pr
 </p></div>
 <LightBeigeButton />
             </div>
-            <div className="h-2/4">
-            <img src="Clinic-pictures/_DSF1754.jpg" alt="" className="cover "/>
+            <div className="h-full">
+            <img src="Clinic-pictures/_DSF1763.jpg" alt="" className="cover"/>
 
             </div>
         </div>
