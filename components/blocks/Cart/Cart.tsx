@@ -5,16 +5,19 @@ export default function Card() {
     <div className="mt-24 block md:flex">
       <div>
         <div className="flex justify-center bg-darkBeige m-6">
+          <img src="3_sessioner.png" alt="billede af noget spirituelt" className="hidden md:block md:w-full md:h-auto md:mx-auto" />
           <div className="mx-10 md:mx-6 my-2 flex flex-col h-[430px] md:h-[500px] md:w-[250px] items-center justify-center relative">
             <p className="m-0 text-[32px] md:text-primaryPurple text-primaryLight">Enkelt Session</p>
             <div className="relative mx-auto text-center w-64">
-              <img src="3_sessioner.png" alt="Billede af noget spirituelt" className="w-full h-auto opacity-35 md:mx-auto md:w-[200px] " />
-              <p className="absolute top-0 left-0 right-0 bottom-0 md:relative flex items-center justify-center text-center text-md md:m-5 md:mt-0 text-primaryLight">
+              <img src="3_sessioner.png" alt="Billede af noget spirituelt" className="w-full h-auto opacity-35 md:mx-auto md:hidden" />
+              <p className="absolute top-0 left-0 right-0 bottom-0 md:relative flex items-center justify-center text-center text-md md:m-5 md:mt-0 text-primaryLight md:text-primaryPurple">
                 En enkelt session indebærer en indledende samtale, samt 45 minutters Kropsterapi inklusiv vand og The efter behov.{" "}
               </p>
             </div>
-            <p className="text-[32px] font-bold text-primaryLight">400 DKK</p>
-            <BrownButton></BrownButton>
+            <div>
+              <p className="text-[32px] font-bold text-primaryLight md:text-primaryPurple">400 DKK</p>
+              <BrownButton></BrownButton>
+            </div>
           </div>
         </div>
       </div>
