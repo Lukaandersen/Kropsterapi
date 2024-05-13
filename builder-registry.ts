@@ -27,6 +27,8 @@ import QAformular from "./components/blocks/QAFormular/QAFormular";
 import MinFormular from "./components/blocks/MinFormular/Minformular";
 import Admin from "./components/blocks/Admin/Admin";
 import Cart from "./components/blocks/Cart/Cart";
+import { TestBlock } from "./components/TestBlock/TestBlock";
+import TestBlock2 from "./components/TestBlock/TestBlock2";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -328,4 +330,25 @@ Builder.registerComponent(Admin, {
 
 Builder.registerComponent(Cart, {
   name: "Cart",
+});
+Builder.registerComponent(TestBlock, {
+  name: 'TestBlock',
+  childRequirements: {
+    message: 'You can only put Buttons, Text, or Headings in a Hero',
+    query: {
+      'component.name': { $in: ['Button', 'Text', 'Heading'] },
+    },
+  }
+});
+
+Builder.registerComponent(TestBlock2, {
+  name: 'Tabs',
+  inputs: [
+    { name: 'tabs', type: 'list', subFields: [
+      { name: 'label', type: 'uiBlocks' }, // Dette antager, at 'label' og 'content' er navnene på dine faneetiketter og indhold
+      { name: 'content', type: 'uiBlocks' }
+    ] },
+    { name: 'defaultActiveTab', type: 'number' } // Valgfri: Standardaktiv faneindeks
+    // Andre indstillinger kan tilføjes efter behov
+  ],
 });

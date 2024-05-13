@@ -6,7 +6,7 @@ import supabase from '@/app/config/supabaseClient'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay, Pagination } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 
 
 
@@ -46,15 +46,6 @@ export default function Testamonial (props) {
     const navigationNextRef1 = useRef<HTMLButtonElement>(null);
     const navigationPrevRef1 = useRef<HTMLButtonElement>(null);
 
-    // const handlePrevClick = () => {
-    //     console.log('Forrige knap blev klikket');
-    //     // Tilføj yderligere logik eller manipulation af data her
-    // }
-
-    // const handleNextClick = () => {
-    //     console.log('Næste knap blev klikket');
-    //     // Tilføj yderligere logik eller manipulation af data her
-    // }
     return(
         <div className={`${darkMode ? 'text-primaryPurple bg-lightBeige' : 'text-lightBeige bg-darkBeige'} py-12 px-6`}>
         <Swiper
@@ -70,12 +61,12 @@ export default function Testamonial (props) {
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log('slide change')}
       >
-        {monials.map(testi=>(
+        {monials.map(test=>(
             <SwiperSlide className="swiper-slide">
             <div className='flex flex-col items-center gap-6 '>
-                <h3 className='text-sm'>{testi.name}</h3>
-                <h2 className='text-xl font-playfair italic'>{testi.title}</h2>
-                <p className='text-center max-w-[720px]'>{testi.testamonial}</p>
+                <h3 className='text-sm'>{test.name}</h3>
+                <h2 className='text-xl font-playfair italic'>{test.title}</h2>
+                <p className='text-center max-w-[720px]'>{test.testamonial}</p>
             </div>
             </SwiperSlide>
         ))}
