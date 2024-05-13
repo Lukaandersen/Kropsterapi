@@ -30,6 +30,7 @@ import Cart from "./components/blocks/Cart/Cart";
 import Calender from "./components/blocks/Cart/Calendar";
 import { TestBlock } from "./components/TestBlock/TestBlock";
 import TestBlock2 from "./components/TestBlock/TestBlock2";
+import Timeslot from "./components/blocks/Cart/Timeslot";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -331,4 +332,12 @@ Builder.registerComponent(Admin, {
 
 Builder.registerComponent(Cart, {
   name: "Cart",
+});
+
+Builder.registerComponent(Calender, {
+  name: "Calendar",
+});
+
+Builder.registerComponent(Timeslot, {
+  name: "Timeslot",
 });
