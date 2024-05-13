@@ -9,7 +9,7 @@ import DoubleTextBlock from "./components/blocks/DoubleTextBlock/DoubleTextBlock
 import BookingCard from "./components/cards/BookingCard/BookingCard";
 import BrownButton from "./components/buttons/BrownButton";
 import CTABanner from "./components/blocks/CTA-Banner/CTABanner";
-import TextBanner from "./components/blocks/TextBanner/TextBanner"
+import TextBanner from "./components/blocks/TextBanner/TextBanner";
 import Ordrerbekræftelse from "./components/blocks/Ordrerbekræftelse/Ordrerbekræftelse";
 import LightBeigeButton from "./components/buttons/LightBeigeButton";
 import PurpleButton from "./components/buttons/purpleButton";
@@ -27,6 +27,7 @@ import QAformular from "./components/blocks/QAFormular/QAFormular";
 import MinFormular from "./components/blocks/MinFormular/Minformular";
 import Admin from "./components/blocks/Admin/Admin";
 import Cart from "./components/blocks/Cart/Cart";
+import Calender from "./components/blocks/Cart/Calendar";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -212,7 +213,7 @@ Builder.registerComponent(CTABanner, {
     {
       name: "titel",
       type: "string",
-    }
+    },
   ],
 });
 Builder.registerComponent(TextBanner, {
@@ -328,4 +329,8 @@ Builder.registerComponent(Admin, {
 
 Builder.registerComponent(Cart, {
   name: "Cart",
+});
+
+Builder.registerComponent(Calender, {
+  name: "Calendar",
 });

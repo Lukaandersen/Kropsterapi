@@ -2,20 +2,20 @@ import LightBeigeButton from "@/components/buttons/LightBeigeButton";
 import BrownButton from "@/components/buttons/BrownButton";
 export default function Card() {
   return (
-    <div className="mt-24 block md:grid md:grid-cols-2 ">
+    <div className="mt-24 block md:grid md:grid-cols-[2fr,1fr]">
       <div className="">
-        <div className="grid grid-cols-1 md:grid-cols-3 justify-center md:justify-start bg-darkBeige m-6 md:max-h-[200px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 justify-center md:justify-start bg-darkBeige m-6 md:max-h-[300px]">
           <img src="3_sessioner.png" alt="billede af noget spirituelt" className="hidden md:block w-full h-full md:w-full md:h-auto md:justify-self-start opacity-35" />
-          <div className="mx-10 md:mx-6 my-2 flex flex-col h-[430px] md:h-[500px] md:w-[250px] md:items-start justify-center md:justify-start relative">
+          <div className="mx-10 md:mx-6 my-2 flex flex-col h-[430px] md:h-[300px] md:w-[250px] justify-center md:justify-center md:items-center relative">
             <p className="m-0 text-[32px] md:text-primaryPurple text-primaryLight">Enkelt Session</p>
             <div className="relative mx-auto text-center w-64">
               <img src="3_sessioner.png" alt="Billede af noget spirituelt" className="w-full h-auto opacity-35 md:mx-auto md:hidden" />
-              <p className="absolute top-0 left-0 right-0 bottom-0 md:relative flex items-center justify-center text-center text-md md:m-5 md:mt-0 text-primaryLight md:text-primaryPurple">
+              <p className="absolute top-0 left-0 right-0 bottom-0 md:relative flex items-center justify-center text-center md:text-start text-md md:m-5 md:mt-0 text-primaryLight md:text-primaryPurple">
                 En enkelt session indebærer en indledende samtale, samt 45 minutters Kropsterapi inklusiv vand og The efter behov.
               </p>
             </div>
           </div>
-          <div className="flex items-center justify-center md:col-span-1 md:items-start">
+          <div className="flex items-center justify-center md:col-span-1 md:items-center">
             <div className="items-center">
               <p className="text-[32px] font-bold text-primaryLight md:text-primaryPurple">400 DKK</p>
               <BrownButton></BrownButton>
