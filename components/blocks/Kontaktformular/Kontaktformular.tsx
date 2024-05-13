@@ -31,8 +31,11 @@ export default function Kontaktformular() {
             Besked
           </label>
           <textarea id="message" className=" p-2 bg-gray-300" placeholder="Indtast din besked"></textarea>
+          <div className="text-center">
+          <LightBeigeButton></LightBeigeButton>
+          </div>
         </div>
-        <LightBeigeButton></LightBeigeButton>
+        
       </form>
     </div>
   );

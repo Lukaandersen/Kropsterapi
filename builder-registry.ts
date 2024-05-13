@@ -337,5 +337,5 @@ Builder.registerComponent(Calender, {
 });
 
 Builder.registerComponent(Timeslot, {
-  name: "timeslot",
+  name: "Timeslot",
 });
