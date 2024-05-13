@@ -28,6 +28,7 @@ import MinFormular from "./components/blocks/MinFormular/Minformular";
 import Admin from "./components/blocks/Admin/Admin";
 import Cart from "./components/blocks/Cart/Cart";
 import Calender from "./components/blocks/Cart/Calendar";
+import Timeslot from "./components/blocks/Cart/Timeslot";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -333,4 +334,8 @@ Builder.registerComponent(Cart, {
 
 Builder.registerComponent(Calender, {
   name: "Calendar",
+});
+
+Builder.registerComponent(Timeslot, {
+  name: "timeslot",
 });
