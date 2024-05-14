@@ -28,8 +28,6 @@ import MinFormular from "./components/blocks/MinFormular/Minformular";
 import Admin from "./components/blocks/Admin/Admin";
 import Cart from "./components/blocks/Cart/Cart";
 import Calender from "./components/blocks/Cart/Calendar";
-import { TestBlock } from "./components/TestBlock/TestBlock";
-import TestBlock2 from "./components/TestBlock/TestBlock2";
 import Timeslot from "./components/blocks/Cart/Timeslot";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
