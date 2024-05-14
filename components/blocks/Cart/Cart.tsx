@@ -1,6 +1,6 @@
 import LightBeigeButton from "@/components/buttons/LightBeigeButton";
 import BrownButton from "@/components/buttons/BrownButton";
-export default function Card() {
+export default function Card(props) {
   return (
     <div className="mt-24 block md:grid md:grid-cols-[2fr,1fr]">
       <div className="">
@@ -17,8 +17,8 @@ export default function Card() {
           </div>
           <div className="flex items-center justify-center md:col-span-1 md:items-center">
             <div className="items-center">
-              <p className="text-[32px] font-bold text-primaryLight md:text-primaryPurple">400 DKK</p>
-              <BrownButton></BrownButton>
+              <p className="text-[32px] font-bold text-center text-primaryLight md:text-primaryPurple">400 DKK</p>
+              <BrownButton text={props.buttonText}></BrownButton>
             </div>
           </div>
         </div>

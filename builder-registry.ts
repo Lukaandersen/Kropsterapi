@@ -325,7 +325,7 @@ Builder.registerComponent(Kontaktformular, {
       name: "btnText",
       type: "string",
     },
-  ]
+  ],
 });
 Builder.registerComponent(QAformular, {
   name: "QAFormular",
@@ -340,6 +340,12 @@ Builder.registerComponent(Admin, {
 
 Builder.registerComponent(Cart, {
   name: "Cart",
+  inputs: [
+    {
+      name: "buttonText",
+      type: "string",
+    },
+  ],
 });
 
 Builder.registerComponent(Calender, {
