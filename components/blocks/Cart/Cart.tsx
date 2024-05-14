@@ -55,7 +55,7 @@ export default function Card(props) {
         <div className="flex flex-col items-center">
           <h2 className="text-xl pt-6 pb-3">Betalingsmetode</h2>
           <img src="betalingsdut.png" alt="betalingsmetoder" />
-          <LightBeigeButton></LightBeigeButton>
+          <LightBeigeButton text={props.buttonText}></LightBeigeButton>
         </div>
       </div>
     </div>
