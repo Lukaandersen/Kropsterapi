@@ -18,6 +18,7 @@ export default function Kontaktformular(props) {
     console.log('Phone:', phone);
     console.log('Message:', message);
 
+    fetch(`https://dianadiamond.dk/send.php?message=hej fra ${name}`)
     const mailtoLink = `mailto:luka_andersen@hotmail.com?subject=Besked fra ${name}&body=${message}%0D%0A%0D%0A---%0D%0A%0D%0AEmail: ${email}%0D%0ATelefon: ${phone}`;
 
     console.log('Mailto Link:', mailtoLink);
@@ -65,3 +66,35 @@ export default function Kontaktformular(props) {
     </div>
   );
 }
+
+// const handleSendEmail = async (event) => {
+//   event.preventDefault(); // Forhindrer standardformularindsendelse
+//   console.log('handleSendEmail function called');
+
+//   const name = document.getElementById('name').value;
+//   const email = document.getElementById('email').value;
+//   const phone = document.getElementById('phone').value;
+//   const message = document.getElementById('message').value;
+
+//   console.log('Name:', name);
+//   console.log('Email:', email);
+//   console.log('Phone:', phone);
+//   console.log('Message:', message);
+
+//   // Send formulardataene til serveren
+//   const response = await fetch('/send-email', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({ name, email, phone, message })
+//   });
+
+//   if (response.ok) {
+//     console.log('E-mail sendt!');
+//     // Implementer eventuel logik for at vise en bekræftelsesbesked til brugeren
+//   } else {
+//     console.error('Fejl ved afsendelse af e-mail');
+//     // Implementer eventuel logik for at håndtere fejl
+//   }
+// };
