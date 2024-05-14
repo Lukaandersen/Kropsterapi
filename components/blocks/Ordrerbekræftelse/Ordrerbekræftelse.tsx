@@ -5,9 +5,9 @@ export default function Ordrerbekræftelse() {
       <p className="text-center">Din booking er nu bekræftet og vi har sendt dig en email på: email@gmail.com</p>
       <p className="text-center">Din booking reference er: XXX-XXX-XXXX</p>
       <p className="text-center">
-        Vi værdsætter din tillid til os og ser frem til at skabe en tryg og beroligende atmosfære for dig under din session. Hvis du har nogen spørgsmål eller særlige anmodninger, er du altid velkommen til at kontakte os på tlf: XXX.XXX.XX.
+        Din valgte tid er reserveret og jeg vil sende dig en endellig mail med bekræftelse på at din tid er booket og aftalen er i hus.
       </p>
-      <p className="text-center">Vi glæder os til at møde dig og bidrage til dit velbefindende.</p>
+      <p className="text-center">Jeg glæder os til at møde dig og bidrage til dit velbefindende.</p>
     </div>
   );
 }

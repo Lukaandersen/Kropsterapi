@@ -1,6 +1,31 @@
 import LightBeigeButton from "@/components/buttons/LightBeigeButton";
 
-export default function Kontaktformular() {
+export default function Kontaktformular(props) {
+
+  const handleSendEmail = (event) => {
+    event.preventDefault(); // Forhindrer standardformularindsendelse
+    console.log('handleSendEmail function called');
+
+    console.log('Form submitted!'); // Tilføjet for at bekræfte, at funktionen kaldes
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
+
+    console.log('Name:', name);
+    console.log('Email:', email);
+    console.log('Phone:', phone);
+    console.log('Message:', message);
+
+    const mailtoLink = `mailto:luka_andersen@hotmail.com?subject=Besked fra ${name}&body=${message}%0D%0A%0D%0A---%0D%0A%0D%0AEmail: ${email}%0D%0ATelefon: ${phone}`;
+
+    console.log('Mailto Link:', mailtoLink);
+
+    // window.location.href = mailtoLink; // Kommenter denne linje ud for at teste linkgenereringen
+};
+
+
   return (
     <div className="m-9">
       <h2 className="text-center md:text-left text-[40px] pb-6 md:pl-2 font-playfair text-primaryPurple">Kontakt</h2>
@@ -32,7 +57,7 @@ export default function Kontaktformular() {
           </label>
           <textarea id="message" className=" p-2 bg-gray-300" placeholder="Indtast din besked"></textarea>
           <div className="text-center">
-          <LightBeigeButton></LightBeigeButton>
+          <LightBeigeButton text={props.btnText} onClick={handleSendEmail}/>
           </div>
         </div>
         

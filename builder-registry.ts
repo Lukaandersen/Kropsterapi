@@ -193,6 +193,10 @@ Builder.registerComponent(BookingCard, {
       name: "price",
       type: "string",
     },
+    {
+      name: "buttonText",
+      type: "string",
+    },
   ],
 });
 
@@ -318,6 +322,12 @@ Builder.registerComponent(TextImage2, {
 });
 Builder.registerComponent(Kontaktformular, {
   name: "Kontaktformular",
+  inputs: [
+    {
+      name: "btnText",
+      type: "string",
+    },
+  ]
 });
 Builder.registerComponent(QAformular, {
   name: "QAFormular",
