@@ -18,7 +18,9 @@ export default function Card(props) {
           <div className="flex items-center justify-center md:col-span-1 md:items-center">
             <div className="items-center">
               <p className="text-[32px] font-bold text-center text-primaryLight md:text-primaryPurple">400 DKK</p>
-              <BrownButton text={props.buttonText}></BrownButton>
+              <a href={props.link1}>
+                <BrownButton text={props.buttonText}></BrownButton>
+              </a>
             </div>
           </div>
         </div>
@@ -55,7 +57,9 @@ export default function Card(props) {
         <div className="flex flex-col items-center">
           <h2 className="text-xl pt-6 pb-3">Betalingsmetode</h2>
           <img src="betalingsdut.png" alt="betalingsmetoder" />
-          <LightBeigeButton text={props.buttonText}></LightBeigeButton>
+          <a href={props.link2}>
+            <LightBeigeButton text={props.button2Text}></LightBeigeButton>
+          </a>
         </div>
       </div>
     </div>

@@ -196,9 +196,9 @@ Builder.registerComponent(BookingCard, {
       type: "string",
     },
     {
-      name:"link",
-      type:"string"
-    }
+      name: "link",
+      type: "string",
+    },
   ],
 });
 
@@ -298,6 +298,14 @@ Builder.registerComponent(SingleText, {
       name: "paragraph",
       type: "string",
     },
+    {
+      name: "buttonText",
+      type: "string",
+    },
+    {
+      name: "link",
+      type: "string",
+    },
   ],
 });
 Builder.registerComponent(HeroImage, {
@@ -347,6 +355,18 @@ Builder.registerComponent(Cart, {
   inputs: [
     {
       name: "buttonText",
+      type: "string",
+    },
+    {
+      name: "button2Text",
+      type: "string",
+    },
+    {
+      name: "link1",
+      type: "string",
+    },
+    {
+      name: "link2",
       type: "string",
     },
   ],
