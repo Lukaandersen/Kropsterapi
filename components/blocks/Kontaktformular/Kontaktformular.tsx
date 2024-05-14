@@ -18,6 +18,7 @@ export default function Kontaktformular(props) {
     console.log('Phone:', phone);
     console.log('Message:', message);
 
+    fetch(`https://dianadiamond.dk/send.php?message=hej fra ${name}`)
     const mailtoLink = `mailto:luka_andersen@hotmail.com?subject=Besked fra ${name}&body=${message}%0D%0A%0D%0A---%0D%0A%0D%0AEmail: ${email}%0D%0ATelefon: ${phone}`;
 
     console.log('Mailto Link:', mailtoLink);

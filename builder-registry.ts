@@ -362,10 +362,6 @@ Builder.registerComponent(Cart, {
       type: "string",
     },
     {
-      name: "link1",
-      type: "string",
-    },
-    {
       name: "link2",
       type: "string",
     },

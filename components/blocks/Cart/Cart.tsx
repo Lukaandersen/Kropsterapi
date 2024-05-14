@@ -2,7 +2,15 @@ import LightBeigeButton from "@/components/buttons/LightBeigeButton";
 import BrownButton from "@/components/buttons/BrownButton";
 import Timeslot from "./Timeslot";
 import Calendar from "./Calendar";
+import { useState } from 'react';
+
 export default function Card(props) {
+  const [showCalendar, setShowCalendar] = useState(false);
+
+  const toggleCalendar = () => {
+    setShowCalendar(!showCalendar);
+  };
+
   return (
     <div className="mt-24 block md:grid md:grid-cols-[2fr,1fr]">
       <div className="">
@@ -20,14 +28,18 @@ export default function Card(props) {
           <div className="flex items-center justify-center md:col-span-1 md:items-center">
             <div className="items-center">
               <p className="text-[32px] font-bold text-center text-primaryLight md:text-primaryPurple">400 DKK</p>
-              <a href={props.link1}>
-                <BrownButton text={props.buttonText}></BrownButton>
-              </a>
+              <BrownButton text={props.buttonText} onClick={toggleCalendar}></BrownButton>
             </div>
           </div>
         </div>
       </div>
 
+      {showCalendar && (
+        <div className="bg-primaryLight m-6">
+          <Calendar></Calendar>
+        </div>
+      )}
+      
       <div className="bg-primaryLight m-6">
         <h1 className="text-center text-2xl py-4">Dine Betalingsoplysninger</h1>
         <form className="flex flex-col gap-5" action="">
@@ -64,10 +76,9 @@ export default function Card(props) {
           </a>
         </div>
       </div>
+      
       <Calendar></Calendar>
-    <Timeslot></Timeslot>
+      <Timeslot></Timeslot>
     </div>
   );
 }
-
-
