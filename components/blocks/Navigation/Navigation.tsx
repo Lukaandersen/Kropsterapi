@@ -14,7 +14,7 @@ export default function Navigation() {
     <div className="bg-lightBeige/50 flex place-items-center justify-between z-40 sticky top-0">
       <div>
         <a href="/forside">
-          <img src="Logo.png" alt="" />
+          <img src="Logo.png" alt="hjerte med peacetegn" />
         </a>
       </div>
       <div className="flex gap-7 mr-5 md:mr-[50px]">
