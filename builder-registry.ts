@@ -213,6 +213,14 @@ Builder.registerComponent(DoubleTextBlock, {
       name: "title2",
       type: "paragraph",
     },
+    {
+      name: "buttonText",
+      type: "string",
+    },
+    {
+      name: "link",
+      type: "string",
+    },
   ],
 });
 
@@ -276,6 +284,14 @@ Builder.registerComponent(TextImage, {
       type: "Image",
       allowedFileTypes: ["jpeg", "jpg", "png", "gif"],
     },
+    {
+      name: "buttonText",
+      type: "string",
+    },
+    {
+      name: "link",
+      type: "string",
+    },
   ],
 });
 Builder.registerComponent(HeroVideo, {
@@ -283,6 +299,14 @@ Builder.registerComponent(HeroVideo, {
   inputs: [
     {
       name: "title",
+      type: "string",
+    },
+    {
+      name: "buttonText",
+      type: "string",
+    },
+    {
+      name: "link",
       type: "string",
     },
   ],
@@ -296,6 +320,22 @@ Builder.registerComponent(SingleText, {
     },
     {
       name: "paragraph",
+      type: "string",
+    },
+    {
+      name: "paragraph2",
+      type: "string",
+    },
+    {
+      name: "paragraph3",
+      type: "string",
+    },
+    {
+      name: "paragraph4",
+      type: "string",
+    },
+    {
+      name: "paragraph5",
       type: "string",
     },
     {
