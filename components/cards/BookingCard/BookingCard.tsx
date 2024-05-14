@@ -25,7 +25,9 @@ function BookingCard(props) {
           <p className={`absolute top-0 left-0 right-0 bottom-0 md:relative flex items-center justify-center text-center text-md md:m-5 md:mt-0 ${darkMode ? "md:text-primaryPurple text-primaryLight" : "text-primaryLight"}`}>{props.text}</p>
         </div>
         <p className="text-[32px] font-bold">{props.price}</p>
+        <a href={props.link}>
         <BrownButton text={props.buttonText} />
+        </a>
         {props.children}
       </div>
     </div>

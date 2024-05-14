@@ -195,6 +195,10 @@ Builder.registerComponent(BookingCard, {
       name: "buttonText",
       type: "string",
     },
+    {
+      name:"link",
+      type:"string"
+    }
   ],
 });
 
