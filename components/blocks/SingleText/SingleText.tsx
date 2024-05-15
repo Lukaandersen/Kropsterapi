@@ -1,6 +1,12 @@
 import LightBeigeButton from "@/components/buttons/LightBeigeButton";
+import { useContext } from "react";
+import { DarkContext } from "@/app/DarkContext";
+import BrownButton from "@/components/buttons/BrownButton";
 
 export default function SingleText(props) {
+  const { darkMode } = useContext(DarkContext);
+  //const darkMode = useContext(DarkModeContext);
+  console.log("Current darkMode value in BookingCard:", darkMode);
   return (
     <div className="grid py-5 md:px-28 px-5 place-items-center text-primaryPurple">
       <div>
@@ -16,9 +22,7 @@ export default function SingleText(props) {
         <p>{props.paragraph5} </p>
       </div>
       <div className="mt-4">
-        <a href={props.link}>
-          <LightBeigeButton text={props.buttonText}></LightBeigeButton>{" "}
-        </a>
+        <a href={props.link}>{darkMode ? <BrownButton text={props.buttonText} /> : <LightBeigeButton text={props.buttonText} />}</a>
       </div>
     </div>
   );

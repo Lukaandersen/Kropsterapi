@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { DarkContext } from "@/app/DarkContext";
 import BrownButton from "@/components/buttons/BrownButton";
+import PurpleButton from "@/components/buttons/purpleButton";
 
 export default function DoubleTextBlock(props) {
   const { darkMode } = useContext(DarkContext);
@@ -22,9 +23,7 @@ export default function DoubleTextBlock(props) {
           kropsterapiens tilgang, krop, sind og sjæl om du vil. Det er vigtigt at der er en let tilgængelig forbindelse mellem krop og psyke, fysik og tanke. Alle tilstande har påvirkning på andre dele af dig. Har du ondet et sted i din krop så
           mærkes det efterhånden også på psyken, tumler du med noget i dit hovede så vise det sig på et tidspunkt også i din krop.
         </p>
-        <a href={props.link}>
-          <BrownButton text={props.buttonText}></BrownButton>
-        </a>
+        <a href={props.link}>{darkMode ? <PurpleButton text={props.buttonText} /> : <BrownButton text={props.buttonText} />}</a>
       </div>
     </div>
   );
