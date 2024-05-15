@@ -31,7 +31,7 @@ export default function Timeline(props) {
   return (
     <div className={`bg-primaryLight w-auto min-h-14 relative ${darkMode ? "bg-mediumBeige" : "bg-darkBeige"}`}>
       <img className="md:hidden ml-3" src={darkMode ? "darkmode_mobile_timeline.png" : "lightmode_mobile_timeline.png"} alt="Tidslinje mobile" />
-      <img className=" hidden md:block my-[50px] ml-0" src={darkMode ? "darkmode_desk_timeline_new.png" : "lightmode_desk_timeline_new.png"} alt="Tidslinje desktop" />
+      <img className=" hidden md:block my-[50px] md:w-[90%] md:m-auto md:py-[50px] ml-0" src={darkMode ? "darkmode_desk_timeline_new.png" : "lightmode_desk_timeline_new.png"} alt="Tidslinje desktop" />
     </div>
   );
 }
