@@ -58,8 +58,6 @@ export default function Testamonial (props) {
         
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
       >
         {monials.map(test=>(
             <SwiperSlide className="swiper-slide">

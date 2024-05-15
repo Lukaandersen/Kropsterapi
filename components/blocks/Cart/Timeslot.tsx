@@ -1,3 +1,4 @@
+import BrownButton from "@/components/buttons/BrownButton";
 import React from "react";
 
 export default function Timeslot() {
@@ -10,7 +11,7 @@ export default function Timeslot() {
   ];
 
   return (
-    <div className="mt-24 block md:flex">
+    <div className="block md:flex">
       <div className="md:w-auto">
         <div className="bg-darkBeige  border-gray-200 rounded-md p-4 ">
           <h2 className="text-lg font-semibold mb-2">Ledige tidspunkter</h2>
@@ -20,6 +21,9 @@ export default function Timeslot() {
                 <p className="text-sm font-medium">{slot.time}</p>
               </div>
             ))}
+          </div>
+          <div className="grid justify-center">
+          <BrownButton></BrownButton>
           </div>
         </div>
       </div>
