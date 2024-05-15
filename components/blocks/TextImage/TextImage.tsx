@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { DarkContext } from "@/app/DarkContext";
 import LightBeigeButton from "@/components/buttons/LightBeigeButton";
+import BrownButton from "@/components/buttons/BrownButton";
 
 export default function (props) {
   const { darkMode } = useContext(DarkContext);
@@ -21,9 +22,7 @@ export default function (props) {
             vejen rundt, og komme problemerne til livs.
           </p>
         </div>
-        <a href={props.link}>
-          <LightBeigeButton text={props.buttonText} />
-        </a>
+        <a href={props.link}>{darkMode ? <BrownButton text={props.buttonText} /> : <LightBeigeButton text={props.buttonText} />}</a>
       </div>
       <div className="h-full">
         <img src="Clinic-pictures/_DSF1763.jpg" alt="" className="cover" />

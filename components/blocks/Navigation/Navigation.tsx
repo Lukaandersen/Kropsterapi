@@ -18,8 +18,8 @@ export default function Navigation() {
         </a>
       </div>
       <div className="flex gap-7 mr-5 md:mr-[50px]">
-        <ul className={`md:flex gap-6 text-primaryPurple mr-4 ${isOpen ? "hidden " : "hidden"}`}>
-          <li className="hover:text-darkBlue font-semibold">
+        <ul className={`md:flex gap-6 mr-4 text-primaryPurple ${isOpen ? "hidden " : "hidden"}`}>
+          <li className="hover:text-darkBlue font-semibold ">
             <a href="/booking">Booking</a>
           </li>
           <li className="hover:text-darkBlue font-semibold">
