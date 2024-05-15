@@ -1,9 +1,12 @@
+import LightBeigeButton from "@/components/buttons/LightBeigeButton";
 import { useState } from "react";
+import Timeslot from "./Timeslot";
 
 const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-const Calendar = () => {
+const Calendar = (props) => {
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [showCalendar, setShowCalendar] = useState(true);
 
   const renderCalendar = (month, year) => {
     const totalDays = new Date(year, month + 1, 0).getDate();
@@ -22,7 +25,6 @@ const Calendar = () => {
       let containerClass = "text-center rounded-md shadow-md";
       let dateClass = "bg-lightBeige rounded-md hover:bg-lightBlue";
 
-      // Tilføj skyggeeffekt til søndage og lørdage
       if (date.getDay() === 0 || date.getDay() === 6) {
         dateClass = "bg-gray-500 rounded-md";
       }
@@ -47,6 +49,22 @@ const Calendar = () => {
     setCurrentDate(newDate);
   };
 
+  const [showTimeSlot, setShowTimeSlot] = useState(false);
+
+  const toggleTimeSlot = () => {
+    setShowTimeSlot(!showTimeSlot);
+    console.log("toggled");
+  };
+
+  const closeCalendar = () => {
+    setShowCalendar(false);
+  };
+
+  if (!showCalendar) {
+    return null; // Hvis showCalendar er falsk, returnerer vi ingenting (komponenten lukkes)
+  }
+
+
   return (
     <div className="max-w-xl mx-auto bg-mediumBeige p-6 rounded shadow">
       <div className="flex justify-between items-center mb-4">
@@ -68,8 +86,27 @@ const Calendar = () => {
         ))}
         {renderCalendar(currentDate.getMonth(), currentDate.getFullYear())}
       </div>
+      <div onClick={toggleTimeSlot} className="grid justify-center">
+      <LightBeigeButton text={props.text}/>
+      </div>
+      {showTimeSlot && (
+        <div className=" m-6 absolute">
+          <Timeslot></Timeslot>
+        </div>
+      )}
+           <div className="absolute top-0 right-0 p-3" onClick={closeCalendar}>
+        <CloseIcon />
+      </div>
     </div>
   );
 };
+
+function CloseIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  );
+}
 
 export default Calendar;

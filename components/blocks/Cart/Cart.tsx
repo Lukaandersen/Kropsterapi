@@ -9,10 +9,16 @@ export default function Card(props) {
 
   const toggleCalendar = () => {
     setShowCalendar(!showCalendar);
+    console.log("toggled")
   };
 
   return (
-    <div className="mt-24 block md:grid md:grid-cols-[2fr,1fr]">
+    <div className="mt-24">
+      <a href="/booking" className="flex">
+      <ArrowIcon />
+       <p className="text-primaryPurple ">Gå tilbage til booking</p>
+       </a>
+    <div className="mt-8 block md:grid md:grid-cols-[2fr,1fr]">
       <div className="">
         <div className="grid grid-cols-1 md:grid-cols-3 justify-center md:justify-start bg-darkBeige m-6 md:max-h-[300px]">
           <img src="3_sessioner.png" alt="billede af noget spirituelt" className="hidden md:block w-full h-full md:w-full md:h-auto md:justify-self-start opacity-35" />
@@ -28,14 +34,16 @@ export default function Card(props) {
           <div className="flex items-center justify-center md:col-span-1 md:items-center">
             <div className="items-center">
               <p className="text-[32px] font-bold text-center text-primaryLight md:text-primaryPurple">400 DKK</p>
-              <BrownButton text={props.buttonText} onClick={toggleCalendar}></BrownButton>
+              <div onClick={toggleCalendar}>
+              <BrownButton text={props.buttonText}></BrownButton>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {showCalendar && (
-        <div className="bg-primaryLight m-6">
+        <div className="bg-primaryLight m-6 absolute grid items-center">
           <Calendar></Calendar>
         </div>
       )}
@@ -76,9 +84,21 @@ export default function Card(props) {
           </a>
         </div>
       </div>
-      
-      <Calendar></Calendar>
-      <Timeslot></Timeslot>
+     
+    </div>
     </div>
   );
 }
+const ArrowIcon: React.FC<{ scaleX?: number }> = ({ scaleX = 1 }) => (
+  <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      className="h-5 w-5"
+      style={{ transform: `scaleX(${scaleX})` }}
+  >
+      <path strokeWidth="2" d="M11 19l-7-7 7-7" />
+      <line x1="5" y1="12" x2="22" y2="12" strokeWidth="2" />
+  </svg>
+);
