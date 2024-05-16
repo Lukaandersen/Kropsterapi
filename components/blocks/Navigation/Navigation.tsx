@@ -12,15 +12,15 @@ export default function Navigation() {
   };
 
   return (
-    <div className="bg-lightBeige/50 flex place-items-center justify-between z-40 sticky top-0">
-      <div>
+    <div className="bg-lightBeige/50 flex items-center justify-between z-40 sticky top-0 px-4">
+      <div className="flex items-center">
         <Link href="/forside">
           <img src="Logo.png" alt="hjerte med peacetegn" />
         </Link>
       </div>
-      <div className="flex gap-7 mr-5 md:mr-[50px]">
-        <ul className={`md:flex gap-6 mr-4 text-primaryPurple ${isOpen ? "hidden " : "hidden"}`}>
-          <li className="hover:text-darkBlue font-semibold ">
+      <div className="flex items-center">
+        <ul className="hidden md:flex gap-6 mr-4 text-primaryPurple">
+          <li className="hover:text-darkBlue font-semibold">
             <Link href="/booking">Booking</Link>
           </li>
           <li className="hover:text-darkBlue font-semibold">
@@ -35,8 +35,8 @@ export default function Navigation() {
             <img src="Cart.png" alt="" />
           </Link>
         </div>
-        <div className="md:hidden justify-center  " onClick={toggleMenu}>
-          <div className={`${styles.burgermenu} ${isOpen ? styles.open : ""}`}>
+        <div className="md:hidden justify-center flex-grow ml-3">
+          <div className={`${styles.burgermenu} ${isOpen ? styles.open : ""}`} onClick={toggleMenu}>
             <div className={`${styles.line} ${styles.line1}`}></div>
             <div className={`${styles.line} ${styles.line2}`}></div>
             <div className={`${styles.line} ${styles.line3}`}></div>

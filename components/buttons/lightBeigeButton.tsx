@@ -7,7 +7,7 @@ export default function LightBeigeButton(props) {
 
   return (
     <div className="">
-      <button onClick={props.onClick} className="text-primaryPurple bg-lightBeige font-josefin font-bold text-xl text-center py-3 px-11 rounded-xl shadow-md custom-shadow">
+      <button onClick={props.onClick} className="text-primaryPurple bg-lightBeige font-josefin font-bold text-md md:text-xl text-center py-3 px-11 rounded-xl shadow-md custom-shadow">
         {props.text}
       </button>
       <style jsx>{`
