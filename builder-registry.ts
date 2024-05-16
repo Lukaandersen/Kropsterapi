@@ -29,6 +29,7 @@ import Admin from "./components/blocks/Admin/Admin";
 import Cart from "./components/blocks/Cart/Cart";
 import Calender from "./components/blocks/Cart/Calendar";
 import Timeslot from "./components/blocks/Cart/Timeslot";
+import BookingCardSection from "./components/blocks/BookingCardSection";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -157,12 +158,24 @@ Builder.registerComponent(TextCard, {
       type: "string",
     },
     {
+      name: "text1",
+      type: "paragraph",
+    },
+    {
       name: "title2",
       type: "string",
     },
     {
+      name: "text2",
+      type: "paragraph",
+    },
+    {
       name: "title3",
       type: "string",
+    },
+    {
+      name: "text3",
+      type: "paragraph",
     },
     {
       name: "image",
@@ -199,6 +212,10 @@ Builder.registerComponent(BookingCard, {
       name: "link",
       type: "string",
     },
+    {
+      name: "id",
+      type: "number"
+    }
   ],
 });
 
@@ -414,4 +431,50 @@ Builder.registerComponent(Calender, {
 
 Builder.registerComponent(Timeslot, {
   name: "Timeslot",
+});
+Builder.registerComponent(BookingCardSection, {
+  name: "BookingCardSection",
+  inputs: [
+    {
+      name: "titel1",
+      type: "string",
+    },
+    {
+      name: "text1",
+      type: "string",
+    },
+    {
+      name: "price1",
+      type: "string",
+    },
+    {
+      name: "titel2",
+      type: "string",
+    },
+    {
+      name: "text2",
+      type: "string",
+    },
+    {
+      name: "price2",
+      type: "string",
+    },
+    {
+      name: "titel3",
+      type: "string",
+    },
+    {
+      name: "text3",
+      type: "string",
+    },
+    {
+      name: "price3",
+      type: "string",
+    },
+    {
+      name: "buttonText",
+      type: "string",
+    },
+  
+  ],
 });

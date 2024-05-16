@@ -67,7 +67,7 @@ const Calendar = (props) => {
 
   return (
     <div className="max-w-xl mx-auto bg-mediumBeige p-6 rounded shadow">
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center mb-4 mt-4">
         <button onClick={handlePrevMonth} className="text-gray-600 focus:outline-none">
           &lt;
         </button>
@@ -94,7 +94,7 @@ const Calendar = (props) => {
           <Timeslot></Timeslot>
         </div>
       )}
-           <div className="absolute top-0 right-0 p-3" onClick={closeCalendar}>
+           <div className="absolute top-0 right-0 p-2" onClick={closeCalendar}>
         <CloseIcon />
       </div>
     </div>

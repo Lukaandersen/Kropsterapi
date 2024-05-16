@@ -1,7 +1,7 @@
 export default function Ordrerbekræftelse() {
   return (
-    <div className="bg-mediumBeige mx-10 mb-2 mt-32 flex flex-col items-center text-base justify-center gap-4 p-5 md:p-10 md:mx-56">
-      <h2 className="text-2xl">Ordrerbekræftelse</h2>
+    <div className="bg-mediumBeige mx-10 mb-2 mt-32 flex flex-col items-center text-base justify-center gap-4 p-5 md:p-10 md:mx-56 text-primaryPurple">
+      <h2 className="text-2xl">Ordrebekræftelse</h2>
       <p className="text-center">Din booking er nu bekræftet og vi har sendt dig en email på: email@gmail.com</p>
       <p className="text-center">Din booking reference er: XXX-XXX-XXXX</p>
       <p className="text-center">

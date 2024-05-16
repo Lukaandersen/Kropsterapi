@@ -2,7 +2,10 @@ import LightBeigeButton from "@/components/buttons/LightBeigeButton";
 import BrownButton from "@/components/buttons/BrownButton";
 import Timeslot from "./Timeslot";
 import Calendar from "./Calendar";
-import { useState } from 'react';
+import { useCallback, useContext, useState } from 'react';
+import { InCartProvider, ProductContext } from "@/app/ProductContext";
+import BookingCard from "@/components/cards/BookingCard/BookingCard";
+import Link from "next/link";
 
 export default function Card(props) {
   const [showCalendar, setShowCalendar] = useState(false);
@@ -13,42 +16,21 @@ export default function Card(props) {
   };
 
   return (
-    <div className="mt-24">
-      <a href="/booking" className="flex">
+  
+    <div className="mt-24 text-primaryPurple ml-5">
+      <a href="/booking" className="flex gap-3">
       <ArrowIcon />
-       <p className="text-primaryPurple ">Gå tilbage til booking</p>
+       <p>Gå tilbage til booking</p>
        </a>
     <div className="mt-8 block md:grid md:grid-cols-[2fr,1fr]">
-      <div className="">
-        <div className="grid grid-cols-1 md:grid-cols-3 justify-center md:justify-start bg-darkBeige m-6 md:max-h-[300px]">
-          <img src="3_sessioner.png" alt="billede af noget spirituelt" className="hidden md:block w-full h-full md:w-full md:h-auto md:justify-self-start opacity-35" />
-          <div className="mx-10 md:mx-6 my-2 flex flex-col h-[430px] md:h-[300px] md:w-[250px] justify-center md:justify-center md:items-center relative">
-            <p className="m-0 text-[32px] md:text-primaryPurple text-primaryLight">Enkelt Session</p>
-            <div className="relative mx-auto text-center w-64">
-              <img src="3_sessioner.png" alt="Billede af noget spirituelt" className="w-full h-auto opacity-35 md:mx-auto md:hidden" />
-              <p className="absolute top-0 left-0 right-0 bottom-0 md:relative flex items-center justify-center text-center md:text-start text-md md:m-5 md:mt-0 text-primaryLight md:text-primaryPurple">
-                En enkelt session indebærer en indledende samtale, samt 45 minutters Kropsterapi inklusiv vand og The efter behov.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center justify-center md:col-span-1 md:items-center">
-            <div className="items-center">
-              <p className="text-[32px] font-bold text-center text-primaryLight md:text-primaryPurple">400 DKK</p>
-              <div onClick={toggleCalendar}>
-              <BrownButton text={props.buttonText}></BrownButton>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {showCalendar && (
-        <div className="bg-primaryLight m-6 absolute grid items-center">
-          <Calendar></Calendar>
-        </div>
-      )}
+ 
+      <InCartProvider>
+        <CartCardWrapper>
+        
+        </CartCardWrapper>
+      </InCartProvider>
       
-      <div className="bg-primaryLight m-6">
+      <div className="bg-primaryLight m-6  text-primaryPurple">
         <h1 className="text-center text-2xl py-4">Dine Betalingsoplysninger</h1>
         <form className="flex flex-col gap-5" action="">
           <div className="mb-2 flex flex-col">
@@ -79,9 +61,9 @@ export default function Card(props) {
         <div className="flex flex-col items-center">
           <h2 className="text-xl pt-6 pb-3">Betalingsmetode</h2>
           <img src="betalingsdut.png" alt="betalingsmetoder" />
-          <a href={props.link2}>
+          <Link href={props.link2}>
             <LightBeigeButton text={props.button2Text}></LightBeigeButton>
-          </a>
+          </Link>
         </div>
       </div>
      
@@ -89,6 +71,8 @@ export default function Card(props) {
     </div>
   );
 }
+
+
 const ArrowIcon: React.FC<{ scaleX?: number }> = ({ scaleX = 1 }) => (
   <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -102,3 +86,69 @@ const ArrowIcon: React.FC<{ scaleX?: number }> = ({ scaleX = 1 }) => (
       <line x1="5" y1="12" x2="22" y2="12" strokeWidth="2" />
   </svg>
 );
+
+export function CartCard(props){
+  const [showCalendar, setShowCalendar] = useState(false);
+
+  const toggleCalendar = () => {
+    setShowCalendar(!showCalendar);
+    console.log("toggled")
+  };
+
+  return <div>
+    <h3>{props.titel}</h3>
+    <h4>{props.price}</h4>
+    <div onClick={toggleCalendar}>
+              <BrownButton text={props.buttonText}></BrownButton>
+      </div>
+      {showCalendar && (
+        <div className="bg-primaryLight m-6 absolute grid items-center">
+          <Calendar></Calendar>
+        </div>
+      )}
+
+  </div>
+}
+
+
+export function CartCardWrapper() {
+  const { inCart, setInCart } = useContext(ProductContext);
+
+  return (
+    <section>
+      {inCart.map((prod) => (
+        <CartCard titel={prod.titel} price={prod.price} key={prod.id} />
+
+      ))}
+    </section>
+  );
+}
+
+     {/* <div className="">
+        <div className="grid grid-cols-1 md:grid-cols-3 justify-center md:justify-start bg-darkBeige m-6 md:max-h-[300px]">
+          <img src="3_sessioner.png" alt="billede af noget spirituelt" className="hidden md:block w-full h-full md:w-full md:h-auto md:justify-self-start opacity-35" />
+          <div className="mx-10 md:mx-6 my-2 flex flex-col h-[430px] md:h-[300px] md:w-[250px] justify-center md:justify-center md:items-center relative">
+            <p className="m-0 text-[32px] md:text-primaryPurple text-primaryLight">Enkelt Session</p>
+            <div className="relative mx-auto text-center w-64">
+              <img src="3_sessioner.png" alt="Billede af noget spirituelt" className="w-full h-auto opacity-35 md:mx-auto md:hidden" />
+              <p className="absolute top-0 left-0 right-0 bottom-0 md:relative flex items-center justify-center text-center md:text-start text-md md:m-5 md:mt-0 text-primaryLight md:text-primaryPurple">
+                En enkelt session indebærer en indledende samtale, samt 45 minutters Kropsterapi inklusiv vand og The efter behov.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center justify-center md:col-span-1 md:items-center">
+            <div className="items-center">
+              <p className="text-[32px] font-bold text-center text-primaryLight md:text-primaryPurple">400 DKK</p>
+              <div onClick={toggleCalendar}>
+              <BrownButton text={props.buttonText}></BrownButton>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */}
+
+      {/* {showCalendar && (
+        <div className="bg-primaryLight m-6 absolute grid items-center">
+          <Calendar></Calendar>
+        </div>
+      )} */}

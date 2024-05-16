@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./styles.module.css";
 import BurgerMenu from "./BurgerMenu";
+import Link from "next/link";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,26 +14,26 @@ export default function Navigation() {
   return (
     <div className="bg-lightBeige/50 flex place-items-center justify-between z-40 sticky top-0">
       <div>
-        <a href="/forside">
+        <Link href="/forside">
           <img src="Logo.png" alt="hjerte med peacetegn" />
-        </a>
+        </Link>
       </div>
       <div className="flex gap-7 mr-5 md:mr-[50px]">
         <ul className={`md:flex gap-6 mr-4 text-primaryPurple ${isOpen ? "hidden " : "hidden"}`}>
           <li className="hover:text-darkBlue font-semibold ">
-            <a href="/booking">Booking</a>
+            <Link href="/booking">Booking</Link>
           </li>
           <li className="hover:text-darkBlue font-semibold">
-            <a href="/about-me">Om mig</a>
+            <Link href="/about-me">Om mig</Link>
           </li>
           <li className="hover:text-darkBlue font-semibold">
-            <a href="/hvad-er-kropsterapi">Hvad er Kropsterapi?</a>
+            <Link href="/hvad-er-kropsterapi">Hvad er Kropsterapi?</Link>
           </li>
         </ul>
         <div>
-          <a href="/cart">
+          <Link href="/cart" prefetch={true}>
             <img src="Cart.png" alt="" />
-          </a>
+          </Link>
         </div>
         <div className="md:hidden justify-center  " onClick={toggleMenu}>
           <div className={`${styles.burgermenu} ${isOpen ? styles.open : ""}`}>
