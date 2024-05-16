@@ -102,10 +102,10 @@ export default function Gallery() {
       </Swiper>
       </div>
        <div className="flex justify-center gap-4 mt-8">
-         <button ref={navigationPrevRef} className={`${darkMode ? "border-lightBeige" : " border-primaryPurple"} previous rounded border-2 p-2`} >
+         <button ref={navigationPrevRef} className={`${darkMode ? "border-lightBeige text-lightBeige" : " border-primaryPurple text-primaryPurple"} previous rounded border-2 p-2`} >
             <ArrowIcon />
           </button>
-            <button ref={navigationNextRef} className={`${darkMode ? "border-lightBeige" : " border-primaryPurple"} next rounded border-2 p-2`}>
+            <button ref={navigationNextRef} className={`${darkMode ? "border-lightBeige text-lightBeige" : " border-primaryPurple text-primaryPurple"} next rounded border-2 p-2`}>
             <ArrowIcon scaleX={-1} />
           </button>
           </div>

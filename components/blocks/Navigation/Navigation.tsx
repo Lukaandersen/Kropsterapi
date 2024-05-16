@@ -19,7 +19,7 @@ export default function Navigation() {
         </Link>
       </div>
       <div className="flex items-center">
-        <ul className="hidden md:flex gap-6 mr-4 text-primaryPurple">
+        <ul className="hidden md:flex gap-6 text-primaryPurple">
           <li className="hover:text-darkBlue font-semibold">
             <Link href="/booking">Booking</Link>
           </li>
