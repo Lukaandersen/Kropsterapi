@@ -1,5 +1,7 @@
 import LightBeigeButton from "@/components/buttons/LightBeigeButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import supabase from '@/app/config/supabaseClient'
+
 import Timeslot from "./Timeslot";
 
 const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -8,7 +10,20 @@ const Calendar = (props) => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [showCalendar, setShowCalendar] = useState(true);
 
-  const renderCalendar = (month, year) => {
+  const [calender, setCalendar] = useState([])
+  useEffect(()=>{
+      async function get(){
+
+          let { data: Appointments, error } = await supabase
+              .from('Appointments')
+              .select('*').filter('date', 'gte', '2024-05-16').lte('date', '2024-05-31')
+          console.log(Appointments)
+          setCalendar(Appointments)
+      }
+      get();
+  },[])
+
+  const renderCalendar = (month, year, timeslots) => {
     const totalDays = new Date(year, month + 1, 0).getDate();
 
     const firstDayOfMonth = new Date(year, month, 1).getDay();
@@ -28,7 +43,18 @@ const Calendar = (props) => {
       if (date.getDay() === 0 || date.getDay() === 6) {
         dateClass = "bg-gray-500 rounded-md";
       }
-
+//day, month
+ 
+//indeholder calendar et objekt der har den rigtige dato
+const todaysEvents = timeslots.filter(evt=>evt.date===`${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`)
+if(todaysEvents.length>0){
+    //så er der events på dagen
+    console.log("fandt et event på "+ i )
+    dateClass += " bg-darkBlue"
+} else {
+  console.log("fandt ikke noget på"+ i, month, year, `${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`)
+    //der er IKKE events
+}
       calendar.push(
         <div key={i} className={containerClass}>
           <div className={dateClass}>{i}</div>
@@ -84,7 +110,7 @@ const Calendar = (props) => {
             {day}
           </div>
         ))}
-        {renderCalendar(currentDate.getMonth(), currentDate.getFullYear())}
+        {renderCalendar(currentDate.getMonth(), currentDate.getFullYear(), calender)}
       </div>
       <div onClick={toggleTimeSlot} className="grid justify-center">
       <LightBeigeButton text={props.text}/>

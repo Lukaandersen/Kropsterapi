@@ -18,17 +18,12 @@ export default function Card(props) {
   return (
   
     <div className="mt-24 text-primaryPurple ml-5">
-      <a href="/booking" className="flex gap-3">
+      <Link href="/booking" className="flex gap-3">
       <ArrowIcon />
        <p>Gå tilbage til booking</p>
-       </a>
+       </Link>
     <div className="mt-8 block md:grid md:grid-cols-[2fr,1fr]">
- 
-      <InCartProvider>
-        <CartCardWrapper>
-        
-        </CartCardWrapper>
-      </InCartProvider>
+ <CartCardWrapper></CartCardWrapper>
       
       <div className="bg-primaryLight m-6  text-primaryPurple">
         <h1 className="text-center text-2xl py-4">Dine Betalingsoplysninger</h1>
@@ -113,7 +108,7 @@ export function CartCard(props){
 
 export function CartCardWrapper() {
   const { inCart, setInCart } = useContext(ProductContext);
-
+console.log(inCart)
   return (
     <section>
       {inCart.map((prod) => (
