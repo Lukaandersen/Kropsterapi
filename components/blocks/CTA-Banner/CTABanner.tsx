@@ -9,7 +9,9 @@ function CTABanner(props) {
 
   return (
     <div className={`p-10 flex flex-col items-center justify-center playfair ${darkMode ? "bg-primaryPurple" : "bg-mediumBeige"}`}>
-      <p className={`text-md md:text-2xl ${darkMode ? "text-white" : "text-primaryPurple"}`}>{props.titel}</p>
+      <a href="">
+        <p className={`text-md md:text-2xl ${darkMode ? "text-white" : "text-primaryPurple"}`}>{props.titel}</p>
+      </a>
     </div>
   );
 }
