@@ -27,7 +27,7 @@ export default function Card(props) {
       <div className="mt-8 block md:grid md:grid-cols-[2fr,1fr]">
         <CartCardWrapper></CartCardWrapper>
 
-        <div className="bg-primaryLight m-6 pb-6 text-primaryPurple">
+        <div className="bg-primaryLight m-6 pb-6 text-primaryPurple max-h-[650px]">
           <h1 className="text-center text-2xl py-4 px-4">Dine Betalingsoplysninger</h1>
           <form className="flex flex-col gap-5" action="">
             <div className="mb-2 flex flex-col">
