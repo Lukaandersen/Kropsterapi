@@ -5,15 +5,14 @@ import { DarkContext } from "@/app/DarkContext";
 import BeigeButton from "@/components/buttons/BeigeButton";
 import { ProductContext } from "@/app/ProductContext";
 
-
-
 function BookingCard(props) {
   const product = {
-    id:props.id,
-    titel:props.titel,
-    price:props.price
-  }
-  const {inCart, setInCart} = useContext(ProductContext);
+    id: props.id,
+    titel: props.titel,
+    text: props.text,
+    price: props.price,
+  };
+  const { inCart, setInCart } = useContext(ProductContext);
   const { darkMode } = useContext(DarkContext);
   console.log("Current darkMode value in BookingCard:", darkMode);
 
@@ -26,7 +25,13 @@ function BookingCard(props) {
           <p className={`absolute top-0 left-0 right-0 bottom-0 md:relative flex items-center justify-center text-center text-md md:m-5 md:mt-0 ${darkMode ? "md:text-primaryPurple text-primaryLight" : "text-primaryLight"}`}>{props.text}</p>
         </div>
         <p className="text-[32px] mt-0 font-bold">{props.price}</p>
-        <button onClick={()=>{setInCart(inCart.concat(product))}}>{darkMode ? <BeigeButton text={props.buttonText} /> : <BrownButton text={props.buttonText} />}</button>
+        <button
+          onClick={() => {
+            setInCart(inCart.concat(product));
+          }}
+        >
+          {darkMode ? <BeigeButton text={props.buttonText} /> : <BrownButton text={props.buttonText} />}
+        </button>
         {props.children}
       </div>
     </div>
