@@ -215,8 +215,8 @@ Builder.registerComponent(BookingCard, {
     },
     {
       name: "id",
-      type: "number"
-    }
+      type: "number",
+    },
   ],
 });
 
@@ -295,6 +295,10 @@ Builder.registerComponent(TextImage, {
     },
     {
       name: "text",
+      type: "string",
+    },
+    {
+      name: "text2",
       type: "string",
     },
     {
@@ -476,7 +480,6 @@ Builder.registerComponent(BookingCardSection, {
       name: "buttonText",
       type: "string",
     },
-  
   ],
 });
 
