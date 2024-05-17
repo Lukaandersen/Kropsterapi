@@ -27,8 +27,8 @@ export default function Card(props) {
       <div className="mt-8 block md:grid md:grid-cols-[2fr,1fr]">
         <CartCardWrapper></CartCardWrapper>
 
-        <div className="bg-primaryLight m-6  text-primaryPurple">
-          <h1 className="text-center text-2xl py-4">Dine Betalingsoplysninger</h1>
+        <div className="bg-primaryLight m-6 pb-6 text-primaryPurple">
+          <h1 className="text-center text-2xl py-4 px-4">Dine Betalingsoplysninger</h1>
           <form className="flex flex-col gap-5" action="">
             <div className="mb-2 flex flex-col">
               <label className="pl-4" htmlFor="name">
@@ -57,7 +57,7 @@ export default function Card(props) {
           </form>
           <div className="flex flex-col items-center">
             <h2 className="text-xl pt-6 pb-3">Betalingsmetode</h2>
-            <img src="betalingsdut.png" alt="betalingsmetoder" />
+            <img src="betalingsdut.png" alt="betalingsmetoder" className="pb-4" />
             <Link href={props.link2}>
               <LightBeigeButton text={props.button2Text}></LightBeigeButton>
             </Link>
