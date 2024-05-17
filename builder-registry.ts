@@ -30,6 +30,7 @@ import Cart from "./components/blocks/Cart/Cart";
 import Calender from "./components/blocks/Cart/Calendar";
 import Timeslot from "./components/blocks/Cart/Timeslot";
 import BookingCardSection from "./components/blocks/BookingCardSection";
+import ImageBanner from "./components/blocks/ImageBanner/ImageBanner";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -477,4 +478,8 @@ Builder.registerComponent(BookingCardSection, {
     },
   
   ],
+});
+
+Builder.registerComponent(ImageBanner, {
+  name: "ImageBanner",
 });
