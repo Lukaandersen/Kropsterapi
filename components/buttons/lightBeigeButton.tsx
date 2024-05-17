@@ -1,8 +1,7 @@
 export default function LightBeigeButton(props) {
   const handleClick = () => {
     if (props.onClick) {
-      props.onClick(); // Kald funktionen, hvis den er defineret
-    }
+      props.onClick(); 
   };
 
   return (
@@ -18,3 +17,4 @@ export default function LightBeigeButton(props) {
     </div>
   );
 }
+};
