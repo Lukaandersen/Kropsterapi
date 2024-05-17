@@ -35,7 +35,7 @@ const Calendar = (props) => {
     for (let i = 1; i <= totalDays; i++) {
       const date = new Date(year, month, i);
       let containerClass = "text-center rounded-md shadow-md";
-      let dateClass = "bg-lightBeige rounded-md hover:bg-lightBlue";
+      let dateClass = "dateClass rounded-md hover:bg-lightBlue";
 
       if (date.getDay() === 0 || date.getDay() === 6) {
         dateClass = "bg-gray-500 rounded-md";
@@ -88,7 +88,7 @@ const Calendar = (props) => {
   }
 
   return (
-    <div className="max-w-xl mx-auto bg-mediumBeige p-6 rounded shadow z-10">
+    <div className="max-w-xl mx-auto dateClass p-6 rounded shadow z-10">
       <div className="flex justify-between items-center mb-4 mt-4">
         <button onClick={handlePrevMonth} className="text-gray-600 focus:outline-none">
           &lt;
@@ -100,7 +100,7 @@ const Calendar = (props) => {
           &gt;
         </button>
       </div>
-      <div className="grid grid-cols-7 gap-5 md:p-[20px] p-2 bg-mediumBeige ">
+      <div className="grid grid-cols-7 gap-5 md:p-[20px] p-2 dateClass ">
         {daysOfWeek.map((day, index) => (
           <div key={index} className="font-semibold text-center">
             {day}
