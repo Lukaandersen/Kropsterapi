@@ -32,7 +32,7 @@ export default function Navigation() {
         </ul>
         <div>
           <Link href="/cart" prefetch={true}>
-            <img src="Cart.png" alt="" />
+            <img src="Cart.png" alt="" className="w-10/12 pl-2"/>
           </Link>
         </div>
         <div className="md:hidden justify-center flex-grow ml-3">
