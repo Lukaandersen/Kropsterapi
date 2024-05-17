@@ -1,6 +1,6 @@
 import LightBeigeButton from "@/components/buttons/LightBeigeButton";
 import { useState, useEffect } from "react";
-import supabase from '@/app/config/supabaseClient'
+import supabase from "@/app/config/supabaseClient";
 
 import Timeslot from "./Timeslot";
 
@@ -10,18 +10,15 @@ const Calendar = (props) => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [showCalendar, setShowCalendar] = useState(true);
 
-  const [calender, setCalendar] = useState([])
-  useEffect(()=>{
-      async function get(){
-
-          let { data: Appointments, error } = await supabase
-              .from('Appointments')
-              .select('*').filter('date', 'gte', '2024-05-16').lte('date', '2024-05-31')
-          console.log(Appointments)
-          setCalendar(Appointments)
-      }
-      get();
-  },[])
+  const [calender, setCalendar] = useState([]);
+  useEffect(() => {
+    async function get() {
+      let { data: Appointments, error } = await supabase.from("Appointments").select("*").filter("date", "gte", "2024-05-16").lte("date", "2024-05-31");
+      console.log(Appointments);
+      setCalendar(Appointments);
+    }
+    get();
+  }, []);
 
   const renderCalendar = (month, year, timeslots) => {
     const totalDays = new Date(year, month + 1, 0).getDate();
@@ -43,18 +40,18 @@ const Calendar = (props) => {
       if (date.getDay() === 0 || date.getDay() === 6) {
         dateClass = "bg-gray-500 rounded-md";
       }
-//day, month
- 
-//indeholder calendar et objekt der har den rigtige dato
-const todaysEvents = timeslots.filter(evt=>evt.date===`${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`)
-if(todaysEvents.length>0){
-    //så er der events på dagen
-    console.log("fandt et event på "+ i )
-    dateClass += " bg-darkBlue"
-} else {
-  console.log("fandt ikke noget på"+ i, month, year, `${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`)
-    //der er IKKE events
-}
+      //day, month
+
+      //indeholder calendar et objekt der har den rigtige dato
+      const todaysEvents = timeslots.filter((evt) => evt.date === `${year}-${String(month + 1).padStart(2, "0")}-${String(i).padStart(2, "0")}`);
+      if (todaysEvents.length > 0) {
+        //så er der events på dagen
+        console.log("fandt et event på " + i);
+        dateClass += " bg-darkBlue";
+      } else {
+        console.log("fandt ikke noget på" + i, month, year, `${year}-${String(month + 1).padStart(2, "0")}-${String(i).padStart(2, "0")}`);
+        //der er IKKE events
+      }
       calendar.push(
         <div key={i} className={containerClass}>
           <div className={dateClass}>{i}</div>
@@ -90,9 +87,8 @@ if(todaysEvents.length>0){
     return null; // Hvis showCalendar er falsk, returnerer vi ingenting (komponenten lukkes)
   }
 
-
   return (
-    <div className="max-w-xl mx-auto bg-mediumBeige p-6 rounded shadow">
+    <div className="max-w-xl mx-auto bg-mediumBeige p-6 rounded shadow z-10">
       <div className="flex justify-between items-center mb-4 mt-4">
         <button onClick={handlePrevMonth} className="text-gray-600 focus:outline-none">
           &lt;
@@ -113,14 +109,14 @@ if(todaysEvents.length>0){
         {renderCalendar(currentDate.getMonth(), currentDate.getFullYear(), calender)}
       </div>
       <div onClick={toggleTimeSlot} className="grid justify-center">
-      <LightBeigeButton text={props.text}/>
+        <LightBeigeButton text={props.text} />
       </div>
       {showTimeSlot && (
         <div className=" m-6 absolute">
           <Timeslot></Timeslot>
         </div>
       )}
-           <div className="absolute top-0 right-0 p-2" onClick={closeCalendar}>
+      <div className="absolute top-0 right-0 p-2" onClick={closeCalendar}>
         <CloseIcon />
       </div>
     </div>
