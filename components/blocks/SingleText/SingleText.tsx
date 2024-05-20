@@ -1,7 +1,7 @@
-import LightBeigeButton from "@/components/buttons/LightBeigeButton";
 import { useContext } from "react";
 import { DarkContext } from "@/app/DarkContext";
 import BrownButton from "@/components/buttons/BrownButton";
+import LightBeigeButton from "@/components/buttons/LightBeigeButton";
 
 export default function SingleText(props) {
   const { darkMode } = useContext(DarkContext);

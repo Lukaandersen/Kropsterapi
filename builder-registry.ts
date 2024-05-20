@@ -302,6 +302,10 @@ Builder.registerComponent(TextImage, {
       type: "string",
     },
     {
+      name: "text3",
+      type: "string",
+    },
+    {
       name: "image",
       type: "Image",
       allowedFileTypes: ["jpeg", "jpg", "png", "gif"],
