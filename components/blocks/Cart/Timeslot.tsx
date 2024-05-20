@@ -1,14 +1,25 @@
 import BrownButton from "@/components/buttons/BrownButton";
 import React from "react";
+import { useState, useEffect } from "react";
+import supabase from "@/app/config/supabaseClient";
 
-export default function Timeslot() {
-  // Dummy data for timeslots
-  const timeSlots = [
-    { time: "08:00" },
-    { time: "10:00" },
-    { time: "12:00" },
-    // Add more timeslots as needed
-  ];
+
+const Timeslot = () => {
+  const [timeSlots, setTimeSlots] = useState([]);
+  useEffect(() => {
+    async function fetchTimeSlots() {
+      try {
+        const { data: appointments, error } = await supabase.from("Appointments").select("time");
+        if (error) {
+          throw error;
+        }
+        setTimeSlots(appointments);
+      } catch (error) {
+        console.error("Fejl ved indlæsning af tidspunkter:", error.message);
+      }
+    }
+    fetchTimeSlots();
+  }, []);
 
   return (
     <div className="block md:flex">
@@ -30,3 +41,4 @@ export default function Timeslot() {
     </div>
   );
 }
+export default Timeslot;
