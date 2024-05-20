@@ -38,7 +38,7 @@ const Calendar = (props) => {
       let dateClass = "dateClass rounded-md hover:bg-lightBlue";
 
       if (date.getDay() === 0 || date.getDay() === 6) {
-        dateClass = "bg-gray-500 rounded-md";
+        dateClass = "bg-gray-500 rounded-md z-10";
       }
       //day, month
 
@@ -88,7 +88,7 @@ const Calendar = (props) => {
   }
 
   return (
-    <div className="max-w-xl mx-auto dateClass p-6 rounded shadow z-10">
+    <div className="max-w-xl mx-auto dateClass p-6 rounded shadow z-7">
       <div className="flex justify-between items-center mb-4 mt-4">
         <button onClick={handlePrevMonth} className="text-gray-600 focus:outline-none">
           &lt;
