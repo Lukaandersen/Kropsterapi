@@ -12,11 +12,11 @@ export default function (props) {
       <div className={`${darkMode ? "text-lightBeige" : "text-primaryPurple"}  p-12 md:col-span-2 grid justify-items-center place-content-center`}>
         <h2 className="text-3xl font-playfair text-center  mb-8">{props.title}</h2>
         <div>
-          <p className="font-josefin max-w-96"> {props.text}</p>
+          <p className="max-w-96"> {props.text}</p>
           <br />
-          <p className="font-josefin max-w-96">{props.text2}</p>
+          <p className="max-w-96">{props.text2}</p>
           <br />
-          <p className="font-josefin max-w-96">{props.text3}</p>
+          <p className="max-w-96">{props.text3}</p>
         </div>
         <a href={props.link}>{darkMode ? <BrownButton text={props.buttonText} /> : <LightBeigeButton text={props.buttonText} />}</a>
       </div>
