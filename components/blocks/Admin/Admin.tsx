@@ -27,7 +27,7 @@ export default function Admin() {
     const values = new FormData(e.target);
     console.log(values.get("date"));
     const { data, error } = await supabase
-      .from("Appointment booking")
+      .from("Appointments")
       .insert([{ date: values.get("date"), time: values.get("time") }])
       .select();
     console.log(data);
@@ -37,7 +37,7 @@ export default function Admin() {
       <div className="container m-4 mx-auto w-[300px] md:w-[700px] my-[130px] md:px-4 bg-primaryLight py-[50px] rounded-lg">
         <h1 className="text-lg md:text-2xl text-center font-semibold mb-4 text-primaryPurple">Opret nye tider for Bookinger</h1>
         <form onSubmit={submit} className="flex flex-col items-center pt-7">
-          <div className=" grid md:flex gap-7">
+          <div className=" grid md:flex gap-7 text-primaryPurple">
             <label className="mb-4">
               Dato:
               <input name="date" type="date" value={selectedDate} onChange={handleDateChange} className="border border-gray-300 rounded-md p-2 ml-2   w-[160px]" />

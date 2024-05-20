@@ -13,7 +13,7 @@ const Calendar = (props) => {
   const [calender, setCalendar] = useState([]);
   useEffect(() => {
     async function get() {
-      let { data: Appointments, error } = await supabase.from("Appointments").select("*").filter("date", "gte", "2024-05-16").lte("date", "2024-05-31");
+      let { data: Appointments, error } = await supabase.from("Appointments").select("*").filter("date", "gte", "2024-05-16").lte("date", "2025-05-31");
       console.log(Appointments);
       setCalendar(Appointments);
     }
@@ -109,7 +109,7 @@ const Calendar = (props) => {
         {renderCalendar(currentDate.getMonth(), currentDate.getFullYear(), calender)}
       </div>
       <div onClick={toggleTimeSlot} className="grid justify-center">
-        <LightBeigeButton text={props.text} />
+        <button>Klik</button>
       </div>
       {showTimeSlot && (
         <div className=" m-6 absolute">
