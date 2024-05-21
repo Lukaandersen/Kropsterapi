@@ -33,7 +33,7 @@ export default function Footer() {
           <h3>Marstalsgade 2100 Østerbro</h3>
         </div>
         <div className={`${darkMode ? "border-lightBeige" : "border-darkBeige"} grid gap-3 md:border-l-2`}>
-          <div className={`${darkMode ? "border-lightBeige" : "border-darkBeige"} flex items-center justify-center border-t-2 md:hidden mx-20`}></div>
+          <div className={`${darkMode ? "border-lightBeige" : "border-darkBeige"} flex items-center justify-center border-t-2 md:hidden mx-28`}></div>
           <a href="/hvad-er-kropsterapi" className="hover:text-primaryPurple transition duration-300 ease-in-out transform hover:scale-110">
             Hvad er Kropsterapi?
           </a>
@@ -45,7 +45,7 @@ export default function Footer() {
           </a>
         </div>
         <div className={`${darkMode ? "border-lightBeige" : "border-darkBeige"} grid gap-3 md:border-l-2`}>
-          <div className={`${darkMode ? "border-lightBeige" : "border-darkBeige"} flex items-center justify-center border-t-2 md:hidden mx-20`}></div>
+          <div className={`${darkMode ? "border-lightBeige" : "border-darkBeige"} flex items-center justify-center border-t-2 md:hidden mx-28`}></div>
           <h3>Cookiepolitik</h3>
           <h3>Privatpolitik</h3>
           <h3>CVR: 12345678</h3>
