@@ -28,11 +28,11 @@ export function CartCard(props) {
             <path d="M6 6L18 18M6 18L18 6" stroke="black" stroke-width="2" />
           </svg>
         </div>
-        <div className="max-w-64 min-w-28 items-center flex justify-center">
+        <div className="max-w-64 min-w-28 place-items-center flex justify-center">
           <img src="3_sessioner.png" alt="billede af noget spirituelt" className="hidden md:block md:w-full md:h-auto md:justify-self-center opacity-35 p-5" />
         </div>
         <div className="mx-10 md:mx-6 my-0 flex flex-col md:h-[300px] md:w-[250px] justify-center relative">
-          <p className={`${darkMode ? "text-primaryPurple" : "md:text-primaryPurple text-primaryLight"} m-0 text-3xl text-center md:text-left mt-5`}>{props.titel}</p>
+          <p className={`${darkMode ? "text-primaryPurple" : "md:text-primaryPurple text-primaryLight"} m-0 text-3xl text-center md:text-left mt-5 md:mt-0`}>{props.titel}</p>
           <div className="relative mx-auto text-center w-full max-w-72 min-w-44 -mt-5 md:-mt-0">
             <img src="3_sessioner.png" alt="Billede af noget spirituelt" className="w-auto h-auto opacity-35 md:mx-auto md:hidden" />
             <p
