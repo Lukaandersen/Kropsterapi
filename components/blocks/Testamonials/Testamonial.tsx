@@ -63,7 +63,7 @@ export default function Testamonial (props) {
             <SwiperSlide className="swiper-slide">
             <div className='flex flex-col items-center gap-6 '>
                 <h3 className='text-sm'>{test.name}</h3>
-                <h2 className='text-xl font-playfair italic'>{test.title}</h2>
+                <h2 className='text-xl font-playfair italic text-center'>{test.title}</h2>
                 <p className='text-center max-w-[720px]'>{test.testamonial}</p>
             </div>
             </SwiperSlide>
