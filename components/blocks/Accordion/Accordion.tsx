@@ -17,7 +17,7 @@ export default function Accordion() {
         <h2 className="text-3xl font-bold mb-6">FAQ</h2>
         <p className="font-bold max-w-56 mb-12 text-center md:text-left">Der er mange der har lignende spørgsmål til Kropsterapi, så her vil jeg prøve at besvare nogle</p>
       </div>
-      <div className="w-full md:w-1/2 md:ml-auto">
+      <div className="w-full md:w-1/2 md:ml-auto text-left">
         {faqItems.map((item, index) => (
           <AccordionItem key={index} question={item.question} answer={item.answer} />
         ))}
@@ -36,7 +36,7 @@ function AccordionItem({ question, answer }) {
   return (
     <div className="mb-4 relative">
       <button className="font-bold flex justify-between w-full" onClick={toggleAccordion}>
-        <span>{question}</span>
+        <span className="text-left">{question}</span>
         <div>{isOpen ? <MinusIcon /> : <PlusIcon />}</div>
       </button>
       <div className="absolute top-full left-0 w-full h-px bg-primaryPurple"></div>
