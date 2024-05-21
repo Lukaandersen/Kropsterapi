@@ -375,11 +375,19 @@ Builder.registerComponent(SingleText, {
   ],
 });
 Builder.registerComponent(HeroImage, {
-  name: "HeroImage",
+  name: 'HeroImage',
   inputs: [
     {
-      name: "Image",
-      type: "string",
+      name: 'title',
+      type: 'string',
+      required: true,
+      defaultValue: 'Default Title',
+    },
+    {
+      name: 'image',
+      type: 'file',
+      allowedFileTypes: ['jpeg', 'jpg', 'png', 'webp', 'gif'],
+      required: true,
     },
   ],
 });
