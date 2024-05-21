@@ -25,29 +25,37 @@ export default function Card(props) {
       </Link>
       <div className="mt-8 block md:grid md:grid-cols-[2fr,1fr]">
         <CartCardWrapper />
-        <div className="bg-primaryLight m-6 pb-6 text-primaryPurple max-h-[650px]">
+        <div className="bg-primaryLight m-6 pb-6 text-primaryPurple max-h-[660px]">
           <h1 className="text-center text-2xl py-4 px-4">Dine Betalingsoplysninger</h1>
           <form className="flex flex-col gap-5" action="">
             <div className="mb-2 flex flex-col">
-              <label className="pl-4" htmlFor="name">Navn</label>
+              <label className="pl-4" htmlFor="name">
+                Navn
+              </label>
               <input name="name" type="text" className="bg-gray-300 p-2 ml-4 w-full max-w-[calc(100%-2rem)]" required />
             </div>
             <div className="mb-2 flex flex-col">
-              <label className="pl-4" htmlFor="email">Email</label>
+              <label className="pl-4" htmlFor="email">
+                Email
+              </label>
               <input name="email" type="email" className="bg-gray-300 p-2 ml-4 w-full max-w-[calc(100%-2rem)]" required />
             </div>
             <div className="mb-2 flex flex-col">
-              <label className="pl-4" htmlFor="phone">Tlf nr.</label>
+              <label className="pl-4" htmlFor="phone">
+                Tlf nr.
+              </label>
               <input name="phone" type="tel" className="bg-gray-300 p-2 ml-4 w-full max-w-[calc(100%-2rem)]" required />
             </div>
             <div className="mb-2 flex flex-col">
-              <label htmlFor="message" className="pl-4">Besked</label>
+              <label htmlFor="message" className="pl-4">
+                Besked
+              </label>
               <textarea id="message" className="bg-gray-300 p-2 ml-4 w-full max-w-[calc(100%-2rem)]" />
             </div>
           </form>
           <div className="flex flex-col items-center">
             <h2 className="text-xl pt-6 pb-3">Betalingsmetode</h2>
-            <img src="betalingsdut.png" alt="betalingsmetoder" className="pb-4" />
+            <img src="betalingsdut.png" alt="betalingsmetoder" className="pb-0" />
             <Link href={props.link2}>
               <LightBeigeButton text={props.button2Text}></LightBeigeButton>
             </Link>
@@ -76,14 +84,14 @@ export function CartCard(props) {
   const { inCart, setInCart } = useContext(ProductContext);
 
   const handleRemoveCard = () => {
-    setInCart(inCart.filter(item => item.id !== props.id));
+    setInCart(inCart.filter((item) => item.id !== props.id));
   };
 
   return (
     <div className={`${darkMode ? "bg-mediumBeige" : "bg-darkBeige"} grid grid-cols-1 md:grid-cols-3 justify-center md:justify-start m-6 md:max-h-[270px] relative`}>
       <div className="absolute top-0 right-0 m-4 cursor-pointer" onClick={handleRemoveCard}>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 6L18 18M6 18L18 6" stroke="black" stroke-width="2"/>
+          <path d="M6 6L18 18M6 18L18 6" stroke="black" stroke-width="2" />
         </svg>
       </div>
       <div className="max-w-64 min-w-28 items-center flex justify-center">
