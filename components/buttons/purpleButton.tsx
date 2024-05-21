@@ -4,7 +4,7 @@ export default function PurpleButton(props) {
   };
   return (
     <div className=" bg-primaryPurple">
-      <button className="text-primaryLight bg-primaryPurple font-josefin font-bold text-md md:text-xl text-center py-3 px-11 rounded-xl shadow-md custom-shadow mt-5" onClick={click}>
+      <button className="text-primaryLight bg-primaryPurple josefin font-bold text-md md:text-xl text-center py-3 px-11 rounded-xl shadow-md custom-shadow mt-5" onClick={click}>
         {props.text}
       </button>
       <style jsx>{`
