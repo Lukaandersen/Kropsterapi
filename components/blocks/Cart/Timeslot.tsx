@@ -1,8 +1,8 @@
 import BrownButton from "@/components/buttons/BrownButton";
+import PurpleButton from "@/components/buttons/purpleButton";
 import React from "react";
 import { useState, useEffect } from "react";
 import supabase from "@/app/config/supabaseClient";
-
 
 const Timeslot = () => {
   const [timeSlots, setTimeSlots] = useState([]);
@@ -24,9 +24,9 @@ const Timeslot = () => {
   return (
     <div className="block md:flex">
       <div className="md:w-auto">
-        <div className="bg-darkBeige  border-gray-200 rounded-md p-4 ">
-          <h2 className="text-lg font-semibold mb-2">Ledige tidspunkter</h2>
-          <div className="grid grid-cols-2 gap-4">
+        <div className="bg-primaryPurple  border-gray-200 rounded-md p-4 ">
+          <h2 className="text-lg font-semibold mb-2 text-primaryLight">Ledige tidspunkter</h2>
+          <div className="grid grid-cols-3 gap-4">
             {timeSlots.map((slot, index) => (
               <div key={index} className="bg-mediumBeige p-2 rounded-md shadow-md hover:bg-lightBlue">
                 <p className="text-sm font-medium">{slot.time}</p>
@@ -34,11 +34,11 @@ const Timeslot = () => {
             ))}
           </div>
           <div className="grid justify-center">
-          <BrownButton></BrownButton>
+            <PurpleButton></PurpleButton>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 export default Timeslot;
