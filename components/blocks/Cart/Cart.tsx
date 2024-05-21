@@ -98,16 +98,20 @@ export function CartCard(props) {
         <img src="3_sessioner.png" alt="billede af noget spirituelt" className="hidden md:block md:w-full md:h-auto md:justify-self-center opacity-35 p-5" />
       </div>
       <div className="mx-10 md:mx-6 my-0 flex flex-col md:h-[300px] md:w-[250px] justify-center md:justify-center md:items-center relative">
-        <p className={`${darkMode ? "text-primaryPurple" : "md:text-primaryPurple text-primaryLight"} m-0 text-[32px] text-center mt-5`}>{props.titel}</p>
+        <p className={`${darkMode ? "text-primaryPurple" : "md:text-primaryPurple text-primaryLight"} m-0 md:text-3xl text:3xl text-center mt-5`}>{props.titel}</p>
         <div className={`${darkMode ? "text-primaryPurple" : "text-primaryLight md:text-primaryPurple"} absolute top-0 left-0 right-0 bottom-0 md:relative flex items-center justify-center text-center md:text-start text-md md:m-5 md:mt-0`}></div>
         <div className="relative mx-auto text-center w-full max-w-72 min-w-44 -mt-5 md:-mt-0">
           <img src="3_sessioner.png" alt="Billede af noget spirituelt" className="w-auto h-auto opacity-35 md:mx-auto md:hidden" />
-          <p className={`${darkMode ? "text-primaryPurple" : "text-primaryLight md:text-primaryPurple"} absolute top-0 left-0 right-0 bottom-0 md:relative flex items-center justify-center text-center md:text-start text-md md:m-5 md:mt-0`}>
+          <p
+            className={`${
+              darkMode ? "text-primaryPurple" : "text-primaryLight md:text-primaryPurple"
+            } absolute top-0 left-0 right-0 bottom-0 md:relative flex items-center justify-center text-center md:text-start md:text-md md:col-span-1 text-md md:m-5 md:mt-0`}
+          >
             {props.text}
           </p>
         </div>
       </div>
-      <div className="flex items-center justify-center md:col-span-1 md:items-center pb-5">
+      <div className="flex items-center justify-center md:col-span-1  md:items-center pb-5">
         <div className="items-center justify-center">
           <h4 className={`${darkMode ? "text-primaryPurple" : "text-primaryLight md:text-primaryPurple"} text-[32px] font-bold text-center -mt-6`}>{props.price}</h4>
           <div onClick={toggleCalendar}>{darkMode ? <BeigeButton text={props.buttonText} /> : <BrownButton text={props.buttonText} />}</div>
