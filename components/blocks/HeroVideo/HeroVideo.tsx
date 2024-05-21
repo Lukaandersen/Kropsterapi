@@ -3,7 +3,7 @@ import LightBeigeButton from "@/components/buttons/LightBeigeButton";
 export default function HeroVideo(props) {
   return (
     <div className="relative z-1">
-      <div className="absolute top-1/2 text-center md:left-20 md:text-left md:transform-none left-1/2 md:translate-x-0 transform -translate-x-1/2 -translate-y-1/2">
+      <div className="absolute top-1/2 text-center md:left-20 md:text-left md:transform-none left-1/2 md:translate-x-0 transform -translate-x-1/2 -translate-y-1/2 z-10">
         <h1 className="text-primaryPurple font-playfair text-lg md:text-3xl">{props.title}</h1>
         <a href={props.link}>
           <LightBeigeButton text={props.buttonText} className="mt-4 md:mt-6 "></LightBeigeButton>
