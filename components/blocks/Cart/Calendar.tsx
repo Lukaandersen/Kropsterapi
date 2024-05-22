@@ -1,6 +1,7 @@
 import LightBeigeButton from "@/components/buttons/LightBeigeButton";
 import { useState, useEffect } from "react";
 import supabase from "@/app/config/supabaseClient";
+import { Button } from "@builder.io/react";
 
 import Timeslot from "./Timeslot";
 
@@ -9,6 +10,8 @@ const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const Calendar = (props) => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [showCalendar, setShowCalendar] = useState(true);
+
+  const [availableSlots, setAvailableSlots] = useState ([]);
 
   const [calender, setCalendar] = useState([]);
   useEffect(() => {
@@ -35,7 +38,7 @@ const Calendar = (props) => {
     for (let i = 1; i <= totalDays; i++) {
       const date = new Date(year, month, i);
       let containerClass = "text-center rounded-md shadow-md w-7 md:w-10";
-      let dateClass = "dateClass rounded-md hover:bg-lightBlue ";
+      let dateClass = "dateClass rounded-md hover:bg-lightBlue clicked:bg-darkPurple";
 
       if (date.getDay() === 0 || date.getDay() === 6) {
         dateClass = "bg-gray-500 rounded-md z-10";
@@ -54,13 +57,19 @@ const Calendar = (props) => {
       }
       calendar.push(
         <div key={i} className={containerClass}>
-          <div className={dateClass}>{i}</div>
+          <button className={dateClass} onClick={() => setDate (todaysEvents) }>{i}</button>
         </div>
       );
     }
 
     return calendar;
   };
+
+  function setDate (timeSlots) {
+    setAvailableSlots(timeSlots)
+console.log(timeSlots)
+setShowTimeSlot(true);
+  }
 
   const handlePrevMonth = () => {
     const newDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);
@@ -113,7 +122,7 @@ const Calendar = (props) => {
       </div>
       {showTimeSlot && (
         <div className=" m-6 absolute">
-          <Timeslot></Timeslot>
+          <Timeslot availableSlots={availableSlots}></Timeslot>
         </div>
       )}
       <div className="absolute top-0 right-0 p-2" onClick={closeCalendar}>
