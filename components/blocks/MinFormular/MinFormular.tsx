@@ -23,7 +23,7 @@ export default function MinFormular() {
   return (
     <div>
       <div className="container mx-auto mt-[300px] px-4 bg-lightBeige py-[100px]">
-        <h1 className="text-2xl text-center font-semibold mb-4 text-primaryPurple">Bookingformular</h1>
+        <h2 className="text-h2M md:text-h2D text-center font-semibold mb-4 text-primaryPurple">Bookingformular</h2>
         <form onSubmit={handleSubmit} className="flex flex-col items-center">
           <label className="mb-2">
             Dato:
