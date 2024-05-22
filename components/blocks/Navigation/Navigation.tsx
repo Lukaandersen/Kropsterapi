@@ -16,8 +16,8 @@ export default function Navigation() {
   return (
     <div className="bg-lightBeige/50 flex items-center justify-between z-40 sticky top-0 px-4">
       <div className="flex items-center">
-        <Link href="/forside">
-          <img src="Logo.png" alt="hjerte med peacetegn" className="w-16 md:w-24"/>
+        <Link href="/">
+          <img src="Logo.png" alt="hjerte med peacetegn" className="w-16 md:w-24" />
         </Link>
       </div>
       <div className="flex items-center relative">
@@ -36,11 +36,7 @@ export default function Navigation() {
           <Link href="/cart" prefetch={true}>
             <img src="Cart.png" alt="Cart" className="w-10/12 pl-2" />
           </Link>
-          {inCart.length > 0 && (
-            <div className="absolute top-0 right-0 bg-lightPurple text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">
-              {inCart.length}
-            </div>
-          )}
+          {inCart.length > 0 && <div className="absolute top-0 right-0 bg-lightPurple text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">{inCart.length}</div>}
         </div>
         <div className="md:hidden justify-center flex-grow ml-3">
           <div className={`${styles.burgermenu} ${isOpen ? styles.open : ""}`} onClick={toggleMenu}>
