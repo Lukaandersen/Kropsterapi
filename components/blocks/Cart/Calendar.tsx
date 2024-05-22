@@ -11,7 +11,7 @@ const Calendar = (props) => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [showCalendar, setShowCalendar] = useState(true);
 
-  const [availableSlots, setAvailableSlots] = useState ([]);
+  const [availableSlots, setAvailableSlots] = useState([]);
 
   const [calender, setCalendar] = useState([]);
   useEffect(() => {
@@ -38,10 +38,10 @@ const Calendar = (props) => {
     for (let i = 1; i <= totalDays; i++) {
       const date = new Date(year, month, i);
       let containerClass = "text-center rounded-md shadow-md w-7 md:w-10";
-      let dateClass = "dateClass rounded-md hover:bg-lightBlue clicked:bg-darkPurple";
+      let dateClass = "dateClass rounded-md hover:bg-lightBlue clicked:bg-darkPurple w-7 md:w-10";
 
       if (date.getDay() === 0 || date.getDay() === 6) {
-        dateClass = "bg-gray-500 rounded-md z-10";
+        dateClass = "bg-gray-500 rounded-md w-7 md:w-10 z-10";
       }
       //day, month
 
@@ -57,7 +57,9 @@ const Calendar = (props) => {
       }
       calendar.push(
         <div key={i} className={containerClass}>
-          <button className={dateClass} onClick={() => setDate (todaysEvents) }>{i}</button>
+          <button className={dateClass} onClick={() => setDate(todaysEvents)}>
+            {i}
+          </button>
         </div>
       );
     }
@@ -65,10 +67,10 @@ const Calendar = (props) => {
     return calendar;
   };
 
-  function setDate (timeSlots) {
-    setAvailableSlots(timeSlots)
-console.log(timeSlots)
-setShowTimeSlot(true);
+  function setDate(timeSlots) {
+    setAvailableSlots(timeSlots);
+    console.log(timeSlots);
+    setShowTimeSlot(true);
   }
 
   const handlePrevMonth = () => {

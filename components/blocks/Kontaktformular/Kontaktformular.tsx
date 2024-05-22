@@ -45,8 +45,8 @@ export default function Kontaktformular(props) {
 
   return (
     <div className="m-9">
-      <h2 className="text-center md:text-left text-[28px] md:text-[40px] pb-6 md:pl-2 font-playfair text-primaryPurple">Kontakt</h2>
-      <p className="pb-6 md:pl-2 text-primaryPurple">Fortæl lidt om dig selv og din situation - så tager jeg kontakt til dig</p>
+      <h2 className="text-center md:text-left text-h2M md:text-h2D pb-6 md:pl-2 font-playfair text-primaryPurple">Kontakt</h2>
+      <p className="pb-6 text-p md:pl-2 text-primaryPurple">Fortæl lidt om dig selv og din situation - så tager jeg kontakt til dig</p>
       <form id="contactForm" onSubmit={handleSendEmail} className="flex flex-col gap-4 bg-primaryLight rounded-lg p-5">
         <div className="flex flex-col">
           <label htmlFor="name" className="text-primaryPurple">

@@ -1,5 +1,5 @@
 import LightBeigeButton from "@/components/buttons/LightBeigeButton";
-import {useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { CartCardWrapper } from "./CartcardWrapper";
 import supabase from "@/app/config/supabaseClient";
@@ -7,16 +7,11 @@ import supabase from "@/app/config/supabaseClient";
 export default function Cart(props) {
   const [showCalendar, setShowCalendar] = useState(false);
 
- async function bookSlot (evt) {
-evt.preventDefault()
-const { data, error } = await supabase
-.from('Appointments')
-.update({ booked: 'otherValue' })
-.eq('id', '3')
-.select()
-console.log(data, error)
+  async function bookSlot(evt) {
+    evt.preventDefault();
+    const { data, error } = await supabase.from("Appointments").update({ booked: "otherValue" }).eq("id", "3").select();
+    console.log(data, error);
   }
- 
 
   return (
     <div className="mt-24 text-primaryPurple ml-5">
@@ -27,7 +22,7 @@ console.log(data, error)
       <div className="mt-8 block md:grid md:grid-cols-[2fr,1fr]">
         <CartCardWrapper />
         <div className="bg-primaryLight m-6 pb-6 text-primaryPurple max-h-[660px]">
-          <h1 className="text-center text-2xl py-4 px-4">Dine Betalingsoplysninger</h1>
+          <h3 className="text-center text-h3M md:text-h3D py-4 px-4">Dine Betalingsoplysninger</h3>
           <form className="flex flex-col gap-5" onSubmit={bookSlot}>
             <div className="mb-2 flex flex-col">
               <label className="pl-4" htmlFor="name">
@@ -73,6 +68,4 @@ const ArrowIcon = ({ scaleX = 1 }) => (
     <path strokeWidth="2" d="M11 19l-7-7 7-7" />
     <line x1="5" y1="12" x2="22" y2="12" strokeWidth="2" />
   </svg>
-  
 );
-
