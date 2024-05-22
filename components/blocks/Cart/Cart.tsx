@@ -2,14 +2,21 @@ import LightBeigeButton from "@/components/buttons/LightBeigeButton";
 import {useState } from "react";
 import Link from "next/link";
 import { CartCardWrapper } from "./CartcardWrapper";
+import supabase from "@/app/config/supabaseClient";
 
 export default function Cart(props) {
   const [showCalendar, setShowCalendar] = useState(false);
 
-  const toggleCalendar = () => {
-    setShowCalendar(!showCalendar);
-    console.log("toggled");
-  };
+ async function bookSlot (evt) {
+evt.preventDefault()
+const { data, error } = await supabase
+.from('Appointments')
+.update({ booked: 'otherValue' })
+.eq('id', '3')
+.select()
+console.log(data, error)
+  }
+ 
 
   return (
     <div className="mt-24 text-primaryPurple ml-5">
@@ -21,7 +28,7 @@ export default function Cart(props) {
         <CartCardWrapper />
         <div className="bg-primaryLight m-6 pb-6 text-primaryPurple max-h-[660px]">
           <h1 className="text-center text-2xl py-4 px-4">Dine Betalingsoplysninger</h1>
-          <form className="flex flex-col gap-5" action="">
+          <form className="flex flex-col gap-5" onSubmit={bookSlot}>
             <div className="mb-2 flex flex-col">
               <label className="pl-4" htmlFor="name">
                 Navn
@@ -46,6 +53,7 @@ export default function Cart(props) {
               </label>
               <textarea id="message" className="bg-gray-300 p-2 ml-4 w-full max-w-[calc(100%-2rem)]" />
             </div>
+            <button>knappelap</button>
           </form>
           <div className="flex flex-col items-center">
             <h2 className="text-xl pt-6 pb-3">Betalingsmetode</h2>
