@@ -19,6 +19,15 @@ const config: Config = {
         josefin: ["Josefin Sans", "sans-serif"],
         playfair: ["Playfair Display", "serif"],
       },
+      fontSize: {
+        h1D: "48px",
+        h2D: "40px",
+        h3D: "32px",
+        p: "16px",
+        h1M: "30px",
+        h2M: "28px",
+        h3M: "26px",
+      },
       dropShadow: {
         "3xl": "0 35px 35px rgba(7, 6, 0, 0.25)",
         "4xl": ["0 35px 35px rgba(0, 0, 0, 0.25)", "0 45px 65px rgba(0, 0, 0, 0.15)"],
