@@ -17,7 +17,7 @@ export default function Cart(props) {
     <div className="mt-24 text-primaryPurple ml-5">
       <Link href="/booking" className="flex gap-3">
         <ArrowIcon />
-        <p>Gå tilbage til booking</p>
+        <p className="text-p">Gå tilbage til booking</p>
       </Link>
       <div className="mt-8 block md:grid md:grid-cols-[2fr,1fr]">
         <CartCardWrapper />

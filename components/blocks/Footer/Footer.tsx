@@ -11,7 +11,7 @@ export default function Footer() {
 
       <div className={`${darkMode ? "text-lightBeige" : "text-darkBeige"} grid grid-cols-1 gap-5 md:grid-cols-3 text-center md:h-56 w-full justify-between`}>
         <div className="grid gap-1 justify-center">
-          <h3 className="">Find mig her:</h3>
+          <p className="">Find mig her:</p>
           <div className="grid grid-cols-2 justify-items-center gap-6 px-16 py-5">
             <img
               src={darkMode ? "FacebookDark.png" : "FacebookLight.png"}
@@ -30,7 +30,7 @@ export default function Footer() {
               onMouseOut={(e) => (e.currentTarget.src = darkMode ? "InstagramDark.png" : "InstagramLight.png")}
             />
           </div>
-          <h3>Marstalsgade 2100 Østerbro</h3>
+          <p>Marstalsgade 2100 Østerbro</p>
         </div>
         <div className={`${darkMode ? "border-lightBeige" : "border-darkBeige"} grid gap-3 md:border-l-2`}>
           <div className={`${darkMode ? "border-lightBeige" : "border-darkBeige"} flex items-center justify-center border-t-2 md:hidden mx-28`}></div>
