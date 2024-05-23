@@ -21,7 +21,7 @@ export default function Cart(props) {
       </Link>
       <div className="mt-8 block md:grid md:grid-cols-[2fr,1fr]">
         <CartCardWrapper />
-        <div className="bg-primaryLight m-6 pb-6 text-primaryPurple max-h-[720px]">
+        <div className="bg-primaryLight m-6 pb-6 text-primaryPurple max-h-[680px]">
           <h3 className="text-center text-h3M md:text-h3D py-4 px-4">Dine Betalingsoplysninger</h3>
           <form className="flex flex-col gap-5" onSubmit={bookSlot}>
             <div className="mb-2 flex flex-col">
