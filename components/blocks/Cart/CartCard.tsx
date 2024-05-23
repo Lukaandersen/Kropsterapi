@@ -15,6 +15,7 @@ export function CartCard(props) {
   const { darkMode } = useContext(DarkContext);
   const { inCart, setInCart } = useContext(ProductContext);
 
+
   const handleRemoveCard = () => {
     setInCart(inCart.filter((item) => item.id !== props.id));
   };
@@ -46,7 +47,7 @@ export function CartCard(props) {
       </div>
       {showCalendar && (
         <div className="bg-primaryLight m-6 absolute grid items-center z-50">
-          <Calendar />
+          <Calendar setChosenTime={props.setChosenTime}/>
         </div>
       )}
     </div>

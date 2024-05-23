@@ -1,7 +1,8 @@
 import LightBeigeButton from "@/components/buttons/LightBeigeButton";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import supabase from "@/app/config/supabaseClient";
 import { Button } from "@builder.io/react";
+import { ProductContext } from "@/app/ProductContext";
 
 import Timeslot from "./Timeslot";
 
@@ -12,11 +13,12 @@ const Calendar = (props) => {
   const [showCalendar, setShowCalendar] = useState(true);
 
   const [availableSlots, setAvailableSlots] = useState([]);
+  const { inCart, setInCart } = useContext(ProductContext);
 
   const [calender, setCalendar] = useState([]);
   useEffect(() => {
     async function get() {
-      let { data: Appointments, error } = await supabase.from("Appointments").select("*").filter("date", "gte", "2024-05-16").lte("date", "2025-05-31");
+      let { data: Appointments, error } = await supabase.from("Appointments").select("*").filter("date", "gte", "2024-05-16").lte("date", "2025-05-31").is("booked", null);
       console.log(Appointments);
       setCalendar(Appointments);
     }
@@ -57,7 +59,7 @@ const Calendar = (props) => {
       }
       calendar.push(
         <div key={i} className={containerClass}>
-          <button className={dateClass} onClick={() => setDate(todaysEvents)}>
+          <button className={dateClass} onClick={() => {setDate(todaysEvents); setInCart(oldCart)}}>
             {i}
           </button>
         </div>
@@ -124,7 +126,7 @@ const Calendar = (props) => {
       </div>
       {showTimeSlot && (
         <div className=" m-6 absolute">
-          <Timeslot availableSlots={availableSlots}></Timeslot>
+          <Timeslot availableSlots={availableSlots} setChosenTime={props.setChosenTime}></Timeslot>
         </div>
       )}
       <div className="absolute top-0 right-0 p-2" onClick={closeCalendar}>

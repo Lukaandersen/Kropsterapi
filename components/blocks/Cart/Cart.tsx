@@ -5,11 +5,24 @@ import { CartCardWrapper } from "./CartcardWrapper";
 import supabase from "@/app/config/supabaseClient";
 
 export default function Cart(props) {
+  const [chosenTime, setChosenTime] = useState({})
+  const [availableSlots, setAvailableSlots] = useState([]);
   const [showCalendar, setShowCalendar] = useState(false);
 
   async function bookSlot(evt) {
     evt.preventDefault();
-    const { data, error } = await supabase.from("Appointments").update({ booked: "otherValue" }).eq("id", "3").select();
+    const formData = new FormData(evt.target);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const phone = formData.get("phone");
+    const message = formData.get("message");
+    const bookedData = {
+      name,
+      email,
+      phone,
+      message
+    };
+    const { data, error } = await supabase.from("Appointments").update({ booked: bookedData }).eq("id", chosenTime.id).select();
     console.log(data, error);
   }
 
@@ -20,7 +33,7 @@ export default function Cart(props) {
         <p className="text-p">Gå tilbage til booking</p>
       </Link>
       <div className="mt-8 block md:grid md:grid-cols-[2fr,1fr]">
-        <CartCardWrapper />
+        <CartCardWrapper setChosenTime={setChosenTime} />
         <div className="bg-primaryLight m-6 pb-6 text-primaryPurple max-h-[680px]">
           <h3 className="text-center text-h3M md:text-h3D py-4 px-4">Dine Betalingsoplysninger</h3>
           <form className="flex flex-col gap-5" onSubmit={bookSlot}>
