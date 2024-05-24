@@ -40,7 +40,7 @@ const Calendar = (props) => {
     for (let i = 1; i <= totalDays; i++) {
       const date = new Date(year, month, i);
       let containerClass = "text-center rounded-md shadow-md w-7 md:w-10";
-      let dateClass = "dateClass rounded-md hover:bg-lightBlue clicked:bg-darkPurple w-7 md:w-10";
+      let dateClass = "dateClass rounded-md hover:bg-lightBlue w-7 md:w-10";
 
       if (date.getDay() === 0 || date.getDay() === 6) {
         dateClass = "bg-gray-500 rounded-md w-7 md:w-10 z-10";
@@ -126,7 +126,7 @@ const Calendar = (props) => {
       </div>
       {showTimeSlot && (
         <div className=" m-6 absolute">
-          <Timeslot availableSlots={availableSlots} setChosenTime={props.setChosenTime}></Timeslot>
+          <Timeslot availableSlots={availableSlots} setChosenTime={props.setChosenTime} closeCalendar={closeCalendar}></Timeslot>
         </div>
       )}
       <div className="absolute top-0 right-0 p-2" onClick={closeCalendar}>

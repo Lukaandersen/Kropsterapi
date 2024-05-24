@@ -24,6 +24,7 @@ export default function Cart(props) {
     };
     const { data, error } = await supabase.from("Appointments").update({ booked: bookedData }).eq("id", chosenTime.id).select();
     console.log(data, error);
+    window.location.href = "/tak-for-din-ordre";
   }
 
   return (
@@ -61,7 +62,9 @@ export default function Cart(props) {
               </label>
               <textarea id="message" className="bg-gray-300 p-2 ml-4 w-full max-w-[calc(100%-2rem)]" />
             </div>
-            <button className="text-primaryPurple bg-primaryLight josefin font-bold text-md md:text-xl text-center py-3 px-1 mx-16 rounded-xl shadow-md custom-shadow my-2">{props.button2Text}</button>
+            <button className="text-primaryPurple bg-primaryLight josefin font-bold text-md md:text-xl text-center py-3 px-1 mx-16 rounded-xl shadow-md custom-shadow my-2" type="submit" >
+    {props.button2Text}
+  </button> 
             <style jsx>{`
               .custom-shadow {
                 box-shadow: -2px -2px 3px rgba(245, 245, 245, 1), 2px 2px 1px rgba(164, 151, 133, 1);
