@@ -31,6 +31,9 @@ export default function Admin() {
       .insert([{ date: values.get("date"), time: values.get("time") }])
       .select();
     console.log(data);
+
+    setSelectedDate("");
+    setSelectedTime("");
   }
   return (
     <div className="bg-darkBeige">
@@ -48,7 +51,7 @@ export default function Admin() {
             </label>
           </div>
           <button type="submit" className="bg-darkBeige text-primaryLight font-semibold py-2 px-4 rounded-md mt-4 hover:bg-primaryPurple transition duration-300">
-            Indsend
+            Indsend nu
           </button>
         </form>
       </div>

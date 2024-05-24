@@ -34,7 +34,7 @@ export default function MinFormular() {
             <input name="time" type="time" value={selectedTime} onChange={handleTimeChange} className="border border-gray-300 rounded-md p-2 ml-2 w-[200px]" />
           </label>
           <button type="submit" className="bg-darkBeige text-white font-semibold py-2 px-4 rounded-md mt-4 hover:bg-primaryPurple transition duration-300">
-            Indsend
+            Indsend nu
           </button>
         </form>
       </div>
