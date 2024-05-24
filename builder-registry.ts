@@ -6,7 +6,7 @@ import Navigation from "./components/blocks/Navigation/Navigation";
 import TextCard from "./components/cards/TextCard/TextCard";
 import DoubleTextBlock from "./components/blocks/DoubleTextBlock/DoubleTextBlock";
 import BookingCard from "./components/cards/BookingCard/BookingCard";
-import BrownButton from "./components/buttons/BrownButton";
+import BrownButton from "./components/buttons/brownButton";
 import CTABanner from "./components/blocks/CTA-Banner/CTABanner";
 import TextBanner from "./components/blocks/TextBanner/TextBanner";
 import Ordrerbekræftelse from "./components/blocks/Ordrerbekræftelse/Ordrerbekræftelse";
@@ -28,8 +28,8 @@ import Timeslot from "./components/blocks/Cart/Timeslot";
 import BookingCardSection from "./components/blocks/BookingCardSection";
 import ImageBanner from "./components/blocks/ImageBanner/ImageBanner";
 import { CartCard } from "./components/blocks/Cart/CartCard";
-import LightBeigeButton from "./components/buttons/LightBeigeButton";
-import BeigeButton from "./components/buttons/BeigeButton";
+import LightBeigeButton from "./components/buttons/lightBeigeButton";
+import BeigeButton from "./components/buttons/beigeButton";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
