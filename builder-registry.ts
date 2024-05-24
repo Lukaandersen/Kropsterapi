@@ -1,6 +1,5 @@
 "use client";
 import { builder, Builder } from "@builder.io/react";
-import Counter from "./components/blocks/Counter/Counter";
 import Footer from "./components/blocks/Footer/Footer";
 import Testamonial from "./components/blocks/Testamonials/Testamonial";
 import Navigation from "./components/blocks/Navigation/Navigation";
@@ -11,11 +10,9 @@ import BrownButton from "./components/buttons/BrownButton";
 import CTABanner from "./components/blocks/CTA-Banner/CTABanner";
 import TextBanner from "./components/blocks/TextBanner/TextBanner";
 import Ordrerbekræftelse from "./components/blocks/Ordrerbekræftelse/Ordrerbekræftelse";
-import LightBeigeButton from "./components/buttons/LightBeigeButton";
 import PurpleButton from "./components/buttons/purpleButton";
 import Timeline from "./components/blocks/Timeline/Timeline";
 import Gallery from "./components/blocks/Galleri/Gallery";
-import BeigeButton from "./components/buttons/beigeButton";
 import Accordion from "./components/blocks/Accordion/Accordion";
 import TextImage from "./components/blocks/TextImage/TextImage";
 import HeroVideo from "./components/blocks/HeroVideo/HeroVideo";
@@ -24,7 +21,6 @@ import HeroImage from "./components/blocks/HeroImage/HeroImage";
 import TextImage2 from "./components/blocks/TextImage2/TextImage2";
 import Kontaktformular from "./components/blocks/Kontaktformular/Kontaktformular";
 import QAformular from "./components/blocks/QAFormular/QAFormular";
-import MinFormular from "./components/blocks/MinFormular/Minformular";
 import Admin from "./components/blocks/Admin/Admin";
 import Cart from "./components/blocks/Cart/Cart";
 import Calender from "./components/blocks/Cart/Calendar";
@@ -32,44 +28,10 @@ import Timeslot from "./components/blocks/Cart/Timeslot";
 import BookingCardSection from "./components/blocks/BookingCardSection";
 import ImageBanner from "./components/blocks/ImageBanner/ImageBanner";
 import { CartCard } from "./components/blocks/Cart/CartCard";
+import LightBeigeButton from "./components/buttons/LightBeigeButton";
+import BeigeButton from "./components/buttons/BeigeButton";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
-
-Builder.registerComponent(Counter, {
-  name: "Counter",
-  inputs: [
-    {
-      name: "initialCount",
-      type: "number",
-    },
-    {
-      name: "reviews",
-      type: "list",
-      defaultValue: [{ reviewText: "hello" }],
-      showIf: (options) => {
-        return options.get("initialCount") > 50;
-      },
-      subFields: [
-        {
-          name: "reviewText",
-          type: "string",
-          defaultValue: '"You are the best"',
-        },
-        {
-          name: "reviewAuthor",
-          type: "string",
-          defaultValue: "Jane Smith",
-        },
-        {
-          name: "image",
-          type: "file",
-          allowedFileTypes: ["jpeg", "jpg", "png", "svg"],
-          required: true,
-        },
-      ],
-    },
-  ],
-});
 
 Builder.registerComponent(Footer, {
   name: "Footer",
@@ -417,9 +379,7 @@ Builder.registerComponent(Kontaktformular, {
 Builder.registerComponent(QAformular, {
   name: "QAFormular",
 });
-Builder.registerComponent(MinFormular, {
-  name: "MinFormular",
-});
+
 
 Builder.registerComponent(Admin, {
   name: "Admin",

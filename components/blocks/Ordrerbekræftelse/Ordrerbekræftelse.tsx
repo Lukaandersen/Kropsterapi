@@ -1,18 +1,57 @@
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { supabase } from "@/app/config/supabaseClient";
 
 export default function Ordrerbekræftelse() {
+  const [bookingInfo, setBookingInfo] = useState(null);
+
+  useEffect(() => {
+    async function fetchBookingInfo() {
+      try {
+        // Hent de seneste bookingoplysninger fra Supabase
+        const { data: bookings, error } = await supabase
+          .from("Appointments")
+          .select("booked")
+          .order("id", { ascending: false })
+          .limit(1);
+
+        if (error) {
+          throw error;
+        }
+
+        if (bookings.length === 0) {
+          throw new Error("No bookings found.");
+        }
+
+        // Pars JSON-strengen fra den seneste booking
+        const bookedData = JSON.parse(bookings[0].booked);
+        setBookingInfo(bookedData); // Opdater state med bookingoplysningerne
+      } catch (error) {
+        console.error("Error fetching booking information:", error.message);
+      }
+    }
+
+    fetchBookingInfo();
+  }, []);
+
   return (
     <div className="mt-32">
-      <Link href="/forside" className="flex gap-3 justify-center mb-5 text-primaryPurple">
+      <Link href="/" className="flex gap-3 justify-center mb-5 text-primaryPurple">
         <ArrowIcon />
         <p className="text-p">Gå tilbage til forsiden</p>
       </Link>
       <div className="bg-mediumBeige mx-10 mb-12  flex flex-col items-center text-base justify-center gap-4 p-5 md:p-10 md:mx-56 text-primaryPurple">
         <h2 className="text-h2M md:text-h2D">Ordrebekræftelse</h2>
-        <p className="text-center text-p">Din booking er nu bekræftet og vi har sendt dig en email på: email@gmail.com</p>
-        <p className="text-center text-p">Din booking reference er: XXX-XXX-XXXX</p>
-        <p className="text-center text-p">Din valgte tid er reserveret og jeg vil sende dig en endellig mail med bekræftelse på at din tid er booket og aftalen er i hus.</p>
-        <p className="text-center text-p">Jeg glæder mig til at møde dig og bidrage til dit velbefindende.</p>
+        {bookingInfo ? (
+          <>
+            <p className="text-center text-p">Din booking er nu bekræftet og vi har sendt dig en email på: {bookingInfo.email}</p>
+            <p className="text-center text-p">Din booking reference er: {bookingInfo.name}</p>
+            <p className="text-center text-p">Din valgte tid er reserveret og jeg vil sende dig en endelig mail med bekræftelse på at din tid er booket og aftalen er i hus.</p>
+            <p className="text-center text-p">Jeg glæder mig til at møde dig og bidrage til dit velbefindende.</p>
+          </>
+        ) : (
+          <p className="text-center text-p">Loading...</p>
+        )}
       </div>
     </div>
   );

@@ -1,13 +1,16 @@
 import LightBeigeButton from "@/components/buttons/LightBeigeButton";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Link from "next/link";
 import { CartCardWrapper } from "./CartcardWrapper";
 import supabase from "@/app/config/supabaseClient";
+import { ProductContext } from "@/app/ProductContext";
 
 export default function Cart(props) {
   const [chosenTime, setChosenTime] = useState({})
   const [availableSlots, setAvailableSlots] = useState([]);
   const [showCalendar, setShowCalendar] = useState(false);
+
+  const { clearCart } = useContext(ProductContext);
 
   async function bookSlot(evt) {
     evt.preventDefault();
@@ -24,6 +27,7 @@ export default function Cart(props) {
     };
     const { data, error } = await supabase.from("Appointments").update({ booked: bookedData }).eq("id", chosenTime.id).select();
     console.log(data, error);
+    clearCart();
     window.location.href = "/tak-for-din-ordre";
   }
 
