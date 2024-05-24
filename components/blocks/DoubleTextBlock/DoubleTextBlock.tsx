@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { DarkContext } from "@/app/DarkContext";
+import PurpleButton from "@/components/buttons/PurpleButton";
 import BrownButton from "@/components/buttons/BrownButton";
-import PurpleButton from "@/components/buttons/purpleButton";
 
 export default function DoubleTextBlock(props) {
   const { darkMode } = useContext(DarkContext);
