@@ -29,8 +29,19 @@ import { CartCard } from "./components/blocks/Cart/CartCard";
 import LightBeigeButton from "./components/buttons/LightBeigeButton";
 import PurpleButton from "./components/buttons/PurpleButton";
 import BeigeButton from "./components/buttons/BeigeButton";
+import BrownButton from "./components/buttons/BrownButton";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
+
+Builder.registerComponent(BrownButton, {
+  name: "BrownButton",
+  inputs: [
+    {
+      name: "text",
+      type: "string",
+    },
+  ],
+});
 
 Builder.registerComponent(LightBeigeButton, {
   name: "LigthBeigeButton",
