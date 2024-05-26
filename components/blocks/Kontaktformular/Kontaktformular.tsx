@@ -9,10 +9,10 @@ export default function Kontaktformular(props) {
     console.log("handleSendEmail function called");
 
     // Hent værdierne fra inputfelterne
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
-    const message = document.getElementById("message").value;
+    const name = document.querySelector<HTMLInputElement>("#name")?.value;
+    const phone = document.querySelector<HTMLInputElement>("#phone")?.value;
+    const email = document.querySelector<HTMLInputElement>("#email")?.value;
+    const message = document.querySelector<HTMLInputElement>("#message")?.value;
 
     // Udfør Fetch-anmodningen til FormSubmit API
     try {
@@ -32,7 +32,7 @@ export default function Kontaktformular(props) {
 
       if (response.ok) {
         // Nulstil formularen og vis succesbesked
-        document.getElementById("contactForm").reset();
+        document.querySelector<HTMLFormElement>("#contactform")?.reset();
         setSubmitSuccess(true);
         console.log("Formularen blev indsendt med succes!");
       } else {

@@ -1,8 +1,12 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, ReactNode } from 'react'; 
 
-export const DarkContext = createContext({});
 
-export const DarkModeProvider = ({children}) =>{
+type Props = {
+    children: ReactNode;
+};
+
+export const DarkContext = createContext<Record<string, any>>({});
+export const DarkModeProvider = ({children}: Props) =>{
     const [darkMode, setDarkMode ] = useState(false)
     function toggleDarkMode(){
         setDarkMode(old=>!old)

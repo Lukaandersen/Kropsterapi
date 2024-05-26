@@ -15,26 +15,28 @@ const Calendar = (props) => {
   const [availableSlots, setAvailableSlots] = useState([]);
   const { inCart, setInCart } = useContext(ProductContext);
 
-  const [calender, setCalendar] = useState([]);
+  const [calender, setCalendar] = useState<any[]>([]);  
   useEffect(() => {
     async function get() {
       let { data: Appointments, error } = await supabase.from("Appointments").select("*").filter("date", "gte", "2024-05-16").lte("date", "2025-05-31").is("booked", null);
       console.log(Appointments);
+    if (Appointments) {
       setCalendar(Appointments);
-    }
+  }
+}
     get();
-  }, []);
+},[]);
+
 
   const renderCalendar = (month, year, timeslots) => {
     const totalDays = new Date(year, month + 1, 0).getDate();
 
     const firstDayOfMonth = new Date(year, month, 1).getDay();
     const offset = firstDayOfMonth === 0 ? 6 : firstDayOfMonth - 1;
-
-    const calendar = [];
+    const calendarArray: any[] = [];
 
     for (let i = 0; i < offset; i++) {
-      calendar.push(<div key={`empty-${i}`} className="text-center py-1" />);
+      calendarArray.push(<div key={`empty-${i}`} className="text-center py-1" />);
     }
 
     for (let i = 1; i <= totalDays; i++) {
@@ -57,16 +59,16 @@ const Calendar = (props) => {
         console.log("fandt ikke noget på" + i, month, year, `${year}-${String(month + 1).padStart(2, "0")}-${String(i).padStart(2, "0")}`);
         //der er IKKE events
       }
-      calendar.push(
+      calendarArray.push(
         <div key={i} className={containerClass}>
-          <button className={dateClass} onClick={() => {setDate(todaysEvents); setInCart(oldCart)}}>
+          <button className={dateClass} onClick={() => {setDate(todaysEvents); }}>
             {i}
           </button>
         </div>
       );
     }
 
-    return calendar;
+    return calendarArray;
   };
 
   function setDate(timeSlots) {
@@ -122,7 +124,7 @@ const Calendar = (props) => {
         {renderCalendar(currentDate.getMonth(), currentDate.getFullYear(), calender)}
       </div>
       <div onClick={toggleTimeSlot} className="grid justify-center">
-        <button>Klik</button>
+        <button></button>
       </div>
       {showTimeSlot && (
         <div className=" m-6 absolute">

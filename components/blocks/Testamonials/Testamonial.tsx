@@ -16,7 +16,7 @@ const ArrowIcon: React.FC<{ scaleX?: number }> = ({ scaleX = 1 }) => (
 );
 
 export default function Testamonial(props) {
-  const [monials, setMonials] = useState([]);
+  const [monials, setMonials] = useState<any>([]);
   useEffect(() => {
     async function get() {
       let { data: testamonials, error } = await supabase.from("Testamonials").select("*");
@@ -43,8 +43,8 @@ export default function Testamonial(props) {
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
       >
-        {monials.map((test) => (
-          <SwiperSlide className="swiper-slide">
+        {monials.map((test, i) => (
+          <SwiperSlide key={i} className="swiper-slide">
             <div className="flex flex-col items-center gap-6 ">
               <p className="text-p">{test.name}</p>
               <h3 className="text-h3M md:text-h3D font-playfair italic text-center">{test.title}</h3>

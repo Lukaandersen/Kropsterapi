@@ -6,8 +6,7 @@ import supabase from "@/app/config/supabaseClient";
 import { ProductContext } from "@/app/ProductContext";
 
 export default function Cart(props) {
-  const [chosenTime, setChosenTime] = useState({})
-  const [availableSlots, setAvailableSlots] = useState([]);
+  const [chosenTime, setChosenTime] = useState<Record<string, any>>({});  const [availableSlots, setAvailableSlots] = useState([]);
   const [showCalendar, setShowCalendar] = useState(false);
 
   const { clearCart } = useContext(ProductContext);

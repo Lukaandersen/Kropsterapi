@@ -1,8 +1,11 @@
 "use client"
 import { createContext, useState, useEffect } from 'react';
 
-export const ProductContext = createContext({ inCart: [], setInCart: () => {} });
-
+export const ProductContext = createContext <Record<string, any>>({
+    inCart: [],
+    setInCart: (newCart) => {},
+    clearCart: () => {},
+});
 export const InCartProvider = ({ children }) => {
     const [inCart, setInCartState] = useState(() => {
         // Initialiser inCart ved at hente det fra localStorage

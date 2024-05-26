@@ -4,7 +4,7 @@ import { DarkContext } from "@/app/DarkContext";
 import LightBeigeButton from "@/components/buttons/LightBeigeButton";
 import BrownButton from "@/components/buttons/BrownButton";
 
-export default function (props) {
+export default function TextImage(props) {
   const { darkMode } = useContext(DarkContext);
 
   return (

@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { supabase } from "@/app/config/supabaseClient";
+import supabase from "@/app/config/supabaseClient";
 
 export default function Ordrerbekræftelse() {
-  const [bookingInfo, setBookingInfo] = useState(null);
-
+  const [bookingInfo, setBookingInfo] = useState<any>(null);
   useEffect(() => {
     async function fetchBookingInfo() {
       try {
@@ -27,7 +26,7 @@ export default function Ordrerbekræftelse() {
         const bookedData = JSON.parse(bookings[0].booked);
         setBookingInfo(bookedData); // Opdater state med bookingoplysningerne
       } catch (error) {
-        console.error("Error fetching booking information:", error.message);
+        console.error("Error fetching booking information:", error);
       }
     }
 
