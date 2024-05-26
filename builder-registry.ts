@@ -26,7 +26,6 @@ import Timeslot from "./components/blocks/Cart/Timeslot";
 import BookingCardSection from "./components/blocks/BookingCardSection";
 import ImageBanner from "./components/blocks/ImageBanner/ImageBanner";
 import { CartCard } from "./components/blocks/Cart/CartCard";
-import BrownButton from "./components/buttons/BrownButton";
 import LightBeigeButton from "./components/buttons/LightBeigeButton";
 import PurpleButton from "./components/buttons/PurpleButton";
 import BeigeButton from "./components/buttons/BeigeButton";
@@ -53,15 +52,7 @@ Builder.registerComponent(BeigeButton, {
     },
   ],
 });
-Builder.registerComponent(BrownButton, {
-  name: "BrownButton",
-  inputs: [
-    {
-      name: "text",
-      type: "string",
-    },
-  ],
-});
+
 Builder.registerComponent(PurpleButton, {
   name: "PurpleButton",
   inputs: [
