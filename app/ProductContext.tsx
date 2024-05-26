@@ -7,12 +7,8 @@ export const ProductContext = createContext <Record<string, any>>({
     clearCart: () => {},
 });
 export const InCartProvider = ({ children }) => {
-    const [inCart, setInCartState] = useState(() => {
-        // Initialiser inCart ved at hente det fra localStorage
-        const itemsInStorage = localStorage.getItem('inCart');
-        return itemsInStorage ? JSON.parse(itemsInStorage) : [];
-    });
-
+    const [inCart, setInCartState] = useState([]);
+       
     const setInCart = (newCart) => {
         // Opdater inCart og localStorage
         setInCartState(newCart);
@@ -24,6 +20,13 @@ export const InCartProvider = ({ children }) => {
         setInCart([]);
         localStorage.removeItem('inCart');
     };
+
+useEffect(() => {
+        const itemsInStorage = localStorage?.getItem('inCart');
+        if (itemsInStorage) {
+            setInCartState(JSON.parse(itemsInStorage));
+        }
+    }, []);
 
     return (
         <ProductContext.Provider value={{ inCart: inCart, setInCart: setInCart, clearCart: clearCart }}>
