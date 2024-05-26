@@ -1,4 +1,3 @@
-import LightBeigeButton from "@/components/buttons/LightBeigeButton";
 import { useState } from "react";
 
 export default function Kontaktformular(props) {
