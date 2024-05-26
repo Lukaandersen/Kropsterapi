@@ -6,11 +6,9 @@ import Navigation from "./components/blocks/Navigation/Navigation";
 import TextCard from "./components/cards/TextCard/TextCard";
 import DoubleTextBlock from "./components/blocks/DoubleTextBlock/DoubleTextBlock";
 import BookingCard from "./components/cards/BookingCard/BookingCard";
-import BrownButton from "./components/buttons/BrownButton";
 import CTABanner from "./components/blocks/CTA-Banner/CTABanner";
 import TextBanner from "./components/blocks/TextBanner/TextBanner";
 import Ordrerbekræftelse from "./components/blocks/Ordrerbekræftelse/Ordrerbekræftelse";
-import PurpleButton from "./components/buttons/PurpleButton";
 import Timeline from "./components/blocks/Timeline/Timeline";
 import Gallery from "./components/blocks/Galleri/Gallery";
 import Accordion from "./components/blocks/Accordion/Accordion";
@@ -28,10 +26,52 @@ import Timeslot from "./components/blocks/Cart/Timeslot";
 import BookingCardSection from "./components/blocks/BookingCardSection";
 import ImageBanner from "./components/blocks/ImageBanner/ImageBanner";
 import { CartCard } from "./components/blocks/Cart/CartCard";
+import BrownButton from "./components/buttons/BrownButton";
 import LightBeigeButton from "./components/buttons/LightBeigeButton";
+import PurpleButton from "./components/buttons/PurpleButton";
 import BeigeButton from "./components/buttons/BeigeButton";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
+
+Builder.registerComponent(LightBeigeButton, {
+  name: "LigthBeigeButton",
+  inputs: [
+    {
+      name: "text",
+      type: "string",
+    },
+  ],
+});
+
+// Buttons:
+Builder.registerComponent(BeigeButton, {
+  name: "beigeButton",
+  inputs: [
+    {
+      name: "text",
+      type: "string",
+    },
+  ],
+});
+Builder.registerComponent(BrownButton, {
+  name: "BrownButton",
+  inputs: [
+    {
+      name: "text",
+      type: "string",
+    },
+  ],
+});
+Builder.registerComponent(PurpleButton, {
+  name: "PurpleButton",
+  inputs: [
+    {
+      name: "text",
+      type: "string",
+    },
+  ],
+});
+
 
 Builder.registerComponent(Footer, {
   name: "Footer",
@@ -72,44 +112,6 @@ Builder.registerComponent(Navigation, {
     {
       name: "logo",
       type: "image",
-    },
-  ],
-});
-Builder.registerComponent(LightBeigeButton, {
-  name: "LigthBeigeButton",
-  inputs: [
-    {
-      name: "text",
-      type: "string",
-    },
-  ],
-});
-
-// Buttons:
-Builder.registerComponent(BeigeButton, {
-  name: "beigeButton",
-  inputs: [
-    {
-      name: "text",
-      type: "string",
-    },
-  ],
-});
-Builder.registerComponent(BrownButton, {
-  name: "BrownButton",
-  inputs: [
-    {
-      name: "text",
-      type: "string",
-    },
-  ],
-});
-Builder.registerComponent(PurpleButton, {
-  name: "PurpleButton",
-  inputs: [
-    {
-      name: "text",
-      type: "string",
     },
   ],
 });
@@ -380,7 +382,6 @@ Builder.registerComponent(QAformular, {
   name: "QAFormular",
 });
 
-
 Builder.registerComponent(Admin, {
   name: "Admin",
 });
@@ -402,7 +403,6 @@ Builder.registerComponent(Cart, {
     },
   ],
 });
-
 
 Builder.registerComponent(CartCard, {
   name: "CartCard",
