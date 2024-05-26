@@ -1,4 +1,3 @@
-import LightBeigeButton from "@/components/buttons/LightBeigeButton";
 import { useState, useEffect, useContext } from "react";
 import supabase from "@/app/config/supabaseClient";
 import { Button } from "@builder.io/react";

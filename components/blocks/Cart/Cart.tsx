@@ -1,4 +1,3 @@
-import LightBeigeButton from "@/components/buttons/LightBeigeButton";
 import { useState, useContext } from "react";
 import Link from "next/link";
 import { CartCardWrapper } from "./CartcardWrapper";

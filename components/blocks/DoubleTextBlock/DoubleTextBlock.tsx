@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { DarkContext } from "@/app/DarkContext";
-import PurpleButton from "@/components/buttons/PurpleButton";
-import BrownButton from "@/components/buttons/BrownButton";
+import ButtonPurple from "@/components/buttons/ButtonPurple";
+import ButtonBrown from "@/components/buttons/ButtonBrown";
 
 export default function DoubleTextBlock(props) {
   const { darkMode } = useContext(DarkContext);
@@ -22,7 +22,7 @@ export default function DoubleTextBlock(props) {
           Kropsterapi er en sammensat behandlingsform hvor vi taler om hvad der rør sig hos dig når vi starter og hvor du undervejs har mulighed for at sætte ord på det, du mærker i din krop og på de tanker og følelser, der må opstå mens vi
           behandler. Jeg kan løbende stille spørgsmål som kan åbne op for nye veje i dine tankerækker.
         </p>
-        <a href={props.link}>{darkMode ? <PurpleButton text={props.buttonText} /> : <BrownButton text={props.buttonText} />}</a>
+        <a href={props.link}>{darkMode ? <ButtonPurple text={props.buttonText} /> : <ButtonBrown text={props.buttonText} />}</a>
       </div>
     </div>
   );

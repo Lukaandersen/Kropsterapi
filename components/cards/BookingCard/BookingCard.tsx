@@ -1,9 +1,9 @@
-import BrownButton from "@/components/buttons/BrownButton";
 import React from "react";
 import { useContext } from "react";
 import { DarkContext } from "@/app/DarkContext";
-import BeigeButton from "@/components/buttons/BeigeButton";
 import { ProductContext } from "@/app/ProductContext";
+import ButtonBeige from "@/components/buttons/ButtonBeige";
+import ButtonBrown from "@/components/buttons/ButtonBrown";
 
 function BookingCard(props) {
   const product = {
@@ -30,7 +30,7 @@ function BookingCard(props) {
             setInCart(inCart.concat(product));
           }}
         >
-          {darkMode ? <BeigeButton text={props.buttonText} /> : <BrownButton text={props.buttonText} />}
+          {darkMode ? <ButtonBeige text={props.buttonText} /> : <ButtonBrown text={props.buttonText} />}
         </button>
         {props.children}
       </div>

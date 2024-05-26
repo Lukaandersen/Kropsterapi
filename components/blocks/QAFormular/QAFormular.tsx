@@ -1,4 +1,4 @@
-import BrownButton from "@/components/buttons/BrownButton";
+import ButtonBrown from "@/components/buttons/ButtonBrown";
 
 export default function QAFormular(props) {
   return (
@@ -10,7 +10,7 @@ export default function QAFormular(props) {
       <form>
         <textarea className=" w-[300px] h-[130px] md:w-[700px] md:h-[150px] text-primaryPurple" id="userInput" placeholder="Skriv din tekst her.." />
       </form>
-      <BrownButton></BrownButton>
+      <ButtonBrown></ButtonBrown>
     </div>
   );
 }

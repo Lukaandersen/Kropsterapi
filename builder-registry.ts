@@ -26,15 +26,16 @@ import Timeslot from "./components/blocks/Cart/Timeslot";
 import BookingCardSection from "./components/blocks/BookingCardSection";
 import ImageBanner from "./components/blocks/ImageBanner/ImageBanner";
 import { CartCard } from "./components/blocks/Cart/CartCard";
-import LightBeigeButton from "@/components/buttons/LightBeigeButton";
-import PurpleButton from "@/components/buttons/PurpleButton";
-import BeigeButton from "@/components/buttons/BeigeButton";
-import BrownButton from "@/components/buttons/BrownButton";
+import ButtonBrown from "./components/buttons/ButtonBrown";
+import ButtonBeige from "./components/buttons/ButtonBeige";
+import ButtonLightBeige from "./components/buttons/ButtonLightBeige";
+import ButtonPurple from "./components/buttons/ButtonPurple";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
-Builder.registerComponent(BrownButton, {
-  name: "BrownButton",
+
+Builder.registerComponent(ButtonBrown, {
+  name: "ButtonBrown",
   inputs: [
     {
       name: "text",
@@ -43,8 +44,9 @@ Builder.registerComponent(BrownButton, {
   ],
 });
 
-Builder.registerComponent(LightBeigeButton, {
-  name: "LigthBeigeButton",
+
+Builder.registerComponent(ButtonLightBeige, {
+  name: "ButtonLightBeige",
   inputs: [
     {
       name: "text",
@@ -53,9 +55,8 @@ Builder.registerComponent(LightBeigeButton, {
   ],
 });
 
-// Buttons:
-Builder.registerComponent(BeigeButton, {
-  name: "beigeButton",
+Builder.registerComponent(ButtonBeige, {
+  name: "ButtonBeige",
   inputs: [
     {
       name: "text",
@@ -64,8 +65,9 @@ Builder.registerComponent(BeigeButton, {
   ],
 });
 
-Builder.registerComponent(PurpleButton, {
-  name: "PurpleButton",
+
+Builder.registerComponent(ButtonPurple, {
+  name: "ButtonPurple",
   inputs: [
     {
       name: "text",

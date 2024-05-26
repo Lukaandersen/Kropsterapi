@@ -1,4 +1,4 @@
-import LightBeigeButton from "@/components/buttons/LightBeigeButton"
+import ButtonLightBeige from "@/components/buttons/ButtonLightBeige"
 
 export default function TextImage2 (props) {
     return (
@@ -13,7 +13,7 @@ export default function TextImage2 (props) {
 <p className="font-josefin max-w-96">Kropetrapi er ideologien om at krop og sind hænger sammen. Som kendt fra fx zoneterapi, så er der flere områder og punkter i vores kroppe som hænger sammen med vores mentale velvære. 
 Grunden til at vælge kropsterapi, er for at komme hele vejen rundt, og komme problemerne til livs.
 </p></div>
-<LightBeigeButton />
+<ButtonLightBeige />
         </div>
         <div className="h-2/4">
         <img src="Clinic-pictures/_DSF1754.jpg" alt="" className="cover "/>

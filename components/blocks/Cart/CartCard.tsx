@@ -2,8 +2,8 @@ import { useState, useContext } from "react";
 import Calendar from "./Calendar";
 import { InCartProvider, ProductContext } from "@/app/ProductContext";
 import { DarkContext } from "@/app/DarkContext";
-import BeigeButton from "@/components/buttons/BeigeButton";
-import BrownButton from "@/components/buttons/BrownButton";
+import ButtonBeige from "@/components/buttons/ButtonBeige";
+import ButtonBrown from "@/components/buttons/ButtonBrown";
 
 export function CartCard(props) {
   const [showCalendar, setShowCalendar] = useState(false);
@@ -42,7 +42,7 @@ export function CartCard(props) {
       <div className="flex  justify-center md:col-span-1  md:items-center pb-5">
         <div className="">
           <h3 className={`${darkMode ? "text-primaryPurple" : "text-primaryLight md:text-primaryPurple"} text-h3M md:text-h3D font-bold text-center`}>{props.price}</h3>
-          <div onClick={toggleCalendar}>{darkMode ? <BeigeButton text={"Vælg tid"} /> : <BrownButton text={"Vælg tid"} />}</div>
+          <div onClick={toggleCalendar}>{darkMode ? <ButtonBeige text={"Vælg tid"} /> : <ButtonBrown text={"Vælg tid"} />}</div>
         </div>
       </div>
       {showCalendar && (

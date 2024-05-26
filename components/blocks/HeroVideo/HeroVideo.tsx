@@ -1,4 +1,4 @@
-import LightBeigeButton from "@/components/buttons/LightBeigeButton";
+import ButtonLightBeige from "@/components/buttons/ButtonLightBeige";
 
 export default function HeroVideo(props) {
   return (
@@ -6,7 +6,7 @@ export default function HeroVideo(props) {
       <div className="absolute top-44 md:top-1/2 text-center md:left-20 md:text-left md:transform-none left-1/2 md:translate-x-0 transform -translate-x-1/2 -translate-y-1/2">
         <h1 className="text-lightBeige md:text-primaryPurple font-playfair text-lg md:text-5xl">{props.title}</h1>
         <a href={props.link}>
-          <LightBeigeButton text={props.buttonText} className="mt-4 md:mt-6 "></LightBeigeButton>
+          <ButtonLightBeige text={props.buttonText} className="mt-4 md:mt-6 "></ButtonLightBeige>
         </a>
       </div>
       <video className="w-full" autoPlay loop muted>

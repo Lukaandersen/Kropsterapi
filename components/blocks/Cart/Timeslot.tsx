@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import BrownButton from "@/components/buttons/BrownButton";
-import PurpleButton from "@/components/buttons/PurpleButton";
 
 const Timeslot = ({ availableSlots, setChosenTime, closeCalendar }) => {
   const [selectedSlot, setSelectedSlot] = useState(null);

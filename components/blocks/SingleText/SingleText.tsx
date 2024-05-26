@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { DarkContext } from "@/app/DarkContext";
-import BrownButton from "@/components/buttons/BrownButton";
-import LightBeigeButton from "@/components/buttons/LightBeigeButton";
+import ButtonLightBeige from "@/components/buttons/ButtonLightBeige";
+import ButtonBrown from "@/components/buttons/ButtonBrown";
 
 export default function SingleText(props) {
   const { darkMode } = useContext(DarkContext);
@@ -22,7 +22,7 @@ export default function SingleText(props) {
         <p className="text-p">{props.paragraph5} </p>
       </div>
       <div className="mt-4">
-        <a href={props.link}>{darkMode ? <BrownButton text={props.buttonText} /> : <LightBeigeButton text={props.buttonText} />}</a>
+        <a href={props.link}>{darkMode ? <ButtonBrown text={props.buttonText} /> : <ButtonLightBeige text={props.buttonText} />}</a>
       </div>
     </div>
   );
