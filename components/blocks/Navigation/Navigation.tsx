@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import BurgerMenu from "./BurgerMenu";
 import Link from "next/link";
 import { ProductContext } from "@/app/ProductContext";
+import Image from "next/image";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,7 @@ export default function Navigation() {
     <div className="bg-lightBeige/50 flex items-center justify-between z-40 sticky top-0 px-4">
       <div className="flex items-center">
         <Link href="/">
-          <img src="Logo.png" alt="hjerte med peacetegn" className="w-16 md:w-24" />
+          <Image src="Logo.png" alt="hjerte med peacetegn" className="w-16 md:w-24" />
         </Link>
       </div>
       <div className="flex items-center relative">
