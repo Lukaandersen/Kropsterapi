@@ -18,7 +18,7 @@ export default function Navigation() {
     <div className="bg-lightBeige/50 flex items-center justify-between z-40 sticky top-0 px-4">
       <div className="flex items-center">
         <Link href="/">
-          <Image src="Logo.png" alt="hjerte med peacetegn" width={300} height={300} className="w-16 md:w-24" />
+          <Image src="/Logo.png" alt="hjerte med peacetegn" width={300} height={300} className="w-16 md:w-24" />
         </Link>
       </div>
       <div className="flex items-center relative">
