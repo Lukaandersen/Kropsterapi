@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { DarkContext } from "@/app/DarkContext";
 import ButtonLightBeige from "@/components/buttons/ButtonLightBeige";
 import ButtonBrown from "@/components/buttons/ButtonBrown";
+import Image from "next/image";
 export default function TextImage(props) {
   const { darkMode } = useContext(DarkContext);
 
@@ -22,7 +23,7 @@ export default function TextImage(props) {
         </div>
       </div>
       <div className="h-full justify-center items-center hidden md:block">
-        <img src="Clinic-pictures/_DSF1763.jpg" alt="" className="object-cover w-full h-full" />
+        <Image src="/Clinic-pictures/_DSF1763.jpg" width={250} height={250} alt="" className="object-cover w-full h-full" />
       </div>
     </div>
   );

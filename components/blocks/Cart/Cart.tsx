@@ -3,12 +3,16 @@ import Link from "next/link";
 import { CartCardWrapper } from "./CartcardWrapper";
 import supabase from "@/app/config/supabaseClient";
 import { ProductContext } from "@/app/ProductContext";
+import { useRouter } from "next/navigation";
 
 export default function Cart(props) {
+  const router = useRouter();
   const [chosenTime, setChosenTime] = useState<Record<string, any>>({});  const [availableSlots, setAvailableSlots] = useState([]);
   const [showCalendar, setShowCalendar] = useState(false);
 
-  const { clearCart } = useContext(ProductContext);
+  const { clearCart, setName, setEmail } = useContext(ProductContext);
+
+  
 
   async function bookSlot(evt) {
     evt.preventDefault();
@@ -23,10 +27,13 @@ export default function Cart(props) {
       phone,
       message
     };
+
+    setName(name);
+    setEmail(email);
     const { data, error } = await supabase.from("Appointments").update({ booked: bookedData }).eq("id", chosenTime.id).select();
     console.log(data, error);
     clearCart();
-    window.location.href = "/tak-for-din-ordre";
+    router.push('/tak-for-din-ordre');
   }
 
   return (

@@ -1,4 +1,5 @@
 import ButtonLightBeige from "@/components/buttons/ButtonLightBeige"
+import Image from "next/image"
 
 export default function TextImage2 (props) {
     return (
@@ -16,7 +17,7 @@ Grunden til at vælge kropsterapi, er for at komme hele vejen rundt, og komme pr
 <ButtonLightBeige />
         </div>
         <div className="h-2/4">
-        <img src="Clinic-pictures/_DSF1754.jpg" alt="" className="cover "/>
+        <Image src="/Clinic-pictures/_DSF1754.jpg" width={250} height={250} alt="" className="cover "/>
 
         </div>
     </div>

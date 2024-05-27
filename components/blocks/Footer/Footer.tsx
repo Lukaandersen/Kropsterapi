@@ -1,6 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { DarkContext } from "@/app/DarkContext";
+import Image from "next/image";
 
 export default function Footer() {
   const { darkMode } = useContext(DarkContext);
@@ -13,21 +14,23 @@ export default function Footer() {
         <div className="grid gap-1 justify-center">
           <p className="">Find mig her:</p>
           <div className="grid grid-cols-2 justify-items-center gap-6 px-16 py-5">
-            <img
-              src={darkMode ? "FacebookDark.png" : "FacebookLight.png"}
+            <Image
+              src={darkMode ? "/FacebookDark.png" : "/FacebookLight.png"}
               alt=""
+              height={45}
               width={45}
               className="transition duration-300 ease-in-out transform hover:scale-110"
-              onMouseOver={(e) => (e.currentTarget.src = "FacebookPurple.png")}
-              onMouseOut={(e) => (e.currentTarget.src = darkMode ? "FacebookDark.png" : "FacebookLight.png")}
+              onMouseOver={(e) => (e.currentTarget.src = "/FacebookPurple.png")}
+              onMouseOut={(e) => (e.currentTarget.src = darkMode ? "/FacebookDark.png" : "/FacebookLight.png")}
             />
-            <img
-              src={darkMode ? "InstagramDark.png" : "InstagramLight.png"}
+            <Image
+              src={darkMode ? "/InstagramDark.png" : "/InstagramLight.png"}
               alt=""
+              height={45}
               width={45}
               className="transition duration-300 ease-in-out transform hover:scale-110"
-              onMouseOver={(e) => (e.currentTarget.src = "InstagramPurple.png")}
-              onMouseOut={(e) => (e.currentTarget.src = darkMode ? "InstagramDark.png" : "InstagramLight.png")}
+              onMouseOver={(e) => (e.currentTarget.src = "/InstagramPurple.png")}
+              onMouseOut={(e) => (e.currentTarget.src = darkMode ? "/InstagramDark.png" : "/InstagramLight.png")}
             />
           </div>
           <p>Marstalsgade 2100 Østerbro</p>

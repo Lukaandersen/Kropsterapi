@@ -8,6 +8,9 @@ export const ProductContext = createContext <Record<string, any>>({
 });
 export const InCartProvider = ({ children }) => {
     const [inCart, setInCartState] = useState([]);
+    const [name, setName] = useState ("");
+    const [email, setEmail] = useState ("");
+
        
     const setInCart = (newCart) => {
         // Opdater inCart og localStorage
@@ -29,7 +32,7 @@ useEffect(() => {
     }, []);
 
     return (
-        <ProductContext.Provider value={{ inCart: inCart, setInCart: setInCart, clearCart: clearCart }}>
+        <ProductContext.Provider value={{ inCart: inCart, setInCart: setInCart, clearCart: clearCart, name: name, email: email, setName: setName, setEmail: setEmail }}>
             {children}
         </ProductContext.Provider>
     );
