@@ -52,26 +52,31 @@ export default function Cart(props) {
     const message = formData.get("message");
     const time = chosenTime.time;
     const date = chosenTime.date; 
-
-
+  
     const bookedData = {
       name,
       email,
       phone,
       message,
       time,
-    date,
+      date,
     };
-
+  
     setName(name);
     setEmail(email);
+  
+    // Send en asynkron anmodning til at opdatere dataene i databasen
     const { data, error } = await supabase.from("Appointments").update({ booked: bookedData }).eq("id", chosenTime.id).select();
     console.log(data, error);
-    
+  
+    // Uanset om anmodningen lykkedes eller mislykkedes, send brugeren videre til næste side
+    router.push('/tak-for-din-ordre');
+    clearCart();
+  
+    // Hvis der ikke er nogen fejl, send emailen
     if (!error) {
-      await handleSendEmail(name, email, phone, message, time, date );
-      router.push('/tak-for-din-ordre');
-      clearCart();
+      await handleSendEmail(name, email, phone, message, time, date);
+     
     }
   }
   
