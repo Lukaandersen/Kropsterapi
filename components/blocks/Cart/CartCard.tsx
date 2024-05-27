@@ -34,7 +34,7 @@ export function CartCard(props) {
       <div className="mx-10 md:mx-6 my-0 flex flex-col md:h-[300px] md:w-[250px] justify-center relative">
         <h3 className={`${darkMode ? "text-primaryPurple" : "md:text-primaryPurple text-primaryLight"} m-0 text-h3M md:text-h3D text-center md:text-left mt-5 md:mt-0`}>{props.titel}</h3>
         <div className="relative mx-auto text-center w-full max-w-72 min-w-44 -mt-5 md:-mt-0">
-          <Image src="3_sessioner.png" alt="Billede af noget spirituelt" className="w-auto h-auto opacity-35 md:mx-auto md:hidden" />
+          <Image width={250} height={250} src="/3_sessioner.png" alt="Billede af noget spirituelt" className="w-auto h-auto opacity-35 md:mx-auto md:hidden" />
           <p className={`${darkMode ? "text-primaryPurple" : "text-primaryLight md:text-primaryPurple"} absolute top-0 left-0 right-0 bottom-0 md:relative flex items-center justify-center text-center md:text-start md:col-span-1 text-p md:mt-5`}>
             {props.text}
           </p>

@@ -9,9 +9,38 @@ export default function Cart(props) {
   const router = useRouter();
   const [chosenTime, setChosenTime] = useState<Record<string, any>>({});  const [availableSlots, setAvailableSlots] = useState([]);
   const [showCalendar, setShowCalendar] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const { clearCart, setName, setEmail } = useContext(ProductContext);
 
+  const handleSendEmail = async (name, email, phone, message, time, date) => {
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/luka_andersen@hotmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          phone: phone,
+          message: message,
+          time: time, 
+          date: date, 
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitSuccess(true);
+        console.log("Formularen blev indsendt med succes!");
+      } else {
+        console.log("Der opstod en fejl under indsendelse af formularen.");
+      }
+    } catch (error) {
+      console.error("Der opstod en fejl:", error);
+    }
+  };
   
 
   async function bookSlot(evt) {
@@ -21,20 +50,31 @@ export default function Cart(props) {
     const email = formData.get("email");
     const phone = formData.get("phone");
     const message = formData.get("message");
+    const time = chosenTime.time;
+    const date = chosenTime.date; 
+
+
     const bookedData = {
       name,
       email,
       phone,
-      message
+      message,
+      time,
+    date,
     };
 
     setName(name);
     setEmail(email);
     const { data, error } = await supabase.from("Appointments").update({ booked: bookedData }).eq("id", chosenTime.id).select();
     console.log(data, error);
-    clearCart();
-    router.push('/tak-for-din-ordre');
+    
+    if (!error) {
+      await handleSendEmail(name, email, phone, message, time, date );
+      router.push('/tak-for-din-ordre');
+      clearCart();
+    }
   }
+  
 
   return (
     <div className="mt-24 text-primaryPurple ml-5">
@@ -70,6 +110,10 @@ export default function Cart(props) {
                 Besked
               </label>
               <textarea id="message" className="bg-gray-300 p-2 ml-4 w-full max-w-[calc(100%-2rem)]" />
+            </div>
+            <div className="mb-2 flex flex-col">
+              <p className="pl-4"><strong>Valgt tid:</strong> {chosenTime.time}</p>
+              <p className="pl-4"><strong>Valgt dato:</strong> {chosenTime.date}</p>
             </div>
             <button className="text-primaryPurple bg-primaryLight josefin font-bold text-md md:text-xl text-center py-3 px-1 mx-16 rounded-xl shadow-md custom-shadow my-2" type="submit" >
     {props.button2Text}
