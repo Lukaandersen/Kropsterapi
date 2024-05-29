@@ -190,7 +190,7 @@ Builder.registerComponent(BookingCard, {
 });
 
 Builder.registerComponent(DoubleTextBlock, {
-  name: "TextBlock",
+  name: "DoubleTextBlock",
   inputs: [
     {
       name: "title1",

@@ -46,17 +46,13 @@ const Calendar = (props) => {
       if (date.getDay() === 0 || date.getDay() === 6) {
         dateClass = "bg-gray-500 rounded-md w-7 md:w-10 z-10";
       }
-      //day, month
 
-      //indeholder calendar et objekt der har den rigtige dato
       const todaysEvents = timeslots.filter((evt) => evt.date === `${year}-${String(month + 1).padStart(2, "0")}-${String(i).padStart(2, "0")}`);
       if (todaysEvents.length > 0) {
-        //så er der events på dagen
         console.log("fandt et event på " + i);
         dateClass += " bg-darkBlue";
       } else {
         console.log("fandt ikke noget på" + i, month, year, `${year}-${String(month + 1).padStart(2, "0")}-${String(i).padStart(2, "0")}`);
-        //der er IKKE events
       }
       calendarArray.push(
         <div key={i} className={containerClass}>
@@ -98,7 +94,7 @@ const Calendar = (props) => {
   };
 
   if (!showCalendar) {
-    return null; // Hvis showCalendar er falsk, returnerer vi ingenting (komponenten lukkes)
+    return null;
   }
 
   return (

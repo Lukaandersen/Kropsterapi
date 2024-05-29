@@ -15,7 +15,7 @@ export default function Accordion() {
     <div className="text-primaryPurple bg-mediumBeige p-10 md:flex gap-4 text-left">
       <div className="md:ml-36 grid place-content-center  text-center md:text-left">
         <h2 className="text-h2M md:h2D font-bold mb-6">FAQ</h2>
-        <p className="font-bold max-w-56 mb-12 text-center text-p md:text-left">Der er mange der har lignende spørgsmål til Kropsterapi, så her vil jeg prøve at besvare nogle</p>
+        <p className="font-bold max-w-56 mb-12 text-center text-p md:text-left">Jeg har prøvet at besvarer nogle at de oftest stillede spørgsmål omkring Kropsterapi</p>
       </div>
       <div className="w-full md:w-1/2 md:ml-auto text-left">
         {faqItems.map((item, index) => (

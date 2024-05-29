@@ -5,7 +5,6 @@ import ButtonBrown from "@/components/buttons/ButtonBrown";
 
 export default function SingleText(props) {
   const { darkMode } = useContext(DarkContext);
-  //const darkMode = useContext(DarkModeContext);
   console.log("Current darkMode value in BookingCard:", darkMode);
   return (
     <div className="grid py-5 md:px-28 px-5 place-items-center text-primaryPurple">

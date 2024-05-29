@@ -13,13 +13,11 @@ export const InCartProvider = ({ children }) => {
 
        
     const setInCart = (newCart) => {
-        // Opdater inCart og localStorage
         setInCartState(newCart);
         localStorage.setItem('inCart', JSON.stringify(newCart));
     };
 
     const clearCart = () => {
-        // Fjern produkterne fra kurven og fra localStorage
         setInCart([]);
         localStorage.removeItem('inCart');
     };

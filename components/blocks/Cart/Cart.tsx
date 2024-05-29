@@ -11,6 +11,11 @@ export default function Cart(props) {
   const [showCalendar, setShowCalendar] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
+  const formatTime = (timeString) => {
+    const [timePart] = timeString.split("+");
+    const [hours, minutes] = timePart.split(":");
+    return `${hours}:${minutes}`;
+  };
   const { clearCart, setName, setEmail } = useContext(ProductContext);
 
   const handleSendEmail = async (name, email, phone, message, time, date) => {
@@ -65,15 +70,12 @@ export default function Cart(props) {
     setName(name);
     setEmail(email);
   
-    // Send en asynkron anmodning til at opdatere dataene i databasen
     const { data, error } = await supabase.from("Appointments").update({ booked: bookedData }).eq("id", chosenTime.id).select();
     console.log(data, error);
   
-    // Uanset om anmodningen lykkedes eller mislykkedes, send brugeren videre til næste side
     router.push('/tak-for-din-ordre');
     clearCart();
   
-    // Hvis der ikke er nogen fejl, send emailen
     if (!error) {
       await handleSendEmail(name, email, phone, message, time, date);
      
@@ -89,7 +91,7 @@ export default function Cart(props) {
       </Link>
       <div className="mt-8 block md:grid md:grid-cols-[2fr,1fr]">
         <CartCardWrapper setChosenTime={setChosenTime} />
-        <div className="bg-primaryLight m-6 pb-6 text-primaryPurple max-h-[680px]">
+        <div className="bg-primaryLight m-6 pb-6 text-primaryPurple max-h-[800px]">
           <h3 className="text-center text-h3M md:text-h3D py-4 px-4">Dine Betalingsoplysninger</h3>
           <form className="flex flex-col gap-5" onSubmit={bookSlot}>
             <div className="mb-2 flex flex-col">
@@ -117,8 +119,8 @@ export default function Cart(props) {
               <textarea id="message" className="bg-gray-300 p-2 ml-4 w-full max-w-[calc(100%-2rem)]" />
             </div>
             <div className="mb-2 flex flex-col">
-              <p className="pl-4"><strong>Valgt tid:</strong> {chosenTime.time}</p>
-              <p className="pl-4"><strong>Valgt dato:</strong> {chosenTime.date}</p>
+            <p className="pl-4"><strong>Valgt tid:</strong> {chosenTime.time && formatTime(chosenTime.time)}</p>
+                          <p className="pl-4"><strong>Valgt dato:</strong> {chosenTime.date}</p>
             </div>
             <button className="text-primaryPurple bg-primaryLight josefin font-bold text-md md:text-xl text-center py-3 px-1 mx-16 rounded-xl shadow-md custom-shadow my-2" type="submit" >
     {props.button2Text}

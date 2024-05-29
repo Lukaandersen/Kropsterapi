@@ -6,7 +6,7 @@ const Timeslot = ({ availableSlots, setChosenTime, closeCalendar }) => {
 
   const formatTime = (timeString) => {
     try {
-      console.log("tider fundet", timeString); // Fejlfindingsmeddelelse
+      console.log("tider fundet", timeString);
       const [timePart] = timeString.split("+");
       const [hours, minutes] = timePart.split(":");
       if (!hours || !minutes) {
@@ -23,7 +23,7 @@ const Timeslot = ({ availableSlots, setChosenTime, closeCalendar }) => {
 
   const handleSlotSelection = (slot) => {
     setSelectedSlot(slot === selectedSlot ? null : slot);
-    setChosenTime(slot); // Opdater valgt tidspunkt
+    setChosenTime(slot); 
   };
 
 

@@ -4,8 +4,7 @@ import { DarkContext } from "@/app/DarkContext";
 
 function CTABanner(props) {
   const { darkMode } = useContext(DarkContext);
-  //const darkMode = useContext(DarkModeContext);
-  console.log("Current darkMode value in CTABanner:", darkMode); // Tilføj denne linje
+  console.log("Current darkMode value in CTABanner:", darkMode);
 
   return (
     <div>

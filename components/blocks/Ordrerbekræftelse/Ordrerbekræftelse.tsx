@@ -9,7 +9,6 @@ export default function Ordrerbekræftelse() {
   useEffect(() => {
     async function fetchBookingInfo() {
       try {
-        // Hent de seneste bookingoplysninger fra Supabase
         const { data: bookings, error } = await supabase
           .from("Appointments")
           .select("booked")
@@ -24,9 +23,8 @@ export default function Ordrerbekræftelse() {
           throw new Error("No bookings found.");
         }
 
-        // Pars JSON-strengen fra den seneste booking
         const bookedData = JSON.parse(bookings[0].booked);
-        setBookingInfo(bookedData); // Opdater state med bookingoplysningerne
+        setBookingInfo(bookedData);
       } catch (error) {
         console.error("Error fetching booking information:", error);
       }

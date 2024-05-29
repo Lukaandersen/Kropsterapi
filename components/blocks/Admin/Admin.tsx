@@ -17,7 +17,6 @@ export default function Admin() {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    // Her kan du håndtere den indsendte formulardata, f.eks. sende det til en API eller en anden funktion.
     console.log("Dato:", selectedDate);
     console.log("Tidspunkt:", selectedTime);
   };

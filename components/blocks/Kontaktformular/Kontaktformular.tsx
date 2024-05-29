@@ -4,16 +4,14 @@ export default function Kontaktformular(props) {
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const handleSendEmail = async (event) => {
-    event.preventDefault(); // Forhindrer standardformularindsendelse
+    event.preventDefault();
     console.log("handleSendEmail function called");
 
-    // Hent værdierne fra inputfelterne
     const name = document.querySelector<HTMLInputElement>("#name")?.value;
     const phone = document.querySelector<HTMLInputElement>("#phone")?.value;
     const email = document.querySelector<HTMLInputElement>("#email")?.value;
     const message = document.querySelector<HTMLInputElement>("#message")?.value;
 
-    // Udfør Fetch-anmodningen til FormSubmit API
     try {
       const response = await fetch("https://formsubmit.co/ajax/luka_andersen@hotmail.com", {
         method: "POST",
@@ -30,7 +28,6 @@ export default function Kontaktformular(props) {
       });
 
       if (response.ok) {
-        // Nulstil formularen og vis succesbesked
         document.querySelector<HTMLFormElement>("#contactform")?.reset();
         setSubmitSuccess(true);
         console.log("Formularen blev indsendt med succes!");
