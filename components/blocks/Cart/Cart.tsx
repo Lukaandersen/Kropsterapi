@@ -73,7 +73,7 @@ export default function Cart(props) {
     const { data, error } = await supabase.from("Appointments").update({ booked: bookedData }).eq("id", chosenTime.id).select();
     console.log(data, error);
   
-    router.push('/tak-for-din-ordre');
+    router.push('/order-confirmation');
     clearCart();
   
     if (!error) {

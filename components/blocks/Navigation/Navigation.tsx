@@ -30,7 +30,7 @@ export default function Navigation() {
             <Link href="/about-me">Om mig</Link>
           </li>
           <li className="hover:text-darkBlue font-semibold">
-            <Link href="/hvad-er-kropsterapi">Hvad er Kropsterapi?</Link>
+            <Link href="/what-is-body-therapy">Hvad er Kropsterapi?</Link>
           </li>
         </ul>
         <div className="relative">

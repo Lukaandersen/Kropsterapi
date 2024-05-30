@@ -11,7 +11,7 @@ export default function BurgerMenu({ isOpen }) {
           <a href="/about-me">Om mig</a>
         </li>
         <li className="hover:text-darkBlue">
-          <a href="/hvad-er-kropsterapi">
+          <a href="/what-is-body-therapy">
             Hvad er <br></br> Kropsterapi?
           </a>
         </li>
